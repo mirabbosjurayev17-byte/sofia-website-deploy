@@ -1,10 +1,18 @@
 {
   "version": 2,
+  "buildCommand": "npm run build",
   "builds": [
-    { "src": "api/index.mjs", "use": "@vercel/node" }
+    {
+      "src": "api/index.mjs",
+      "use": "@vercel/node",
+      "config": { "includeFiles": "dist/server/**" }
+    },
+    { "src": "dist/client/**", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/assets/(.*)", "dest": "/dist/client/assets/$1" },
+    { "src": "/images/(.*)", "dest": "/dist/client/images/$1" },
+    { "src": "/favicon.ico", "dest": "/dist/client/favicon.ico" },
     { "src": "/(.*)", "dest": "/api/index.mjs" }
   ]
 }
