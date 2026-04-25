@@ -11,26 +11,12 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--ivory)] border-b border-[var(--charcoal)]/10">
-      {/* Persistent top bar (desktop only) */}
-      <div className="hidden lg:block bg-[var(--charcoal)] text-[var(--ivory)]">
-        <div className="mx-auto max-w-[1400px] px-5 lg:px-10 h-9 flex items-center justify-end gap-6 text-xs tracking-wide">
-          <a
-            href="tel:+998970003334"
-            className="inline-flex items-center gap-2 text-[var(--ivory)]/90 hover:text-[var(--camel)] transition-colors"
-          >
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-            +998 97 000 33 34
-          </a>
-          <span className="text-[var(--ivory)]/30">|</span>
-          <a
-            href="https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[var(--ivory)]/90 hover:text-[var(--camel)] transition-colors"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 8.16l-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12L8.47 13.4l-2.81-.88c-.61-.19-.62-.61.13-.9l10.99-4.24c.51-.18.96.12.77.78z"/></svg>
-            Telegram
-          </a>
+      {/* Promotional top bar */}
+      <div className="bg-[var(--charcoal)] text-white">
+        <div className="mx-auto max-w-[1400px] px-4 lg:px-10 h-8 lg:h-9 flex items-center justify-center">
+          <p className="font-sans text-[11px] lg:text-[12px] tracking-[0.05em] text-center text-white/95 truncate">
+            {localize(ui.topBarPromo, lang)}
+          </p>
         </div>
       </div>
       <div className="mx-auto max-w-[1400px] px-5 lg:px-10 h-16 lg:h-20 flex items-center justify-between">

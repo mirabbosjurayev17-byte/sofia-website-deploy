@@ -8,8 +8,8 @@ const sofas: Product[] = [
   {
     title: { ru: 'Угловой диван "VALENSIA"', uz: 'Burchakli divan "VALENSIA"' },
     description: {
-      ru: "Размер 340x250 см. Модульная система по турецкой технологии, ножки из натурального дерева.",
-      uz: "O'lchami 340x250 sm. Turkiya texnologiyasi asosidagi modulli tizim, tabiiy yog'och oyoqchalar.",
+      ru: "Сочетание уюта и функциональности для современной гостиной. Просторная модульная форма позволяет комфортно разместиться всей семье, а турецкая технология сборки и ножки из натурального дерева обеспечивают надёжность на годы. Идеален как для ежедневного отдыха, так и для приёма гостей.",
+      uz: "Zamonaviy mehmonxona uchun shinamlik va funksionallik uyg'unligi. Keng modulli forma butun oilani qulay joylashtirishga imkon beradi, turkiya texnologiyasi va tabiiy yog'och oyoqchalar esa uzoq yillik bardoshlilikni ta'minlaydi. Har kungi dam olish va mehmon kutish uchun ideal.",
     },
     price: "11 000 000 UZS",
     images: ["/images/products/valensia/1.jpg", "/images/products/valensia/2.jpg"],
@@ -17,8 +17,8 @@ const sofas: Product[] = [
   {
     title: { ru: 'Угловой диван "EVA"', uz: 'Burchakli divan "EVA"' },
     description: {
-      ru: "Размер 270x230 см. В комплекте два пуфа с открыванием и бельевой отсек.",
-      uz: "O'lchami 270x230 sm. To'plamda ochiladigan ikki puf va saqlash qutisi bor.",
+      ru: "Идеальный выбор для тех, кто ценит комфорт и практичность в каждой детали. Свободные линии и размер 270×230 см создают атмосферу уюта для всей семьи, а два открывающихся пуфа и вместительный бельевой отсек помогут сохранить порядок и всё необходимое под рукой.",
+      uz: "Har bir tafsilotda qulaylik va amaliylikni qadrlaydiganlar uchun ideal tanlov. Keng forma va 270×230 sm o'lcham butun oila uchun shinam muhit yaratadi, ikki ochiladigan puf va sig'imli saqlash qutisi esa tartib va kerakli narsalarni qo'l ostida saqlashga yordam beradi.",
     },
     price: "8 500 000 UZS",
     images: ["/images/products/eva/1.jpg", "/images/products/eva/2.jpg"],
@@ -26,8 +26,8 @@ const sofas: Product[] = [
   {
     title: { ru: 'Раскладной диван "Тик-так"', uz: 'Yig\'iladigan divan "Tik-tak"' },
     description: {
-      ru: 'Ширина 240 см. Механизм "еврокнижка", идеален для ежедневного сна.',
-      uz: "Kengligi 240 sm. Mexanizm \"evroknijka\", har kuni uxlash uchun juda qulay.",
+      ru: 'Надёжный спутник для ежедневного использования и спокойного сна. Механизм "еврокнижка" работает легко и бесшумно, а ширина 240 см и ровная спальная поверхность обеспечивают настоящий отдых. Практичное решение для всей семьи в любой комнате.',
+      uz: "Har kungi foydalanish va tinch uyqu uchun ishonchli hamroh. \"Yevroknijka\" mexanizmi yengil va shovqinsiz ishlaydi, kengligi 240 sm va tekis yotoq yuzasi esa haqiqiy dam olishni ta'minlaydi. Har qanday xona uchun butun oilaga mos amaliy yechim.",
     },
     price: "5 800 000 UZS",
     images: ["/images/products/tik-tak/1.jpg", "/images/products/tik-tak/2.jpg"],
@@ -35,8 +35,8 @@ const sofas: Product[] = [
   {
     title: { ru: 'Угловой диван "Bella"', uz: 'Burchakli divan "Bella"' },
     description: {
-      ru: "Размер 270x155 см. Вместительный бельевой отсек в атаманке и подлокотниках.",
-      uz: "O'lchami 270x155 sm. Atamanka va qo'ltiqtayoqlarda katta saqlash qutisi bor.",
+      ru: "Элегантное решение, которое объединяет стиль и практичность в каждой линии. Размер 270×155 см идеально подходит для уютных вечеров всей семьёй, а вместительные бельевые отсеки в атаманке и подлокотниках делают его исключительно удобным для ежедневного использования.",
+      uz: "Har bir chiziqda uslub va amaliylikni birlashtirgan nafis yechim. 270×155 sm o'lcham butun oila bilan shinam oqshomlar uchun ideal mos keladi, atamanka va qo'ltiq tayoqlardagi keng saqlash qutilari esa har kungi foydalanishni g'oyat qulay qiladi.",
     },
     price: "7 000 000 UZS",
     images: ["/images/products/Bella/1.jpg", "/images/products/Bella/2.jpg", "/images/products/Bella/3.jpg"],
@@ -306,7 +306,7 @@ export function Hero() {
               aria-label={localize(ui.heroCallNow, lang)}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-              <span className="font-serif text-lg lg:text-xl tracking-wide">+998 97 000 33 34</span>
+              <span className="font-sans font-semibold text-base lg:text-lg tracking-wide">+998 97 000 33 34</span>
             </a>
           </div>
         </div>
@@ -485,39 +485,45 @@ export function FAQ() {
 
 export function MapSection() {
   const { lang } = useLocale();
+  // Single-pin search-mode embed with explicit query for ul. Mukimi 98A. The `mode=search` widget
+  // shows one selected result; the iframe stays clean without unrelated markers.
   const yandexMapEmbed =
-    "https://yandex.com/map-widget/v1/?ll=69.241094%2C41.290554&mode=search&sll=69.241094%2C41.290554&text=Ташкент%20Мукими%2098А&z=17";
-  const yandexMapShare = "https://yandex.uz/maps/-/CPGrM-4q";
+    "https://yandex.uz/map-widget/v1/?text=Ташкент%2C%20ул.%20Мукими%2C%2098А&z=17&l=map";
+  const yandexMapShare = "https://yandex.uz/maps/-/CPGvaL2A";
   return (
-    <section id="map" className="py-20 lg:py-28 bg-white">
+    <section id="map" className="py-20 lg:py-28 bg-white font-sans">
       <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
-        <SectionTitle eyebrow={localize(ui.mapEyebrow, lang)}>{localize(ui.mapTitle, lang)}</SectionTitle>
+        <div className="text-center mb-12 lg:mb-16">
+          <p className="text-[var(--camel)] text-xs tracking-[0.3em] uppercase mb-4">{localize(ui.mapEyebrow, lang)}</p>
+          <h2 className="font-sans font-semibold text-3xl md:text-4xl lg:text-[44px] text-[var(--charcoal)] tracking-tight">
+            {localize(ui.mapTitle, lang)}
+          </h2>
+        </div>
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-12 items-stretch">
           <div className="flex flex-col justify-center bg-[var(--ivory)] px-6 lg:px-10 py-10 lg:py-12">
-            <p className="text-[var(--charcoal)]/80 leading-relaxed text-[15px] mb-8">
+            <p className="text-[var(--charcoal)]/80 leading-relaxed text-[15px] mb-10">
               {localize(ui.mapDescription, lang)}
             </p>
             <div className="space-y-6">
               <div className="flex gap-4">
                 <span className="text-[var(--camel)] text-xl leading-none mt-1">📍</span>
                 <div>
-                  <p className="text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-1">{localize(ui.mapAddressLabel, lang)}</p>
-                  <p className="font-serif text-lg text-[var(--charcoal)]">{localize(ui.addressLine, lang)}</p>
-                  <p className="text-sm text-[var(--charcoal)]/60 mt-1">{localize(ui.landmark, lang)}</p>
+                  <p className="text-[var(--camel)] text-[11px] tracking-[0.25em] uppercase mb-1 font-medium">{localize(ui.mapAddressLabel, lang)}</p>
+                  <p className="text-base lg:text-lg text-[var(--charcoal)] font-medium">{localize(ui.addressLine, lang)}</p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <span className="text-[var(--camel)] text-xl leading-none mt-1">📞</span>
                 <div>
-                  <p className="text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-1">{localize(ui.mapPhoneLabel, lang)}</p>
-                  <a href="tel:+998970003334" className="font-serif text-lg text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors">+998 97 000 33 34</a>
+                  <p className="text-[var(--camel)] text-[11px] tracking-[0.25em] uppercase mb-1 font-medium">{localize(ui.mapPhoneLabel, lang)}</p>
+                  <a href="tel:+998970003334" className="text-base lg:text-lg text-[var(--charcoal)] font-medium hover:text-[var(--camel)] transition-colors">+998 97 000 33 34</a>
                 </div>
               </div>
               <div className="flex gap-4">
                 <span className="text-[var(--camel)] text-xl leading-none mt-1">🕐</span>
                 <div>
-                  <p className="text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-1">{localize(ui.mapHoursLabel, lang)}</p>
-                  <p className="font-serif text-lg text-[var(--charcoal)]">{localize(ui.mapHoursValue, lang)}</p>
+                  <p className="text-[var(--camel)] text-[11px] tracking-[0.25em] uppercase mb-1 font-medium">{localize(ui.mapHoursLabel, lang)}</p>
+                  <p className="text-base lg:text-lg text-[var(--charcoal)] font-medium">{localize(ui.mapHoursValue, lang)}</p>
                 </div>
               </div>
             </div>
@@ -525,13 +531,13 @@ export function MapSection() {
               href={yandexMapShare}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-10 inline-flex items-center gap-2 text-sm text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors w-fit border-b border-[var(--charcoal)]/30 hover:border-[var(--camel)] pb-1"
+              className="mt-10 inline-flex items-center justify-center gap-2 bg-[var(--charcoal)] hover:bg-[var(--camel)] text-white text-sm font-medium tracking-wide px-6 py-3.5 transition-colors w-fit"
             >
               {localize(ui.mapOpenInYandex, lang)}
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M7 17L17 7M9 7h8v8"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg>
             </a>
           </div>
-          <div className="relative min-h-[360px] lg:min-h-[480px] overflow-hidden">
+          <div className="relative min-h-[360px] lg:min-h-[480px] overflow-hidden bg-[var(--ivory)]">
             <iframe
               src={yandexMapEmbed}
               title="SOFIA-MEBEL on Yandex Maps"

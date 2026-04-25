@@ -132,20 +132,25 @@ export const ui = {
   managerTelegram: { ru: "Менеджер (Telegram)", uz: "Menejer (Telegram)" },
   cityCountry: { ru: "Ташкент, Узбекистан", uz: "Toshkent, O'zbekiston" },
   addressLine: { ru: "Ташкент, ул. Мукими 98А", uz: "Toshkent, Muqimiy ko'chasi 98A" },
-  // Top bar / hero / map
-  topBarPhone: { ru: "+998 97 000 33 34", uz: "+998 97 000 33 34" },
-  topBarTelegram: { ru: "Telegram", uz: "Telegram" },
+  // Top promo bar
+  topBarPromo: {
+    ru: "Скидки до 30% на популярные модели диванов — ограниченное предложение",
+    uz: "Ommabop divan modellariga 30% gacha chegirma — cheklangan taklif",
+  },
   heroCallNow: { ru: "Позвонить сейчас", uz: "Hozir qo'ng'iroq qiling" },
+  // Map section (showroom CTA)
   mapEyebrow: { ru: "Шоу-рум", uz: "Shou-rum" },
-  mapTitle: { ru: "Как нас найти", uz: "Bizni qanday topish mumkin" },
+  mapTitle: { ru: "Приезжайте к нам в шоу-рум", uz: "Bizning shou-rumga tashrif buyuring" },
+  mapDescription: {
+    ru: "Оцените мебель вживую, почувствуйте комфорт и выберите идеальный вариант вместе с нашим менеджером.",
+    uz: "Mebelni o'z ko'zingiz bilan ko'ring, qulayligini his qiling va menejerimiz bilan birga ideal variantni tanlang.",
+  },
   mapAddressLabel: { ru: "Адрес", uz: "Manzil" },
   mapPhoneLabel: { ru: "Телефон", uz: "Telefon" },
-  mapHoursLabel: { ru: "График работы", uz: "Ish vaqti" },
-  mapHoursValue: { ru: "Ежедневно, с 10:00 до 19:00", uz: "Har kuni, 10:00 dan 19:00 gacha" },
-  mapOpenInYandex: { ru: "Открыть на Яндекс.Картах", uz: "Yandex Xaritada ochish" },
-  mapDescription: {
-    ru: "Приезжайте к нам в шоу-рум — оцените мебель вживую, выберите ткань и цвет, посоветуйтесь с менеджером. Мы рядом с рестораном «Фламинго».",
-    uz: "Shou-rumimizga tashrif buyuring — mebelni o'z ko'zingiz bilan ko'ring, mato va rangni tanlang, menejerimiz bilan maslahatlashing. Biz «Flamingo» restorani yaqinida joylashganmiz.",
-  },
+  mapHoursLabel: { ru: "График", uz: "Ish vaqti" },
+  mapHoursValue: { ru: "Ежедневно с 10:00 до 19:00", uz: "Har kuni 10:00 dan 19:00 gacha" },
+  mapOpenInYandex: { ru: "Открыть в Яндекс Картах", uz: "Yandex Xaritada ochish" },
+  // Floating Telegram CTA
   floatingTelegramAria: { ru: "Написать в Telegram", uz: "Telegram orqali yozish" },
+  floatingTelegramLabel: { ru: "Написать в Telegram", uz: "Telegramda yozish" },
 };

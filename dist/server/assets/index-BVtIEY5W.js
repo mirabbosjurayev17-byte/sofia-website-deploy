@@ -115,19 +115,27 @@ const ui = {
   managerTelegram: { ru: "Менеджер (Telegram)", uz: "Menejer (Telegram)" },
   cityCountry: { ru: "Ташкент, Узбекистан", uz: "Toshkent, O'zbekiston" },
   addressLine: { ru: "Ташкент, ул. Мукими 98А", uz: "Toshkent, Muqimiy ko'chasi 98A" },
+  // Top promo bar
+  topBarPromo: {
+    ru: "Скидки до 30% на популярные модели диванов — ограниченное предложение",
+    uz: "Ommabop divan modellariga 30% gacha chegirma — cheklangan taklif"
+  },
   heroCallNow: { ru: "Позвонить сейчас", uz: "Hozir qo'ng'iroq qiling" },
+  // Map section (showroom CTA)
   mapEyebrow: { ru: "Шоу-рум", uz: "Shou-rum" },
-  mapTitle: { ru: "Как нас найти", uz: "Bizni qanday topish mumkin" },
+  mapTitle: { ru: "Приезжайте к нам в шоу-рум", uz: "Bizning shou-rumga tashrif buyuring" },
+  mapDescription: {
+    ru: "Оцените мебель вживую, почувствуйте комфорт и выберите идеальный вариант вместе с нашим менеджером.",
+    uz: "Mebelni o'z ko'zingiz bilan ko'ring, qulayligini his qiling va menejerimiz bilan birga ideal variantni tanlang."
+  },
   mapAddressLabel: { ru: "Адрес", uz: "Manzil" },
   mapPhoneLabel: { ru: "Телефон", uz: "Telefon" },
-  mapHoursLabel: { ru: "График работы", uz: "Ish vaqti" },
-  mapHoursValue: { ru: "Ежедневно, с 10:00 до 19:00", uz: "Har kuni, 10:00 dan 19:00 gacha" },
-  mapOpenInYandex: { ru: "Открыть на Яндекс.Картах", uz: "Yandex Xaritada ochish" },
-  mapDescription: {
-    ru: "Приезжайте к нам в шоу-рум — оцените мебель вживую, выберите ткань и цвет, посоветуйтесь с менеджером. Мы рядом с рестораном «Фламинго».",
-    uz: "Shou-rumimizga tashrif buyuring — mebelni o'z ko'zingiz bilan ko'ring, mato va rangni tanlang, menejerimiz bilan maslahatlashing. Biz «Flamingo» restorani yaqinida joylashganmiz."
-  },
-  floatingTelegramAria: { ru: "Написать в Telegram", uz: "Telegram orqali yozish" }
+  mapHoursLabel: { ru: "График", uz: "Ish vaqti" },
+  mapHoursValue: { ru: "Ежедневно с 10:00 до 19:00", uz: "Har kuni 10:00 dan 19:00 gacha" },
+  mapOpenInYandex: { ru: "Открыть в Яндекс Картах", uz: "Yandex Xaritada ochish" },
+  // Floating Telegram CTA
+  floatingTelegramAria: { ru: "Написать в Telegram", uz: "Telegram orqali yozish" },
+  floatingTelegramLabel: { ru: "Написать в Telegram", uz: "Telegramda yozish" }
 };
 function Header() {
   const { lang, setLang } = useLocale();
@@ -136,33 +144,7 @@ function Header() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
   return /* @__PURE__ */ jsxs("header", { className: "fixed top-0 left-0 right-0 z-50 bg-[var(--ivory)] border-b border-[var(--charcoal)]/10", children: [
-    /* @__PURE__ */ jsx("div", { className: "hidden lg:block bg-[var(--charcoal)] text-[var(--ivory)]", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-[1400px] px-5 lg:px-10 h-9 flex items-center justify-end gap-6 text-xs tracking-wide", children: [
-      /* @__PURE__ */ jsxs(
-        "a",
-        {
-          href: "tel:+998970003334",
-          className: "inline-flex items-center gap-2 text-[var(--ivory)]/90 hover:text-[var(--camel)] transition-colors",
-          children: [
-            /* @__PURE__ */ jsx("svg", { width: "13", height: "13", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ jsx("path", { d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" }) }),
-            "+998 97 000 33 34"
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsx("span", { className: "text-[var(--ivory)]/30", children: "|" }),
-      /* @__PURE__ */ jsxs(
-        "a",
-        {
-          href: "https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20",
-          target: "_blank",
-          rel: "noopener noreferrer",
-          className: "inline-flex items-center gap-2 text-[var(--ivory)]/90 hover:text-[var(--camel)] transition-colors",
-          children: [
-            /* @__PURE__ */ jsx("svg", { width: "14", height: "14", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ jsx("path", { d: "M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 8.16l-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12L8.47 13.4l-2.81-.88c-.61-.19-.62-.61.13-.9l10.99-4.24c.51-.18.96.12.77.78z" }) }),
-            "Telegram"
-          ]
-        }
-      )
-    ] }) }),
+    /* @__PURE__ */ jsx("div", { className: "bg-[var(--charcoal)] text-white", children: /* @__PURE__ */ jsx("div", { className: "mx-auto max-w-[1400px] px-4 lg:px-10 h-8 lg:h-9 flex items-center justify-center", children: /* @__PURE__ */ jsx("p", { className: "font-sans text-[11px] lg:text-[12px] tracking-[0.05em] text-center text-white/95 truncate", children: localize(ui.topBarPromo, lang) }) }) }),
     /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-[1400px] px-5 lg:px-10 h-16 lg:h-20 flex items-center justify-between", children: [
       /* @__PURE__ */ jsxs("a", { href: "#", className: "font-serif text-xl lg:text-2xl tracking-tight text-[var(--charcoal)]", children: [
         "SOFIA",
@@ -364,8 +346,8 @@ const sofas = [
   {
     title: { ru: 'Угловой диван "VALENSIA"', uz: 'Burchakli divan "VALENSIA"' },
     description: {
-      ru: "Размер 340x250 см. Модульная система по турецкой технологии, ножки из натурального дерева.",
-      uz: "O'lchami 340x250 sm. Turkiya texnologiyasi asosidagi modulli tizim, tabiiy yog'och oyoqchalar."
+      ru: "Сочетание уюта и функциональности для современной гостиной. Просторная модульная форма позволяет комфортно разместиться всей семье, а турецкая технология сборки и ножки из натурального дерева обеспечивают надёжность на годы. Идеален как для ежедневного отдыха, так и для приёма гостей.",
+      uz: "Zamonaviy mehmonxona uchun shinamlik va funksionallik uyg'unligi. Keng modulli forma butun oilani qulay joylashtirishga imkon beradi, turkiya texnologiyasi va tabiiy yog'och oyoqchalar esa uzoq yillik bardoshlilikni ta'minlaydi. Har kungi dam olish va mehmon kutish uchun ideal."
     },
     price: "11 000 000 UZS",
     images: ["/images/products/valensia/1.jpg", "/images/products/valensia/2.jpg"]
@@ -373,8 +355,8 @@ const sofas = [
   {
     title: { ru: 'Угловой диван "EVA"', uz: 'Burchakli divan "EVA"' },
     description: {
-      ru: "Размер 270x230 см. В комплекте два пуфа с открыванием и бельевой отсек.",
-      uz: "O'lchami 270x230 sm. To'plamda ochiladigan ikki puf va saqlash qutisi bor."
+      ru: "Идеальный выбор для тех, кто ценит комфорт и практичность в каждой детали. Свободные линии и размер 270×230 см создают атмосферу уюта для всей семьи, а два открывающихся пуфа и вместительный бельевой отсек помогут сохранить порядок и всё необходимое под рукой.",
+      uz: "Har bir tafsilotda qulaylik va amaliylikni qadrlaydiganlar uchun ideal tanlov. Keng forma va 270×230 sm o'lcham butun oila uchun shinam muhit yaratadi, ikki ochiladigan puf va sig'imli saqlash qutisi esa tartib va kerakli narsalarni qo'l ostida saqlashga yordam beradi."
     },
     price: "8 500 000 UZS",
     images: ["/images/products/eva/1.jpg", "/images/products/eva/2.jpg"]
@@ -382,8 +364,8 @@ const sofas = [
   {
     title: { ru: 'Раскладной диван "Тик-так"', uz: `Yig'iladigan divan "Tik-tak"` },
     description: {
-      ru: 'Ширина 240 см. Механизм "еврокнижка", идеален для ежедневного сна.',
-      uz: 'Kengligi 240 sm. Mexanizm "evroknijka", har kuni uxlash uchun juda qulay.'
+      ru: 'Надёжный спутник для ежедневного использования и спокойного сна. Механизм "еврокнижка" работает легко и бесшумно, а ширина 240 см и ровная спальная поверхность обеспечивают настоящий отдых. Практичное решение для всей семьи в любой комнате.',
+      uz: `Har kungi foydalanish va tinch uyqu uchun ishonchli hamroh. "Yevroknijka" mexanizmi yengil va shovqinsiz ishlaydi, kengligi 240 sm va tekis yotoq yuzasi esa haqiqiy dam olishni ta'minlaydi. Har qanday xona uchun butun oilaga mos amaliy yechim.`
     },
     price: "5 800 000 UZS",
     images: ["/images/products/tik-tak/1.jpg", "/images/products/tik-tak/2.jpg"]
@@ -391,8 +373,8 @@ const sofas = [
   {
     title: { ru: 'Угловой диван "Bella"', uz: 'Burchakli divan "Bella"' },
     description: {
-      ru: "Размер 270x155 см. Вместительный бельевой отсек в атаманке и подлокотниках.",
-      uz: "O'lchami 270x155 sm. Atamanka va qo'ltiqtayoqlarda katta saqlash qutisi bor."
+      ru: "Элегантное решение, которое объединяет стиль и практичность в каждой линии. Размер 270×155 см идеально подходит для уютных вечеров всей семьёй, а вместительные бельевые отсеки в атаманке и подлокотниках делают его исключительно удобным для ежедневного использования.",
+      uz: "Har bir chiziqda uslub va amaliylikni birlashtirgan nafis yechim. 270×155 sm o'lcham butun oila bilan shinam oqshomlar uchun ideal mos keladi, atamanka va qo'ltiq tayoqlardagi keng saqlash qutilari esa har kungi foydalanishni g'oyat qulay qiladi."
     },
     price: "7 000 000 UZS",
     images: ["/images/products/Bella/1.jpg", "/images/products/Bella/2.jpg", "/images/products/Bella/3.jpg"]
@@ -661,7 +643,7 @@ function Hero() {
             "aria-label": localize(ui.heroCallNow, lang),
             children: [
               /* @__PURE__ */ jsx("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ jsx("path", { d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" }) }),
-              /* @__PURE__ */ jsx("span", { className: "font-serif text-lg lg:text-xl tracking-wide", children: "+998 97 000 33 34" })
+              /* @__PURE__ */ jsx("span", { className: "font-sans font-semibold text-base lg:text-lg tracking-wide", children: "+998 97 000 33 34" })
             ]
           }
         )
@@ -782,34 +764,36 @@ function FAQ() {
 }
 function MapSection() {
   const { lang } = useLocale();
-  const yandexMapEmbed = "https://yandex.com/map-widget/v1/?ll=69.241094%2C41.290554&mode=search&sll=69.241094%2C41.290554&text=Ташкент%20Мукими%2098А&z=17";
-  const yandexMapShare = "https://yandex.uz/maps/-/CPGrM-4q";
-  return /* @__PURE__ */ jsx("section", { id: "map", className: "py-20 lg:py-28 bg-white", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-[1400px] px-5 lg:px-10", children: [
-    /* @__PURE__ */ jsx(SectionTitle, { eyebrow: localize(ui.mapEyebrow, lang), children: localize(ui.mapTitle, lang) }),
+  const yandexMapEmbed = "https://yandex.uz/map-widget/v1/?text=Ташкент%2C%20ул.%20Мукими%2C%2098А&z=17&l=map";
+  const yandexMapShare = "https://yandex.uz/maps/-/CPGvaL2A";
+  return /* @__PURE__ */ jsx("section", { id: "map", className: "py-20 lg:py-28 bg-white font-sans", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-[1400px] px-5 lg:px-10", children: [
+    /* @__PURE__ */ jsxs("div", { className: "text-center mb-12 lg:mb-16", children: [
+      /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.3em] uppercase mb-4", children: localize(ui.mapEyebrow, lang) }),
+      /* @__PURE__ */ jsx("h2", { className: "font-sans font-semibold text-3xl md:text-4xl lg:text-[44px] text-[var(--charcoal)] tracking-tight", children: localize(ui.mapTitle, lang) })
+    ] }),
     /* @__PURE__ */ jsxs("div", { className: "grid lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-12 items-stretch", children: [
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col justify-center bg-[var(--ivory)] px-6 lg:px-10 py-10 lg:py-12", children: [
-        /* @__PURE__ */ jsx("p", { className: "text-[var(--charcoal)]/80 leading-relaxed text-[15px] mb-8", children: localize(ui.mapDescription, lang) }),
+        /* @__PURE__ */ jsx("p", { className: "text-[var(--charcoal)]/80 leading-relaxed text-[15px] mb-10", children: localize(ui.mapDescription, lang) }),
         /* @__PURE__ */ jsxs("div", { className: "space-y-6", children: [
           /* @__PURE__ */ jsxs("div", { className: "flex gap-4", children: [
             /* @__PURE__ */ jsx("span", { className: "text-[var(--camel)] text-xl leading-none mt-1", children: "📍" }),
             /* @__PURE__ */ jsxs("div", { children: [
-              /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-1", children: localize(ui.mapAddressLabel, lang) }),
-              /* @__PURE__ */ jsx("p", { className: "font-serif text-lg text-[var(--charcoal)]", children: localize(ui.addressLine, lang) }),
-              /* @__PURE__ */ jsx("p", { className: "text-sm text-[var(--charcoal)]/60 mt-1", children: localize(ui.landmark, lang) })
+              /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-[11px] tracking-[0.25em] uppercase mb-1 font-medium", children: localize(ui.mapAddressLabel, lang) }),
+              /* @__PURE__ */ jsx("p", { className: "text-base lg:text-lg text-[var(--charcoal)] font-medium", children: localize(ui.addressLine, lang) })
             ] })
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "flex gap-4", children: [
             /* @__PURE__ */ jsx("span", { className: "text-[var(--camel)] text-xl leading-none mt-1", children: "📞" }),
             /* @__PURE__ */ jsxs("div", { children: [
-              /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-1", children: localize(ui.mapPhoneLabel, lang) }),
-              /* @__PURE__ */ jsx("a", { href: "tel:+998970003334", className: "font-serif text-lg text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors", children: "+998 97 000 33 34" })
+              /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-[11px] tracking-[0.25em] uppercase mb-1 font-medium", children: localize(ui.mapPhoneLabel, lang) }),
+              /* @__PURE__ */ jsx("a", { href: "tel:+998970003334", className: "text-base lg:text-lg text-[var(--charcoal)] font-medium hover:text-[var(--camel)] transition-colors", children: "+998 97 000 33 34" })
             ] })
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "flex gap-4", children: [
             /* @__PURE__ */ jsx("span", { className: "text-[var(--camel)] text-xl leading-none mt-1", children: "🕐" }),
             /* @__PURE__ */ jsxs("div", { children: [
-              /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-1", children: localize(ui.mapHoursLabel, lang) }),
-              /* @__PURE__ */ jsx("p", { className: "font-serif text-lg text-[var(--charcoal)]", children: localize(ui.mapHoursValue, lang) })
+              /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-[11px] tracking-[0.25em] uppercase mb-1 font-medium", children: localize(ui.mapHoursLabel, lang) }),
+              /* @__PURE__ */ jsx("p", { className: "text-base lg:text-lg text-[var(--charcoal)] font-medium", children: localize(ui.mapHoursValue, lang) })
             ] })
           ] })
         ] }),
@@ -819,15 +803,15 @@ function MapSection() {
             href: yandexMapShare,
             target: "_blank",
             rel: "noopener noreferrer",
-            className: "mt-10 inline-flex items-center gap-2 text-sm text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors w-fit border-b border-[var(--charcoal)]/30 hover:border-[var(--camel)] pb-1",
+            className: "mt-10 inline-flex items-center justify-center gap-2 bg-[var(--charcoal)] hover:bg-[var(--camel)] text-white text-sm font-medium tracking-wide px-6 py-3.5 transition-colors w-fit",
             children: [
               localize(ui.mapOpenInYandex, lang),
-              /* @__PURE__ */ jsx("svg", { width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ jsx("path", { d: "M7 17L17 7M9 7h8v8" }) })
+              /* @__PURE__ */ jsx("svg", { width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.8", children: /* @__PURE__ */ jsx("path", { d: "M7 17L17 7M9 7h8v8" }) })
             ]
           }
         )
       ] }),
-      /* @__PURE__ */ jsx("div", { className: "relative min-h-[360px] lg:min-h-[480px] overflow-hidden", children: /* @__PURE__ */ jsx(
+      /* @__PURE__ */ jsx("div", { className: "relative min-h-[360px] lg:min-h-[480px] overflow-hidden bg-[var(--ivory)]", children: /* @__PURE__ */ jsx(
         "iframe",
         {
           src: yandexMapEmbed,
@@ -904,28 +888,21 @@ function FloatingTelegram() {
       target: "_blank",
       rel: "noopener noreferrer",
       "aria-label": localize(ui.floatingTelegramAria, lang),
-      className: "fixed bottom-5 right-5 lg:bottom-7 lg:right-7 z-40 inline-flex items-center justify-center w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#229ED9] text-white shadow-lg shadow-black/20 hover:scale-105 hover:shadow-xl transition-all duration-200",
+      className: "fixed bottom-5 right-5 lg:bottom-7 lg:right-7 z-40 inline-flex items-center gap-2.5 pl-4 pr-5 py-3 lg:py-3.5 rounded-full bg-[#229ED9] hover:bg-[#1c8cc1] text-white shadow-[0_8px_24px_rgba(34,158,217,0.35)] hover:shadow-[0_10px_28px_rgba(34,158,217,0.45)] transition-all duration-200 hover:-translate-y-0.5 font-sans",
       children: [
         /* @__PURE__ */ jsx(
           "svg",
           {
-            width: "28",
-            height: "28",
+            width: "22",
+            height: "22",
             viewBox: "0 0 24 24",
             fill: "currentColor",
             "aria-hidden": "true",
-            className: "lg:w-8 lg:h-8",
+            className: "shrink-0",
             children: /* @__PURE__ */ jsx("path", { d: "M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 8.16l-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12L8.47 13.4l-2.81-.88c-.61-.19-.62-.61.13-.9l10.99-4.24c.51-.18.96.12.77.78z" })
           }
         ),
-        /* @__PURE__ */ jsx(
-          "span",
-          {
-            "aria-hidden": "true",
-            className: "absolute inset-0 rounded-full bg-[#229ED9] opacity-50 animate-ping",
-            style: { animationDuration: "2.5s" }
-          }
-        )
+        /* @__PURE__ */ jsx("span", { className: "text-sm lg:text-[15px] font-medium tracking-tight whitespace-nowrap", children: localize(ui.floatingTelegramLabel, lang) })
       ]
     }
   );
