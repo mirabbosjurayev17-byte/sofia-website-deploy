@@ -62,14 +62,14 @@ const sofas: Product[] = [
   {
     title: { ru: 'Раздвижной диван "VIOLA"', uz: 'Yig\'iladigan divan "VIOLA"' },
     description: {
-      ru: "Длина 225 см. Широкое спальное место и вместительный бельевой ящик.",
-      uz: "Uzunligi 225 sm. Keng yotoq joyi va katta saqlash qutisi mavjud.",
+      ru: "Идеальное решение для ежедневного сна. Широкое спальное место (225 см) и вместительный бельевой ящик — отличная альтернатива кровати. Современный дизайн легко впишется в любой интерьер.",
+      uz: "Har kungi uyqu uchun ideal yechim. Keng yotoq joyi (225 sm) va katta saqlash qutisi karavotga ajoyib muqobil bo'ladi. Zamonaviy dizayn istalgan interyerga oson uyg'unlashadi.",
     },
     price: "6 200 000 UZS",
     images: ["/images/products/VIOLA/1.jpg", "/images/products/VIOLA/2.jpg"],
   },
   {
-    title: { ru: 'Угловой диван "Мартелл"', uz: 'Burchakli divan "Martell"' },
+    title: { ru: 'Угловой раскладной диван "Мартелл"', uz: 'Burchakli yig\'iladigan divan "Martell"' },
     description: {
       ru: 'Размер 280x155 см. Съёмные подушки на подлокотниках, механизм "дельфин".',
       uz: "O'lchami 280x155 sm. Qo'ltiq qismlarida olinadigan yostiqlar, mexanizm \"delfin\".",
@@ -87,7 +87,7 @@ const sofas: Product[] = [
     images: ["/images/products/Мини-Йорк/1.jpg", "/images/products/Мини-Йорк/2.jpg"],
   },
   {
-    title: { ru: 'Угловой диван "Нота PLUS"', uz: 'Burchakli divan "Nota PLUS"' },
+    title: { ru: 'Угловой раскладной диван "Нота PLUS"', uz: 'Burchakli yig\'iladigan divan "Nota PLUS"' },
     description: {
       ru: "Размер 260x160 см. Два бельевых ящика, просторное спальное место 220x155 см.",
       uz: "O'lchami 260x160 sm. Ikki saqlash qutisi, keng yotoq joyi 220x155 sm.",
@@ -114,7 +114,7 @@ const sofas: Product[] = [
     images: ["/images/products/original/1.jpg", "/images/products/original/2.jpg"],
   },
   {
-    title: { ru: 'Угловой диван "BAR-уголок"', uz: 'Burchakli divan "BAR-burchak"' },
+    title: { ru: 'Угловой раскладной диван "BAR-уголок"', uz: 'Burchakli yig\'iladigan divan "BAR-burchak"' },
     description: {
       ru: 'Размер 265x150 см. Механизм "дельфин", ортопедические пружины, сторона угла меняется.',
       uz: "O'lchami 265x150 sm. Mexanizm \"delfin\", ortopedik prujinalar, burchak tomoni almashtiriladi.",
@@ -123,7 +123,7 @@ const sofas: Product[] = [
     images: ["/images/products/BAR-уголок/1.jpg", "/images/products/BAR-уголок/2.jpg"],
   },
   {
-    title: { ru: "Классическая тройка (Диван и 2 кресла)", uz: "Klassik troyka (Divan va 2 kreslo)" },
+    title: { ru: "Классическая раскладная тройка (Диван и 2 кресла)", uz: "Klassik yig'iladigan troyka (Divan va 2 kreslo)" },
     description: {
       ru: 'Диван 220 см и два кресла по 90 см. Механизм "книжка", имеется бельевой ящик.',
       uz: "Divan 220 sm va 90 sm dan 2 ta kreslo. Mexanizm \"knijka\", saqlash qutisi bor.",
@@ -159,10 +159,10 @@ const sofas: Product[] = [
     images: ["/images/products/VIOLA уголок/1.jpg", "/images/products/VIOLA уголок/2.jpg"],
   },
   {
-    title: { ru: 'Диван с механизмом "Аккордеон"', uz: 'Divan "Akkordeon" mexanizmi bilan' },
+    title: { ru: 'Раскладной диван "Аккордеон"', uz: 'Yig\'iladigan divan "Akkordeon"' },
     description: {
-      ru: "Ширина 195 см. Спальное место 160х210 см. Ортопедические подушки в комплекте.",
-      uz: "Kengligi 195 sm. Yotoq joyi 160x210 sm. To'plamda ortopedik yostiqlar bor.",
+      ru: "Компактное решение с полноценным спальным местом. Ширина 195 см, спальное место 160×210 см, в комплекте мягкие подушки. Подойдёт даже в небольшую комнату.",
+      uz: "To'liq yotoq joyi bilan ixcham yechim. Kengligi 195 sm, yotoq joyi 160×210 sm, to'plamda yumshoq yostiqlar mavjud. Hatto kichik xonaga ham mos keladi.",
     },
     price: "5 300 000 UZS",
     images: ["/images/products/akkordeon/1.jpg", "/images/products/akkordeon/2.jpg"],
@@ -180,10 +180,10 @@ const sofas: Product[] = [
 
 const promos: Product[] = [
   {
-    title: { ru: 'Угловой диван "HAPPY"', uz: 'Burchakli divan "HAPPY"' },
+    title: { ru: 'Угловой раскладной диван "HAPPY"', uz: 'Burchakli yig\'iladigan divan "HAPPY"' },
     description: {
-      ru: 'Размер 260x150 см. Механизм "дельфин", ортопедические пружины.',
-      uz: "O'lchami 260x150 sm. Mexanizm \"delfin\", ortopedik prujinalar.",
+      ru: 'Многофункциональный диван для всей семьи. Размер 260×150 см, механизм "дельфин" и ортопедические пружины обеспечивают комфорт и долгую службу.',
+      uz: "Butun oila uchun ko'p funksiyali divan. O'lchami 260×150 sm, \"delfin\" mexanizmi va ortopedik prujinalar uzoq vaqt qulaylik va bardoshlilikni ta'minlaydi.",
     },
     price: "4 760 000 UZS",
     oldPrice: "6 800 000 UZS",
@@ -191,9 +191,9 @@ const promos: Product[] = [
     badge: ui.discountBadge,
   },
   {
-    title: { ru: 'Угловой диван "ESTEL"', uz: 'Burchakli divan "ESTEL"' },
+    title: { ru: 'Угловой раскладной диван "ESTEL"', uz: 'Burchakli yig\'iladigan divan "ESTEL"' },
     description: {
-      ru: "Размер 260x160 см. Металлический каркас, сторона угла меняется.",
+      ru: "Эргономичный вариант для комфортного отдыха. Размер 260×160 см, прочный металлический каркас, сторону угла можно менять под любую планировку.",
       uz: "O'lchami 260x160 sm. Metall karkas, burchak tomoni almashtiriladi.",
     },
     price: "5 840 000 UZS",
@@ -202,9 +202,9 @@ const promos: Product[] = [
     badge: ui.discountBadge,
   },
   {
-    title: { ru: 'Угловой диван "LAURA"', uz: 'Burchakli divan "LAURA"' },
+    title: { ru: 'Угловой раскладной диван "LAURA"', uz: 'Burchakli yig\'iladigan divan "LAURA"' },
     description: {
-      ru: "Размер 265x150 см. ППУ 48 плотности, вместительный отсек.",
+      ru: "Эргономичный комплект для комфортного отдыха. Размер 265×150 см, ППУ плотностью 48 и вместительный отсек для хранения белья.",
       uz: "O'lchami 265x150 sm. PPU 48 zichlik, katta saqlash qutisi.",
     },
     price: "5 440 000 UZS",
@@ -292,13 +292,23 @@ export function Hero() {
           <p className="text-base lg:text-lg text-white/85 max-w-xl mb-8 lg:mb-10 leading-relaxed">
             {localize(ui.heroDescription, lang)}
           </p>
-          <a
-            href="#catalog"
-            className="inline-flex items-center gap-3 bg-[var(--camel)] hover:bg-[var(--camel-dark)] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase transition-colors"
-          >
-            {localize(ui.showCatalog, lang)}
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+            <a
+              href="#catalog"
+              className="inline-flex items-center justify-center gap-3 bg-[var(--camel)] hover:bg-[var(--camel-dark)] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase transition-colors"
+            >
+              {localize(ui.showCatalog, lang)}
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a
+              href="tel:+998970003334"
+              className="inline-flex items-center justify-center gap-3 border border-white/40 hover:border-[var(--camel)] hover:text-[var(--camel)] text-white px-7 py-4 transition-colors"
+              aria-label={localize(ui.heroCallNow, lang)}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              <span className="font-serif text-lg lg:text-xl tracking-wide">+998 97 000 33 34</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -459,14 +469,77 @@ export function FAQ() {
                 </button>
                 <div className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"}`}>
                   <div className="overflow-hidden">
-                    <div className="font-sans text-[var(--charcoal)]/80 leading-relaxed pr-4 lg:pr-12 space-y-3 text-[15px]">
-                      <p>{localize(item.a, lang)}</p>
+                    <div className="font-sans text-[var(--charcoal)]/80 leading-relaxed pr-4 lg:pr-12 text-[15px] whitespace-pre-line">
+                      {localize(item.a, lang)}
                     </div>
                   </div>
                 </div>
               </div>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function MapSection() {
+  const { lang } = useLocale();
+  const yandexMapEmbed =
+    "https://yandex.com/map-widget/v1/?ll=69.241094%2C41.290554&mode=search&sll=69.241094%2C41.290554&text=Ташкент%20Мукими%2098А&z=17";
+  const yandexMapShare = "https://yandex.uz/maps/-/CPGrM-4q";
+  return (
+    <section id="map" className="py-20 lg:py-28 bg-white">
+      <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
+        <SectionTitle eyebrow={localize(ui.mapEyebrow, lang)}>{localize(ui.mapTitle, lang)}</SectionTitle>
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-12 items-stretch">
+          <div className="flex flex-col justify-center bg-[var(--ivory)] px-6 lg:px-10 py-10 lg:py-12">
+            <p className="text-[var(--charcoal)]/80 leading-relaxed text-[15px] mb-8">
+              {localize(ui.mapDescription, lang)}
+            </p>
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <span className="text-[var(--camel)] text-xl leading-none mt-1">📍</span>
+                <div>
+                  <p className="text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-1">{localize(ui.mapAddressLabel, lang)}</p>
+                  <p className="font-serif text-lg text-[var(--charcoal)]">{localize(ui.addressLine, lang)}</p>
+                  <p className="text-sm text-[var(--charcoal)]/60 mt-1">{localize(ui.landmark, lang)}</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <span className="text-[var(--camel)] text-xl leading-none mt-1">📞</span>
+                <div>
+                  <p className="text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-1">{localize(ui.mapPhoneLabel, lang)}</p>
+                  <a href="tel:+998970003334" className="font-serif text-lg text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors">+998 97 000 33 34</a>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <span className="text-[var(--camel)] text-xl leading-none mt-1">🕐</span>
+                <div>
+                  <p className="text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-1">{localize(ui.mapHoursLabel, lang)}</p>
+                  <p className="font-serif text-lg text-[var(--charcoal)]">{localize(ui.mapHoursValue, lang)}</p>
+                </div>
+              </div>
+            </div>
+            <a
+              href={yandexMapShare}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 inline-flex items-center gap-2 text-sm text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors w-fit border-b border-[var(--charcoal)]/30 hover:border-[var(--camel)] pb-1"
+            >
+              {localize(ui.mapOpenInYandex, lang)}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
+          <div className="relative min-h-[360px] lg:min-h-[480px] overflow-hidden">
+            <iframe
+              src={yandexMapEmbed}
+              title="SOFIA-MEBEL on Yandex Maps"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full border-0"
+              allowFullScreen
+            />
+          </div>
         </div>
       </div>
     </section>

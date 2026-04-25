@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
-import { Hero, Catalog, Promotions, Chairs, Installments, CustomProduction, FAQ, Footer } from "@/components/Sections";
+import { Hero, Catalog, Promotions, Chairs, Installments, CustomProduction, FAQ, MapSection, Footer } from "@/components/Sections";
+import { FloatingTelegram } from "@/components/FloatingTelegram";
 import { LocaleProvider } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
@@ -28,8 +29,10 @@ function Index() {
           <Installments />
           <CustomProduction />
           <FAQ />
+          <MapSection />
         </main>
         <Footer />
+        <FloatingTelegram />
       </div>
     </LocaleProvider>
   );

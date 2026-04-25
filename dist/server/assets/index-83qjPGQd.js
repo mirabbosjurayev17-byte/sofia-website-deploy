@@ -67,34 +67,37 @@ const ui = {
   faq: [
     {
       q: { ru: "У вас есть рассрочка?", uz: "Sizda muddatli to'lov bormi?" },
-      a: { ru: "Да, через Uzum, Anor и Open Bank.", uz: "Ha, Uzum, Anor va Open Bank orqali mavjud." }
-    },
-    {
-      q: { ru: "Вы делаете доставку в другие города?", uz: "Boshqa shaharlarga yetkazib berish bormi?" },
       a: {
-        ru: "Бесплатная доставка по всему Узбекистану (кроме акционных товаров).",
-        uz: "Ha, O'zbekiston bo'ylab yetkazib berish bepul (aksiyadagi tovarlardan tashqari)."
+        ru: "Да, у нас есть удобные варианты рассрочки, чтобы вам было комфортно приобрести мебель без лишней нагрузки на бюджет.\n\nВы можете воспользоваться:\n• Uzum Bank — рассрочка до 12 месяцев без лишних сложностей.\n• Anor карта — до 6 месяцев (с увеличением стоимости на 15%).\n• Open карта — до 12 месяцев (увеличение стоимости на 25%).\n\nОбратите внимание:\n• Рассрочка не действует на товары со скидкой.\n• Доставка оплачивается отдельно и не включается в сумму рассрочки.\n\nЕсли нужно — мы с радостью подскажем самый выгодный вариант именно для вас 😊",
+        uz: "Ha, sizga qulay bo'lishi uchun bir nechta muddatli to'lov variantlari mavjud — mebelni byudjetga ortiqcha yuk tushirmasdan xarid qilishingiz mumkin.\n\nQuyidagi variantlardan foydalanishingiz mumkin:\n• Uzum Bank — 12 oygacha muddatli to'lov, hech qanday ortiqcha shartlarsiz.\n• Anor karta — 6 oygacha (mahsulot narxi 15% ga oshadi).\n• Open karta — 12 oygacha (mahsulot narxi 25% ga oshadi).\n\nDiqqat:\n• Muddatli to'lov chegirmadagi tovarlarga amal qilmaydi.\n• Yetkazib berish xizmati alohida to'lanadi va muddatli to'lov summasiga kirmaydi.\n\nKerak bo'lsa — siz uchun eng qulay variantni biz bilan birga tanlaymiz 😊"
       }
     },
     {
-      q: { ru: "У вас есть шоу-рум?", uz: "Tayyor mebellarni ko'rish uchun shourumingiz bormi?" },
+      q: { ru: "Вы делаете доставку в другие города Узбекистана?", uz: "O'zbekistonning boshqa shaharlariga yetkazib berasizmi?" },
       a: {
-        ru: "Ташкент, ул.Мукими 98А. Без выходных с 10:00 до 19:00.",
-        uz: "Toshkent sh., Muqimiy ko'chasi, 98A. Dam olish kunlarisiz, 10:00 dan 19:00 gacha ishlaymiz."
+        ru: "Да, мы доставляем мебель по всему Узбекистану.\n\nВ большинстве случаев доставка бесплатная, однако:\n• при покупке по акции или в рассрочку условия могут отличаться.\n\nСроки и детали доставки зависят от вашего города — просто позвоните нам, и мы всё подробно расскажем:\n📞 +998 97 000 33 34",
+        uz: "Ha, biz mebelni butun O'zbekiston bo'ylab yetkazib beramiz.\n\nKo'p hollarda yetkazib berish bepul, lekin:\n• aksiya yoki muddatli to'lov bilan xarid qilinganda shartlar farqlanishi mumkin.\n\nMuddat va batafsil ma'lumot shaharingizga bog'liq — bizga qo'ng'iroq qiling, hammasini batafsil aytib beramiz:\n📞 +998 97 000 33 34"
       }
     },
     {
-      q: { ru: "Мебель только готовая или под заказ?", uz: "Mebellar faqat tayyormi yoki buyurtma ham olasizlarmi?" },
+      q: { ru: "У вас есть шоу-рум?", uz: "Sizda shou-rum bormi?" },
       a: {
-        ru: "Есть в наличии и под заказ, срок до 15 дней.",
-        uz: "Tayyor mebellar ham mavjud, shuningdek buyurtma asosida ham yasab beramiz (15 kungacha)."
+        ru: "Да, конечно! Мы будем рады видеть вас в нашем шоу-руме в Ташкенте:\n\n📍 ул. Мукими 98А\n🕐 Работаем ежедневно с 10:00 до 19:00\n\nВы сможете вживую оценить качество, комфорт и материалы нашей мебели.",
+        uz: "Ha, albatta! Toshkentdagi shou-rumimizda sizni kutib qolamiz:\n\n📍 Muqimiy ko'chasi 98A\n🕐 Har kuni 10:00 dan 19:00 gacha ishlaymiz\n\nMebellarimizning sifati, qulayligi va materiallarini o'z ko'zingiz bilan ko'rishingiz mumkin."
+      }
+    },
+    {
+      q: { ru: "У вас мебель только готовая или под заказ?", uz: "Mebellaringiz faqat tayyormi yoki buyurtma asosida ham olasizmi?" },
+      a: {
+        ru: "Мы предлагаем оба варианта:\n• Готовые модели — можно выбрать и забрать сразу.\n• Мебель под заказ — создадим именно то, что нужно вам.\n\nВы можете выбрать:\n✔ размер\n✔ ткань\n✔ цвет\n✔ конфигурацию\n\nСрок изготовления — в среднем 15 дней.\n\nМы поможем воплотить вашу идею в идеальный диван ✨",
+        uz: "Biz har ikki variantni ham taklif qilamiz:\n• Tayyor modellar — tanlab darhol olib ketishingiz mumkin.\n• Buyurtma asosida — siz uchun aynan kerakli mebelni yaratamiz.\n\nO'zingiz tanlaysiz:\n✔ o'lcham\n✔ mato\n✔ rang\n✔ konfiguratsiya\n\nTayyorlash muddati — o'rtacha 15 kun.\n\nFikringizni mukammal divanga aylantirishga yordam beramiz ✨"
       }
     },
     {
       q: { ru: "У вас мебель местного производства?", uz: "Mebellar mahalliy ishlab chiqarishmi?" },
       a: {
-        ru: "Да, труд местных мастеров с использованием премиальных импортных материалов.",
-        uz: "Ha, mahalliy ustalarimiz mehnati hamda yuqori sifatli import materiallardan foydalaniladi."
+        ru: "Да, наша мебель производится в Узбекистане опытными мастерами.\n\nМы используем:\n• качественные импортные материалы\n• современное оборудование\n\nКаждое изделие — это сочетание надёжности, эстетики и комфорта, сделанное с вниманием к деталям.",
+        uz: "Ha, mebellarimiz O'zbekistonda tajribali ustalarimiz tomonidan ishlab chiqariladi.\n\nBiz quyidagilardan foydalanamiz:\n• yuqori sifatli import materiallar\n• zamonaviy uskunalar\n\nHar bir mahsulot — ishonchlilik, nafosat va qulaylikning uyg'unligi bo'lib, har bir tafsilotga e'tibor bilan tayyorlanadi."
       }
     }
   ],
@@ -111,7 +114,20 @@ const ui = {
   telegramChannel: { ru: "Telegram канал", uz: "Telegram kanal" },
   managerTelegram: { ru: "Менеджер (Telegram)", uz: "Menejer (Telegram)" },
   cityCountry: { ru: "Ташкент, Узбекистан", uz: "Toshkent, O'zbekiston" },
-  addressLine: { ru: "Ташкент, ул. Мукими 98А", uz: "Toshkent, Muqimiy ko'chasi 98A" }
+  addressLine: { ru: "Ташкент, ул. Мукими 98А", uz: "Toshkent, Muqimiy ko'chasi 98A" },
+  heroCallNow: { ru: "Позвонить сейчас", uz: "Hozir qo'ng'iroq qiling" },
+  mapEyebrow: { ru: "Шоу-рум", uz: "Shou-rum" },
+  mapTitle: { ru: "Как нас найти", uz: "Bizni qanday topish mumkin" },
+  mapAddressLabel: { ru: "Адрес", uz: "Manzil" },
+  mapPhoneLabel: { ru: "Телефон", uz: "Telefon" },
+  mapHoursLabel: { ru: "График работы", uz: "Ish vaqti" },
+  mapHoursValue: { ru: "Ежедневно, с 10:00 до 19:00", uz: "Har kuni, 10:00 dan 19:00 gacha" },
+  mapOpenInYandex: { ru: "Открыть на Яндекс.Картах", uz: "Yandex Xaritada ochish" },
+  mapDescription: {
+    ru: "Приезжайте к нам в шоу-рум — оцените мебель вживую, выберите ткань и цвет, посоветуйтесь с менеджером. Мы рядом с рестораном «Фламинго».",
+    uz: "Shou-rumimizga tashrif buyuring — mebelni o'z ko'zingiz bilan ko'ring, mato va rangni tanlang, menejerimiz bilan maslahatlashing. Biz «Flamingo» restorani yaqinida joylashganmiz."
+  },
+  floatingTelegramAria: { ru: "Написать в Telegram", uz: "Telegram orqali yozish" }
 };
 function Header() {
   const { lang, setLang } = useLocale();
@@ -120,6 +136,33 @@ function Header() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
   return /* @__PURE__ */ jsxs("header", { className: "fixed top-0 left-0 right-0 z-50 bg-[var(--ivory)] border-b border-[var(--charcoal)]/10", children: [
+    /* @__PURE__ */ jsx("div", { className: "hidden lg:block bg-[var(--charcoal)] text-[var(--ivory)]", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-[1400px] px-5 lg:px-10 h-9 flex items-center justify-end gap-6 text-xs tracking-wide", children: [
+      /* @__PURE__ */ jsxs(
+        "a",
+        {
+          href: "tel:+998970003334",
+          className: "inline-flex items-center gap-2 text-[var(--ivory)]/90 hover:text-[var(--camel)] transition-colors",
+          children: [
+            /* @__PURE__ */ jsx("svg", { width: "13", height: "13", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ jsx("path", { d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" }) }),
+            "+998 97 000 33 34"
+          ]
+        }
+      ),
+      /* @__PURE__ */ jsx("span", { className: "text-[var(--ivory)]/30", children: "|" }),
+      /* @__PURE__ */ jsxs(
+        "a",
+        {
+          href: "https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20",
+          target: "_blank",
+          rel: "noopener noreferrer",
+          className: "inline-flex items-center gap-2 text-[var(--ivory)]/90 hover:text-[var(--camel)] transition-colors",
+          children: [
+            /* @__PURE__ */ jsx("svg", { width: "14", height: "14", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ jsx("path", { d: "M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 8.16l-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12L8.47 13.4l-2.81-.88c-.61-.19-.62-.61.13-.9l10.99-4.24c.51-.18.96.12.77.78z" }) }),
+            "Telegram"
+          ]
+        }
+      )
+    ] }) }),
     /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-[1400px] px-5 lg:px-10 h-16 lg:h-20 flex items-center justify-between", children: [
       /* @__PURE__ */ jsxs("a", { href: "#", className: "font-serif text-xl lg:text-2xl tracking-tight text-[var(--charcoal)]", children: [
         "SOFIA",
@@ -375,14 +418,14 @@ const sofas = [
   {
     title: { ru: 'Раздвижной диван "VIOLA"', uz: `Yig'iladigan divan "VIOLA"` },
     description: {
-      ru: "Длина 225 см. Широкое спальное место и вместительный бельевой ящик.",
-      uz: "Uzunligi 225 sm. Keng yotoq joyi va katta saqlash qutisi mavjud."
+      ru: "Идеальное решение для ежедневного сна. Широкое спальное место (225 см) и вместительный бельевой ящик — отличная альтернатива кровати. Современный дизайн легко впишется в любой интерьер.",
+      uz: "Har kungi uyqu uchun ideal yechim. Keng yotoq joyi (225 sm) va katta saqlash qutisi karavotga ajoyib muqobil bo'ladi. Zamonaviy dizayn istalgan interyerga oson uyg'unlashadi."
     },
     price: "6 200 000 UZS",
     images: ["/images/products/VIOLA/1.jpg", "/images/products/VIOLA/2.jpg"]
   },
   {
-    title: { ru: 'Угловой диван "Мартелл"', uz: 'Burchakli divan "Martell"' },
+    title: { ru: 'Угловой раскладной диван "Мартелл"', uz: `Burchakli yig'iladigan divan "Martell"` },
     description: {
       ru: 'Размер 280x155 см. Съёмные подушки на подлокотниках, механизм "дельфин".',
       uz: `O'lchami 280x155 sm. Qo'ltiq qismlarida olinadigan yostiqlar, mexanizm "delfin".`
@@ -400,7 +443,7 @@ const sofas = [
     images: ["/images/products/Мини-Йорк/1.jpg", "/images/products/Мини-Йорк/2.jpg"]
   },
   {
-    title: { ru: 'Угловой диван "Нота PLUS"', uz: 'Burchakli divan "Nota PLUS"' },
+    title: { ru: 'Угловой раскладной диван "Нота PLUS"', uz: `Burchakli yig'iladigan divan "Nota PLUS"` },
     description: {
       ru: "Размер 260x160 см. Два бельевых ящика, просторное спальное место 220x155 см.",
       uz: "O'lchami 260x160 sm. Ikki saqlash qutisi, keng yotoq joyi 220x155 sm."
@@ -427,7 +470,7 @@ const sofas = [
     images: ["/images/products/original/1.jpg", "/images/products/original/2.jpg"]
   },
   {
-    title: { ru: 'Угловой диван "BAR-уголок"', uz: 'Burchakli divan "BAR-burchak"' },
+    title: { ru: 'Угловой раскладной диван "BAR-уголок"', uz: `Burchakli yig'iladigan divan "BAR-burchak"` },
     description: {
       ru: 'Размер 265x150 см. Механизм "дельфин", ортопедические пружины, сторона угла меняется.',
       uz: `O'lchami 265x150 sm. Mexanizm "delfin", ortopedik prujinalar, burchak tomoni almashtiriladi.`
@@ -436,7 +479,7 @@ const sofas = [
     images: ["/images/products/BAR-уголок/1.jpg", "/images/products/BAR-уголок/2.jpg"]
   },
   {
-    title: { ru: "Классическая тройка (Диван и 2 кресла)", uz: "Klassik troyka (Divan va 2 kreslo)" },
+    title: { ru: "Классическая раскладная тройка (Диван и 2 кресла)", uz: "Klassik yig'iladigan troyka (Divan va 2 kreslo)" },
     description: {
       ru: 'Диван 220 см и два кресла по 90 см. Механизм "книжка", имеется бельевой ящик.',
       uz: 'Divan 220 sm va 90 sm dan 2 ta kreslo. Mexanizm "knijka", saqlash qutisi bor.'
@@ -472,10 +515,10 @@ const sofas = [
     images: ["/images/products/VIOLA уголок/1.jpg", "/images/products/VIOLA уголок/2.jpg"]
   },
   {
-    title: { ru: 'Диван с механизмом "Аккордеон"', uz: 'Divan "Akkordeon" mexanizmi bilan' },
+    title: { ru: 'Раскладной диван "Аккордеон"', uz: `Yig'iladigan divan "Akkordeon"` },
     description: {
-      ru: "Ширина 195 см. Спальное место 160х210 см. Ортопедические подушки в комплекте.",
-      uz: "Kengligi 195 sm. Yotoq joyi 160x210 sm. To'plamda ortopedik yostiqlar bor."
+      ru: "Компактное решение с полноценным спальным местом. Ширина 195 см, спальное место 160×210 см, в комплекте мягкие подушки. Подойдёт даже в небольшую комнату.",
+      uz: "To'liq yotoq joyi bilan ixcham yechim. Kengligi 195 sm, yotoq joyi 160×210 sm, to'plamda yumshoq yostiqlar mavjud. Hatto kichik xonaga ham mos keladi."
     },
     price: "5 300 000 UZS",
     images: ["/images/products/akkordeon/1.jpg", "/images/products/akkordeon/2.jpg"]
@@ -492,10 +535,10 @@ const sofas = [
 ];
 const promos = [
   {
-    title: { ru: 'Угловой диван "HAPPY"', uz: 'Burchakli divan "HAPPY"' },
+    title: { ru: 'Угловой раскладной диван "HAPPY"', uz: `Burchakli yig'iladigan divan "HAPPY"` },
     description: {
-      ru: 'Размер 260x150 см. Механизм "дельфин", ортопедические пружины.',
-      uz: `O'lchami 260x150 sm. Mexanizm "delfin", ortopedik prujinalar.`
+      ru: 'Многофункциональный диван для всей семьи. Размер 260×150 см, механизм "дельфин" и ортопедические пружины обеспечивают комфорт и долгую службу.',
+      uz: `Butun oila uchun ko'p funksiyali divan. O'lchami 260×150 sm, "delfin" mexanizmi va ortopedik prujinalar uzoq vaqt qulaylik va bardoshlilikni ta'minlaydi.`
     },
     price: "4 760 000 UZS",
     oldPrice: "6 800 000 UZS",
@@ -503,9 +546,9 @@ const promos = [
     badge: ui.discountBadge
   },
   {
-    title: { ru: 'Угловой диван "ESTEL"', uz: 'Burchakli divan "ESTEL"' },
+    title: { ru: 'Угловой раскладной диван "ESTEL"', uz: `Burchakli yig'iladigan divan "ESTEL"` },
     description: {
-      ru: "Размер 260x160 см. Металлический каркас, сторона угла меняется.",
+      ru: "Эргономичный вариант для комфортного отдыха. Размер 260×160 см, прочный металлический каркас, сторону угла можно менять под любую планировку.",
       uz: "O'lchami 260x160 sm. Metall karkas, burchak tomoni almashtiriladi."
     },
     price: "5 840 000 UZS",
@@ -514,9 +557,9 @@ const promos = [
     badge: ui.discountBadge
   },
   {
-    title: { ru: 'Угловой диван "LAURA"', uz: 'Burchakli divan "LAURA"' },
+    title: { ru: 'Угловой раскладной диван "LAURA"', uz: `Burchakli yig'iladigan divan "LAURA"` },
     description: {
-      ru: "Размер 265x150 см. ППУ 48 плотности, вместительный отсек.",
+      ru: "Эргономичный комплект для комфортного отдыха. Размер 265×150 см, ППУ плотностью 48 и вместительный отсек для хранения белья.",
       uz: "O'lchami 265x150 sm. PPU 48 zichlik, katta saqlash qutisi."
     },
     price: "5 440 000 UZS",
@@ -598,17 +641,31 @@ function Hero() {
         " va qulaylik"
       ] }) }),
       /* @__PURE__ */ jsx("p", { className: "text-base lg:text-lg text-white/85 max-w-xl mb-8 lg:mb-10 leading-relaxed", children: localize(ui.heroDescription, lang) }),
-      /* @__PURE__ */ jsxs(
-        "a",
-        {
-          href: "#catalog",
-          className: "inline-flex items-center gap-3 bg-[var(--camel)] hover:bg-[var(--camel-dark)] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase transition-colors",
-          children: [
-            localize(ui.showCatalog, lang),
-            /* @__PURE__ */ jsx("svg", { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ jsx("path", { d: "M5 12h14M13 6l6 6-6 6" }) })
-          ]
-        }
-      )
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-4 sm:items-center", children: [
+        /* @__PURE__ */ jsxs(
+          "a",
+          {
+            href: "#catalog",
+            className: "inline-flex items-center justify-center gap-3 bg-[var(--camel)] hover:bg-[var(--camel-dark)] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase transition-colors",
+            children: [
+              localize(ui.showCatalog, lang),
+              /* @__PURE__ */ jsx("svg", { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ jsx("path", { d: "M5 12h14M13 6l6 6-6 6" }) })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxs(
+          "a",
+          {
+            href: "tel:+998970003334",
+            className: "inline-flex items-center justify-center gap-3 border border-white/40 hover:border-[var(--camel)] hover:text-[var(--camel)] text-white px-7 py-4 transition-colors",
+            "aria-label": localize(ui.heroCallNow, lang),
+            children: [
+              /* @__PURE__ */ jsx("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ jsx("path", { d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" }) }),
+              /* @__PURE__ */ jsx("span", { className: "font-serif text-lg lg:text-xl tracking-wide", children: "+998 97 000 33 34" })
+            ]
+          }
+        )
+      ] })
     ] }) })
   ] });
 }
@@ -718,9 +775,69 @@ function FAQ() {
             ]
           }
         ),
-        /* @__PURE__ */ jsx("div", { className: `grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"}`, children: /* @__PURE__ */ jsx("div", { className: "overflow-hidden", children: /* @__PURE__ */ jsx("div", { className: "font-sans text-[var(--charcoal)]/80 leading-relaxed pr-4 lg:pr-12 space-y-3 text-[15px]", children: /* @__PURE__ */ jsx("p", { children: localize(item.a, lang) }) }) }) })
+        /* @__PURE__ */ jsx("div", { className: `grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"}`, children: /* @__PURE__ */ jsx("div", { className: "overflow-hidden", children: /* @__PURE__ */ jsx("div", { className: "font-sans text-[var(--charcoal)]/80 leading-relaxed pr-4 lg:pr-12 text-[15px] whitespace-pre-line", children: localize(item.a, lang) }) }) })
       ] }, i);
     }) })
+  ] }) });
+}
+function MapSection() {
+  const { lang } = useLocale();
+  const yandexMapEmbed = "https://yandex.com/map-widget/v1/?ll=69.241094%2C41.290554&mode=search&sll=69.241094%2C41.290554&text=Ташкент%20Мукими%2098А&z=17";
+  const yandexMapShare = "https://yandex.uz/maps/-/CPGrM-4q";
+  return /* @__PURE__ */ jsx("section", { id: "map", className: "py-20 lg:py-28 bg-white", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-[1400px] px-5 lg:px-10", children: [
+    /* @__PURE__ */ jsx(SectionTitle, { eyebrow: localize(ui.mapEyebrow, lang), children: localize(ui.mapTitle, lang) }),
+    /* @__PURE__ */ jsxs("div", { className: "grid lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-12 items-stretch", children: [
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col justify-center bg-[var(--ivory)] px-6 lg:px-10 py-10 lg:py-12", children: [
+        /* @__PURE__ */ jsx("p", { className: "text-[var(--charcoal)]/80 leading-relaxed text-[15px] mb-8", children: localize(ui.mapDescription, lang) }),
+        /* @__PURE__ */ jsxs("div", { className: "space-y-6", children: [
+          /* @__PURE__ */ jsxs("div", { className: "flex gap-4", children: [
+            /* @__PURE__ */ jsx("span", { className: "text-[var(--camel)] text-xl leading-none mt-1", children: "📍" }),
+            /* @__PURE__ */ jsxs("div", { children: [
+              /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-1", children: localize(ui.mapAddressLabel, lang) }),
+              /* @__PURE__ */ jsx("p", { className: "font-serif text-lg text-[var(--charcoal)]", children: localize(ui.addressLine, lang) }),
+              /* @__PURE__ */ jsx("p", { className: "text-sm text-[var(--charcoal)]/60 mt-1", children: localize(ui.landmark, lang) })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "flex gap-4", children: [
+            /* @__PURE__ */ jsx("span", { className: "text-[var(--camel)] text-xl leading-none mt-1", children: "📞" }),
+            /* @__PURE__ */ jsxs("div", { children: [
+              /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-1", children: localize(ui.mapPhoneLabel, lang) }),
+              /* @__PURE__ */ jsx("a", { href: "tel:+998970003334", className: "font-serif text-lg text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors", children: "+998 97 000 33 34" })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "flex gap-4", children: [
+            /* @__PURE__ */ jsx("span", { className: "text-[var(--camel)] text-xl leading-none mt-1", children: "🕐" }),
+            /* @__PURE__ */ jsxs("div", { children: [
+              /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-1", children: localize(ui.mapHoursLabel, lang) }),
+              /* @__PURE__ */ jsx("p", { className: "font-serif text-lg text-[var(--charcoal)]", children: localize(ui.mapHoursValue, lang) })
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxs(
+          "a",
+          {
+            href: yandexMapShare,
+            target: "_blank",
+            rel: "noopener noreferrer",
+            className: "mt-10 inline-flex items-center gap-2 text-sm text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors w-fit border-b border-[var(--charcoal)]/30 hover:border-[var(--camel)] pb-1",
+            children: [
+              localize(ui.mapOpenInYandex, lang),
+              /* @__PURE__ */ jsx("svg", { width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ jsx("path", { d: "M7 17L17 7M9 7h8v8" }) })
+            ]
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "relative min-h-[360px] lg:min-h-[480px] overflow-hidden", children: /* @__PURE__ */ jsx(
+        "iframe",
+        {
+          src: yandexMapEmbed,
+          title: "SOFIA-MEBEL on Yandex Maps",
+          loading: "lazy",
+          className: "absolute inset-0 w-full h-full border-0",
+          allowFullScreen: true
+        }
+      ) })
+    ] })
   ] }) });
 }
 function Footer() {
@@ -777,6 +894,42 @@ function Footer() {
     ] })
   ] }) });
 }
+const TELEGRAM_URL = "https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20";
+function FloatingTelegram() {
+  const { lang } = useLocale();
+  return /* @__PURE__ */ jsxs(
+    "a",
+    {
+      href: TELEGRAM_URL,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      "aria-label": localize(ui.floatingTelegramAria, lang),
+      className: "fixed bottom-5 right-5 lg:bottom-7 lg:right-7 z-40 inline-flex items-center justify-center w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#229ED9] text-white shadow-lg shadow-black/20 hover:scale-105 hover:shadow-xl transition-all duration-200",
+      children: [
+        /* @__PURE__ */ jsx(
+          "svg",
+          {
+            width: "28",
+            height: "28",
+            viewBox: "0 0 24 24",
+            fill: "currentColor",
+            "aria-hidden": "true",
+            className: "lg:w-8 lg:h-8",
+            children: /* @__PURE__ */ jsx("path", { d: "M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 8.16l-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12L8.47 13.4l-2.81-.88c-.61-.19-.62-.61.13-.9l10.99-4.24c.51-.18.96.12.77.78z" })
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "span",
+          {
+            "aria-hidden": "true",
+            className: "absolute inset-0 rounded-full bg-[#229ED9] opacity-50 animate-ping",
+            style: { animationDuration: "2.5s" }
+          }
+        )
+      ]
+    }
+  );
+}
 function Index() {
   return /* @__PURE__ */ jsx(LocaleProvider, { children: /* @__PURE__ */ jsxs("div", { className: "bg-[var(--ivory)] text-[var(--charcoal)] min-h-screen", children: [
     /* @__PURE__ */ jsx(Header, {}),
@@ -787,9 +940,11 @@ function Index() {
       /* @__PURE__ */ jsx(Chairs, {}),
       /* @__PURE__ */ jsx(Installments, {}),
       /* @__PURE__ */ jsx(CustomProduction, {}),
-      /* @__PURE__ */ jsx(FAQ, {})
+      /* @__PURE__ */ jsx(FAQ, {}),
+      /* @__PURE__ */ jsx(MapSection, {})
     ] }),
-    /* @__PURE__ */ jsx(Footer, {})
+    /* @__PURE__ */ jsx(Footer, {}),
+    /* @__PURE__ */ jsx(FloatingTelegram, {})
   ] }) });
 }
 export {

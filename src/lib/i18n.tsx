@@ -84,34 +84,37 @@ export const ui = {
   faq: [
     {
       q: { ru: "У вас есть рассрочка?", uz: "Sizda muddatli to'lov bormi?" },
-      a: { ru: "Да, через Uzum, Anor и Open Bank.", uz: "Ha, Uzum, Anor va Open Bank orqali mavjud." },
-    },
-    {
-      q: { ru: "Вы делаете доставку в другие города?", uz: "Boshqa shaharlarga yetkazib berish bormi?" },
       a: {
-        ru: "Бесплатная доставка по всему Узбекистану (кроме акционных товаров).",
-        uz: "Ha, O'zbekiston bo'ylab yetkazib berish bepul (aksiyadagi tovarlardan tashqari).",
+        ru: "Да, у нас есть удобные варианты рассрочки, чтобы вам было комфортно приобрести мебель без лишней нагрузки на бюджет.\n\nВы можете воспользоваться:\n• Uzum Bank — рассрочка до 12 месяцев без лишних сложностей.\n• Anor карта — до 6 месяцев (с увеличением стоимости на 15%).\n• Open карта — до 12 месяцев (увеличение стоимости на 25%).\n\nОбратите внимание:\n• Рассрочка не действует на товары со скидкой.\n• Доставка оплачивается отдельно и не включается в сумму рассрочки.\n\nЕсли нужно — мы с радостью подскажем самый выгодный вариант именно для вас 😊",
+        uz: "Ha, sizga qulay bo'lishi uchun bir nechta muddatli to'lov variantlari mavjud — mebelni byudjetga ortiqcha yuk tushirmasdan xarid qilishingiz mumkin.\n\nQuyidagi variantlardan foydalanishingiz mumkin:\n• Uzum Bank — 12 oygacha muddatli to'lov, hech qanday ortiqcha shartlarsiz.\n• Anor karta — 6 oygacha (mahsulot narxi 15% ga oshadi).\n• Open karta — 12 oygacha (mahsulot narxi 25% ga oshadi).\n\nDiqqat:\n• Muddatli to'lov chegirmadagi tovarlarga amal qilmaydi.\n• Yetkazib berish xizmati alohida to'lanadi va muddatli to'lov summasiga kirmaydi.\n\nKerak bo'lsa — siz uchun eng qulay variantni biz bilan birga tanlaymiz 😊",
       },
     },
     {
-      q: { ru: "У вас есть шоу-рум?", uz: "Tayyor mebellarni ko'rish uchun shourumingiz bormi?" },
+      q: { ru: "Вы делаете доставку в другие города Узбекистана?", uz: "O'zbekistonning boshqa shaharlariga yetkazib berasizmi?" },
       a: {
-        ru: "Ташкент, ул.Мукими 98А. Без выходных с 10:00 до 19:00.",
-        uz: "Toshkent sh., Muqimiy ko'chasi, 98A. Dam olish kunlarisiz, 10:00 dan 19:00 gacha ishlaymiz.",
+        ru: "Да, мы доставляем мебель по всему Узбекистану.\n\nВ большинстве случаев доставка бесплатная, однако:\n• при покупке по акции или в рассрочку условия могут отличаться.\n\nСроки и детали доставки зависят от вашего города — просто позвоните нам, и мы всё подробно расскажем:\n📞 +998 97 000 33 34",
+        uz: "Ha, biz mebelni butun O'zbekiston bo'ylab yetkazib beramiz.\n\nKo'p hollarda yetkazib berish bepul, lekin:\n• aksiya yoki muddatli to'lov bilan xarid qilinganda shartlar farqlanishi mumkin.\n\nMuddat va batafsil ma'lumot shaharingizga bog'liq — bizga qo'ng'iroq qiling, hammasini batafsil aytib beramiz:\n📞 +998 97 000 33 34",
       },
     },
     {
-      q: { ru: "Мебель только готовая или под заказ?", uz: "Mebellar faqat tayyormi yoki buyurtma ham olasizlarmi?" },
+      q: { ru: "У вас есть шоу-рум?", uz: "Sizda shou-rum bormi?" },
       a: {
-        ru: "Есть в наличии и под заказ, срок до 15 дней.",
-        uz: "Tayyor mebellar ham mavjud, shuningdek buyurtma asosida ham yasab beramiz (15 kungacha).",
+        ru: "Да, конечно! Мы будем рады видеть вас в нашем шоу-руме в Ташкенте:\n\n📍 ул. Мукими 98А\n🕐 Работаем ежедневно с 10:00 до 19:00\n\nВы сможете вживую оценить качество, комфорт и материалы нашей мебели.",
+        uz: "Ha, albatta! Toshkentdagi shou-rumimizda sizni kutib qolamiz:\n\n📍 Muqimiy ko'chasi 98A\n🕐 Har kuni 10:00 dan 19:00 gacha ishlaymiz\n\nMebellarimizning sifati, qulayligi va materiallarini o'z ko'zingiz bilan ko'rishingiz mumkin.",
+      },
+    },
+    {
+      q: { ru: "У вас мебель только готовая или под заказ?", uz: "Mebellaringiz faqat tayyormi yoki buyurtma asosida ham olasizmi?" },
+      a: {
+        ru: "Мы предлагаем оба варианта:\n• Готовые модели — можно выбрать и забрать сразу.\n• Мебель под заказ — создадим именно то, что нужно вам.\n\nВы можете выбрать:\n✔ размер\n✔ ткань\n✔ цвет\n✔ конфигурацию\n\nСрок изготовления — в среднем 15 дней.\n\nМы поможем воплотить вашу идею в идеальный диван ✨",
+        uz: "Biz har ikki variantni ham taklif qilamiz:\n• Tayyor modellar — tanlab darhol olib ketishingiz mumkin.\n• Buyurtma asosida — siz uchun aynan kerakli mebelni yaratamiz.\n\nO'zingiz tanlaysiz:\n✔ o'lcham\n✔ mato\n✔ rang\n✔ konfiguratsiya\n\nTayyorlash muddati — o'rtacha 15 kun.\n\nFikringizni mukammal divanga aylantirishga yordam beramiz ✨",
       },
     },
     {
       q: { ru: "У вас мебель местного производства?", uz: "Mebellar mahalliy ishlab chiqarishmi?" },
       a: {
-        ru: "Да, труд местных мастеров с использованием премиальных импортных материалов.",
-        uz: "Ha, mahalliy ustalarimiz mehnati hamda yuqori sifatli import materiallardan foydalaniladi.",
+        ru: "Да, наша мебель производится в Узбекистане опытными мастерами.\n\nМы используем:\n• качественные импортные материалы\n• современное оборудование\n\nКаждое изделие — это сочетание надёжности, эстетики и комфорта, сделанное с вниманием к деталям.",
+        uz: "Ha, mebellarimiz O'zbekistonda tajribali ustalarimiz tomonidan ishlab chiqariladi.\n\nBiz quyidagilardan foydalanamiz:\n• yuqori sifatli import materiallar\n• zamonaviy uskunalar\n\nHar bir mahsulot — ishonchlilik, nafosat va qulaylikning uyg'unligi bo'lib, har bir tafsilotga e'tibor bilan tayyorlanadi.",
       },
     },
   ],
@@ -129,4 +132,20 @@ export const ui = {
   managerTelegram: { ru: "Менеджер (Telegram)", uz: "Menejer (Telegram)" },
   cityCountry: { ru: "Ташкент, Узбекистан", uz: "Toshkent, O'zbekiston" },
   addressLine: { ru: "Ташкент, ул. Мукими 98А", uz: "Toshkent, Muqimiy ko'chasi 98A" },
+  // Top bar / hero / map
+  topBarPhone: { ru: "+998 97 000 33 34", uz: "+998 97 000 33 34" },
+  topBarTelegram: { ru: "Telegram", uz: "Telegram" },
+  heroCallNow: { ru: "Позвонить сейчас", uz: "Hozir qo'ng'iroq qiling" },
+  mapEyebrow: { ru: "Шоу-рум", uz: "Shou-rum" },
+  mapTitle: { ru: "Как нас найти", uz: "Bizni qanday topish mumkin" },
+  mapAddressLabel: { ru: "Адрес", uz: "Manzil" },
+  mapPhoneLabel: { ru: "Телефон", uz: "Telefon" },
+  mapHoursLabel: { ru: "График работы", uz: "Ish vaqti" },
+  mapHoursValue: { ru: "Ежедневно, с 10:00 до 19:00", uz: "Har kuni, 10:00 dan 19:00 gacha" },
+  mapOpenInYandex: { ru: "Открыть на Яндекс.Картах", uz: "Yandex Xaritada ochish" },
+  mapDescription: {
+    ru: "Приезжайте к нам в шоу-рум — оцените мебель вживую, выберите ткань и цвет, посоветуйтесь с менеджером. Мы рядом с рестораном «Фламинго».",
+    uz: "Shou-rumimizga tashrif buyuring — mebelni o'z ko'zingiz bilan ko'ring, mato va rangni tanlang, menejerimiz bilan maslahatlashing. Biz «Flamingo» restorani yaqinida joylashganmiz.",
+  },
+  floatingTelegramAria: { ru: "Написать в Telegram", uz: "Telegram orqali yozish" },
 };
