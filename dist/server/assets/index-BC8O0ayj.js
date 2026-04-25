@@ -284,22 +284,35 @@ function ProductCard({ product }) {
   const total = product.images.length;
   const next = () => setCurrent((p) => (p + 1) % total);
   const prev = () => setCurrent((p) => (p - 1 + total) % total);
-  const onTouchStart = (e) => {
+  const reset = () => {
+    touchStartRef.current = null;
     touchEndRef.current = null;
-    touchStartRef.current = e.targetTouches[0].clientX;
   };
-  const onTouchMove = (e) => {
-    touchEndRef.current = e.targetTouches[0].clientX;
+  const onPointerDown = (e) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    if (e.target.closest("button")) return;
+    touchEndRef.current = e.clientX;
+    touchStartRef.current = e.clientX;
+    e.currentTarget.setPointerCapture(e.pointerId);
   };
-  const onTouchEnd = () => {
+  const onPointerMove = (e) => {
+    if (touchStartRef.current === null) return;
+    touchEndRef.current = e.clientX;
+  };
+  const onPointerUp = (e) => {
     const start = touchStartRef.current;
     const end = touchEndRef.current;
-    if (start === null || end === null) return;
+    if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    }
+    if (start === null || end === null) {
+      reset();
+      return;
+    }
     const delta = start - end;
     if (delta > SWIPE_THRESHOLD) next();
     else if (delta < -SWIPE_THRESHOLD) prev();
-    touchStartRef.current = null;
-    touchEndRef.current = null;
+    reset();
   };
   const isSale = !!product.oldPrice;
   const fmtPrice = (value) => lang === "uz" ? value.replace("UZS", "so'm") : value;
@@ -307,10 +320,11 @@ function ProductCard({ product }) {
     /* @__PURE__ */ jsxs(
       "div",
       {
-        className: "relative overflow-hidden bg-muted aspect-[4/5] touch-pan-y select-none",
-        onTouchStart,
-        onTouchMove,
-        onTouchEnd,
+        className: `relative overflow-hidden bg-muted aspect-[4/5] touch-pan-y select-none ${total > 1 ? "cursor-grab active:cursor-grabbing" : ""}`,
+        onPointerDown,
+        onPointerMove,
+        onPointerUp,
+        onPointerCancel: reset,
         children: [
           product.badge && /* @__PURE__ */ jsx(
             "span",
@@ -327,7 +341,8 @@ function ProductCard({ product }) {
               loading: "lazy",
               width: 1024,
               height: 1280,
-              className: `absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${i === current ? "opacity-100" : "opacity-0"}`
+              draggable: false,
+              className: `absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out pointer-events-none ${i === current ? "opacity-100" : "opacity-0"}`
             },
             i
           )) }),

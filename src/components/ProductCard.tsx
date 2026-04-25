@@ -1,4 +1,4 @@
-import { useRef, useState, type TouchEvent as ReactTouchEvent } from "react";
+import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { localize, type LocalizedText, useLocale, ui } from "@/lib/i18n";
 
 export interface Product {
@@ -24,22 +24,38 @@ export function ProductCard({ product }: { product: Product }) {
   const next = () => setCurrent((p) => (p + 1) % total);
   const prev = () => setCurrent((p) => (p - 1 + total) % total);
 
-  const onTouchStart = (e: ReactTouchEvent) => {
+  const reset = () => {
+    touchStartRef.current = null;
     touchEndRef.current = null;
-    touchStartRef.current = e.targetTouches[0].clientX;
   };
-  const onTouchMove = (e: ReactTouchEvent) => {
-    touchEndRef.current = e.targetTouches[0].clientX;
+
+  const onPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
+    // Ignore right/middle clicks
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    // Don't hijack clicks on dot buttons
+    if ((e.target as HTMLElement).closest("button")) return;
+    touchEndRef.current = e.clientX;
+    touchStartRef.current = e.clientX;
+    e.currentTarget.setPointerCapture(e.pointerId);
   };
-  const onTouchEnd = () => {
+  const onPointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
+    if (touchStartRef.current === null) return;
+    touchEndRef.current = e.clientX;
+  };
+  const onPointerUp = (e: ReactPointerEvent<HTMLDivElement>) => {
     const start = touchStartRef.current;
     const end = touchEndRef.current;
-    if (start === null || end === null) return;
+    if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    }
+    if (start === null || end === null) {
+      reset();
+      return;
+    }
     const delta = start - end;
     if (delta > SWIPE_THRESHOLD) next();
     else if (delta < -SWIPE_THRESHOLD) prev();
-    touchStartRef.current = null;
-    touchEndRef.current = null;
+    reset();
   };
 
   const isSale = !!product.oldPrice;
@@ -48,10 +64,13 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group flex flex-col">
       <div
-        className="relative overflow-hidden bg-muted aspect-[4/5] touch-pan-y select-none"
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
+        className={`relative overflow-hidden bg-muted aspect-[4/5] touch-pan-y select-none ${
+          total > 1 ? "cursor-grab active:cursor-grabbing" : ""
+        }`}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={reset}
       >
         {product.badge && (
           <span
@@ -73,7 +92,8 @@ export function ProductCard({ product }: { product: Product }) {
               loading="lazy"
               width={1024}
               height={1280}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+              draggable={false}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out pointer-events-none ${
                 i === current ? "opacity-100" : "opacity-0"
               }`}
             />
