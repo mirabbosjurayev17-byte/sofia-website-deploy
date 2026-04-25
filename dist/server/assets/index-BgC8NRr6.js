@@ -418,8 +418,8 @@ const sofas = [
   {
     title: { ru: 'Раскладной диван "Мини-Йорк"', uz: `Yig'iladigan divan "Mini-York"` },
     description: {
-      ru: "Ширина 160 см. Двойной механизм (дельфин + откидная спинка), спальное место 130x190 см.",
-      uz: "Kengligi 160 sm. Ikki mexanizm (delfin + bukiladigan orqa qism), yotoq joyi 130x190 sm."
+      ru: "Идеальное решение для небольших пространств, где важен каждый сантиметр. Несмотря на свои размеры, он легко трансформируется в полноценное спальное место и дарит комфортный отдых. Стильный внешний вид и продуманная конструкция делают его отличным выбором для современных квартир, где ценится практичность и уют.",
+      uz: "Har bir santimetr muhim bo'lgan kichik xonalar uchun ideal yechim. O'lchamiga qaramay, u to'laqonli yotoq joyiga oson aylanadi va qulay dam olish baxsh etadi. Nafis tashqi ko'rinish va o'ylangan tuzilma uni amaliylik va shinamlik qadrlanadigan zamonaviy kvartiralar uchun ajoyib tanlovga aylantiradi."
     },
     price: "4 500 000 UZS",
     images: ["/images/products/Мини-Йорк/1.jpg", "/images/products/Мини-Йорк/2.jpg"]
@@ -427,8 +427,8 @@ const sofas = [
   {
     title: { ru: 'Угловой раскладной диван "Нота PLUS"', uz: `Burchakli yig'iladigan divan "Nota PLUS"` },
     description: {
-      ru: "Размер 260x160 см. Два бельевых ящика, просторное спальное место 220x155 см.",
-      uz: "O'lchami 260x160 sm. Ikki saqlash qutisi, keng yotoq joyi 220x155 sm."
+      ru: "Создан для тех, кто ценит простор и комфорт в повседневной жизни. Большое спальное место позволяет использовать его как полноценную кровать, а вместительные ящики помогают удобно хранить вещи. Современный дизайн и мягкие формы создают уютную атмосферу и делают его центром притяжения в любой гостиной.",
+      uz: "Kundalik hayotda kenglik va qulaylikni qadrlaydiganlar uchun yaratilgan. Katta yotoq joyi uni to'laqonli karavot sifatida ishlatishga imkon beradi, sig'imli qutilar esa narsalarni qulay saqlashga yordam beradi. Zamonaviy dizayn va yumshoq formalar shinam muhit yaratadi va uni har qanday mehmonxonaning tortish markaziga aylantiradi."
     },
     price: "6 800 000 UZS",
     images: ["/images/products/Нота PLUS уголок/1.jpg", "/images/products/Нота PLUS уголок/2.jpg"]
@@ -436,8 +436,8 @@ const sofas = [
   {
     title: { ru: 'Раскладной диван "Нота Plus"', uz: `Yig'iladigan divan "Nota Plus"` },
     description: {
-      ru: "Длина 235 см. Широкое спальное место (200x155 см) полностью заменяет двуспальную кровать.",
-      uz: "Uzunligi 235 sm. Keng yotoq joyi (200x155 sm) ikki kishilik karavotni to'liq almashtiradi."
+      ru: "Гармоничное сочетание удобства и функциональности. Просторное спальное место обеспечивает комфортный сон, а надёжный механизм делает трансформацию лёгкой и быстрой. Минималистичный дизайн позволяет легко вписать его в любой интерьер, создавая ощущение уюта и спокойствия.",
+      uz: "Qulaylik va funksionallikning uyg'un birikmasi. Keng yotoq joyi qulay uyqu bilan ta'minlaydi, ishonchli mexanizm esa transformatsiyani yengil va tez qiladi. Minimalistik dizayn uni har qanday interyerga oson moslashtiradi va shinamlik hamda osoyishtalik tuyg'usini yaratadi."
     },
     price: "5 800 000 UZS",
     images: ["/images/products/Нота Plus/1.jpg", "/images/products/Нота Plus/2.jpg"]
@@ -445,8 +445,8 @@ const sofas = [
   {
     title: { ru: 'Угловой диван "ORIGINAL"', uz: 'Burchakli divan "ORIGINAL"' },
     description: {
-      ru: "Размер 290x230 см. В комплекте два открывающихся пуфа и вместительный бельевой отсек.",
-      uz: "O'lchami 290x230 sm. To'plamda ochiladigan ikki puf va katta saqlash qutisi mavjud."
+      ru: "Универсальное решение для большой семьи и уютных вечеров. Просторная конструкция позволяет удобно разместиться, а дополнительные пуфы добавляют гибкости в использовании. Практичные материалы и вместительные ящики делают его не только красивым, но и максимально удобным в повседневной жизни.",
+      uz: "Katta oila va shinam oqshomlar uchun universal yechim. Keng tuzilma qulay joylashishga imkon beradi, qo'shimcha puflar esa foydalanishda moslashuvchanlikni oshiradi. Amaliy materiallar va sig'imli qutilar uni nafaqat chiroyli, balki kundalik hayotda eng qulay mebelga aylantiradi."
     },
     price: "8 500 000 UZS",
     images: ["/images/products/original/1.jpg", "/images/products/original/2.jpg"]
@@ -454,8 +454,8 @@ const sofas = [
   {
     title: { ru: 'Угловой раскладной диван "BAR-уголок"', uz: `Burchakli yig'iladigan divan "BAR-burchak"` },
     description: {
-      ru: 'Размер 265x150 см. Механизм "дельфин", ортопедические пружины, сторона угла меняется.',
-      uz: `O'lchami 265x150 sm. Mexanizm "delfin", ortopedik prujinalar, burchak tomoni almashtiriladi.`
+      ru: "Стильное решение с акцентом на комфорт и функциональность. Просторное угловое расположение позволяет создать удобную зону отдыха, а раскладной механизм превращает его в полноценное спальное место. Мягкие сиденья и продуманная конструкция делают его идеальным выбором для всей семьи и ежедневного использования.",
+      uz: "Qulaylik va funksionallikka urg'u bergan nafis yechim. Keng burchakli joylashuv qulay dam olish maydonini yaratishga imkon beradi, yig'iladigan mexanizm esa uni to'laqonli yotoq joyiga aylantiradi. Yumshoq o'rindiqlar va o'ylangan tuzilma uni butun oila va har kungi foydalanish uchun ideal tanlovga aylantiradi."
     },
     price: "6 800 000 UZS",
     images: ["/images/products/BAR-уголок/1.jpg", "/images/products/BAR-уголок/2.jpg"]
@@ -463,8 +463,8 @@ const sofas = [
   {
     title: { ru: "Классическая раскладная тройка (Диван и 2 кресла)", uz: "Klassik yig'iladigan troyka (Divan va 2 kreslo)" },
     description: {
-      ru: 'Диван 220 см и два кресла по 90 см. Механизм "книжка", имеется бельевой ящик.',
-      uz: 'Divan 220 sm va 90 sm dan 2 ta kreslo. Mexanizm "knijka", saqlash qutisi bor.'
+      ru: "Проверенное временем решение для комфортного отдыха всей семьи. Просторный диван и удобные кресла создают гармоничную зону уюта и идеально подходят для приёма гостей. Функция раскладывания делает диван практичным для ежедневного использования, сочетая стиль и удобство в одном комплекте.",
+      uz: "Butun oila uchun qulay dam olishning vaqt sinovidan o'tgan yechimi. Keng divan va qulay kreslolar uyg'un shinamlik maydonini yaratadi va mehmon kutish uchun ideal mos keladi. Yig'ilish funksiyasi divanni har kungi foydalanish uchun amaliy qiladi va bitta to'plamda uslub va qulaylikni birlashtiradi."
     },
     price: "5 800 000 UZS",
     images: ["/images/products/Classic Troyka/1.jpg", "/images/products/Classic Troyka/2.jpg"]
@@ -472,8 +472,8 @@ const sofas = [
   {
     title: { ru: 'Комплект "Ласетти" (Тройка)', uz: `"Lasetti" to'plami (Troyka)` },
     description: {
-      ru: "Облегчённый дизайн. Откидная спинка имеет три положения и у дивана, и у кресел.",
-      uz: "Yengil dizayn. Bukiladigan orqa qism divanda ham, kreslolarda ham uch holatda sozlanadi."
+      ru: "Лёгкость, стиль и комфорт в одном решении. Универсальная конструкция позволяет легко адаптировать мебель под разные сценарии отдыха и использовать её в повседневной жизни. Мягкие формы и современный дизайн создают уютную атмосферу, делая пространство более тёплым и живым.",
+      uz: "Yengillik, uslub va qulaylik bitta yechimda. Universal tuzilma mebelni har xil dam olish va kundalik hayot stsenariylariga oson moslashtirishga imkon beradi. Yumshoq formalar va zamonaviy dizayn shinam muhit yaratadi va xonani yanada iliq va jonli qiladi."
     },
     price: "5 800 000 UZS",
     images: ["/images/products/lacetti/1.jpg", "/images/products/lacetti/2.jpg"]
@@ -481,8 +481,8 @@ const sofas = [
   {
     title: { ru: 'Угловой диван "Venera"', uz: 'Burchakli divan "Venera"' },
     description: {
-      ru: "Размер 280x225 см. Два открывающихся пуфа (55x55 см), вместительный бельевой ящик.",
-      uz: "O'lchami 280x225 sm. Ikki ochiladigan puf (55x55 sm), katta saqlash qutisi bor."
+      ru: "Сочетание элегантности и практичности для современной гостиной. Просторная форма позволяет удобно разместиться всей семье, а вместительные ящики добавляют функциональности. Мягкие подушки и продуманный дизайн делают его идеальным для ежедневного отдыха и расслабления.",
+      uz: "Zamonaviy mehmonxona uchun nafislik va amaliylik uyg'unligi. Keng forma butun oilani qulay joylashtirishga imkon beradi, sig'imli qutilar esa funksionallikni oshiradi. Yumshoq yostiqlar va o'ylangan dizayn uni har kungi dam olish va hordiq chiqarish uchun ideal qiladi."
     },
     price: "8 500 000 UZS",
     images: ["/images/products/venera/1.jpg", "/images/products/venera/2.jpg"]
@@ -490,8 +490,8 @@ const sofas = [
   {
     title: { ru: 'Угловой диван "VIOLA"', uz: 'Burchakli divan "VIOLA"' },
     description: {
-      ru: "Размер 245x160 см. Два бельевых ящика, удобные большие мягкие подушки.",
-      uz: "O'lchami 245x160 sm. Ikki saqlash qutisi, qulay katta yumshoq yostiqlar bilan."
+      ru: "Баланс между комфортом и современным стилем. Просторная конструкция и мягкие подушки создают идеальные условия для отдыха после долгого дня. Практичные решения и качественные материалы обеспечивают долговечность и удобство в ежедневном использовании всей семьей.",
+      uz: "Qulaylik va zamonaviy uslub o'rtasidagi muvozanat. Keng tuzilma va yumshoq yostiqlar uzoq kundan keyin dam olish uchun ideal sharoit yaratadi. Amaliy yechimlar va sifatli materiallar uni butun oila tomonidan har kungi foydalanishda bardoshli va qulay qiladi."
     },
     price: "7 300 000 UZS",
     images: ["/images/products/VIOLA уголок/1.jpg", "/images/products/VIOLA уголок/2.jpg"]
@@ -499,8 +499,8 @@ const sofas = [
   {
     title: { ru: 'Раскладной диван "Аккордеон"', uz: `Yig'iladigan divan "Akkordeon"` },
     description: {
-      ru: "Компактное решение с полноценным спальным местом. Ширина 195 см, спальное место 160×210 см, в комплекте мягкие подушки. Подойдёт даже в небольшую комнату.",
-      uz: "To'liq yotoq joyi bilan ixcham yechim. Kengligi 195 sm, yotoq joyi 160×210 sm, to'plamda yumshoq yostiqlar mavjud. Hatto kichik xonaga ham mos keladi."
+      ru: "Компактное и удобное решение с полноценным спальным местом. Механизм трансформации позволяет быстро разложить диван, обеспечивая комфортный сон каждый день. Отличный выбор для небольших помещений, где важны функциональность, экономия пространства и уют в ежедневной жизни.",
+      uz: "To'laqonli yotoq joyi bilan ixcham va qulay yechim. Transformatsiya mexanizmi divanni tezda yoyishga imkon beradi va har kuni qulay uyquni ta'minlaydi. Funksionallik, joy tejash va kundalik hayotda shinamlik muhim bo'lgan kichik xonalar uchun ajoyib tanlov."
     },
     price: "5 300 000 UZS",
     images: ["/images/products/akkordeon/1.jpg", "/images/products/akkordeon/2.jpg"]
@@ -508,8 +508,8 @@ const sofas = [
   {
     title: { ru: 'Раскладной диван "SPARK"', uz: `Yig'iladigan divan "SPARK"` },
     description: {
-      ru: "Ширина 190 см. Двойной механизм, глубокое сидячее место, спинка полностью откидывается.",
-      uz: "Kengligi 190 sm. Ikki mexanizm, chuqur o'rindiq va to'liq yotadigan orqa qism."
+      ru: "Современное решение для комфортного отдыха и сна. Глубокое сиденье и мягкая спинка обеспечивают максимальное удобство в течение дня всей семье. Благодаря надёжному механизму трансформации он легко превращается в просторное спальное место, создавая уют в вашем доме каждый день.",
+      uz: "Qulay dam olish va uyqu uchun zamonaviy yechim. Chuqur o'rindiq va yumshoq orqa suyanchiq butun oilaga kun davomida maksimal qulaylikni ta'minlaydi. Ishonchli transformatsiya mexanizmi tufayli u keng yotoq joyiga oson aylanadi va uyingizda har kuni shinamlik yaratadi."
     },
     price: "5 300 000 UZS",
     images: ["/images/products/spark/1.jpg", "/images/products/spark/2.jpg"]
