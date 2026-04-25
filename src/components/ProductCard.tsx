@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
+import { useEffect, useRef, useState } from "react";
 import { localize, type LocalizedText, useLocale, ui } from "@/lib/i18n";
 
 export interface Product {
@@ -12,63 +11,80 @@ export interface Product {
 }
 
 const TG = "https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20";
+const AUTOPLAY_MS = 3000;
 
 export function ProductCard({ product }: { product: Product }) {
   const { lang } = useLocale();
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
-  const [selected, setSelected] = useState(0);
-  const [snaps, setSnaps] = useState<number[]>([]);
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+  // Stagger autoplay start so multiple cards on screen don't flip in unison.
+  const offsetRef = useRef<number>(Math.floor(Math.random() * AUTOPLAY_MS));
+
+  const total = product.images.length;
 
   useEffect(() => {
-    if (!emblaApi) return;
-    setSnaps(emblaApi.scrollSnapList());
-    const onSelect = () => setSelected(emblaApi.selectedScrollSnap());
-    emblaApi.on("select", onSelect);
+    if (paused || total <= 1) return;
+    let interval: ReturnType<typeof setInterval> | undefined;
+    const startDelay = Math.max(200, AUTOPLAY_MS - offsetRef.current);
+    const initial = setTimeout(() => {
+      setCurrent((prev) => (prev + 1) % total);
+      interval = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % total);
+      }, AUTOPLAY_MS);
+    }, startDelay);
     return () => {
-      emblaApi.off("select", onSelect);
+      clearTimeout(initial);
+      if (interval) clearInterval(interval);
     };
-  }, [emblaApi]);
+  }, [paused, total]);
 
   const isSale = !!product.oldPrice;
   const fmtPrice = (value: string) => (lang === "uz" ? value.replace("UZS", "so'm") : value);
 
   return (
     <div className="group flex flex-col">
-      <div className="relative overflow-hidden bg-muted aspect-[4/5]">
+      <div
+        className="relative overflow-hidden bg-muted aspect-[4/5]"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         {product.badge && (
           <span
-            className={`absolute top-3 left-3 z-10 text-[10px] tracking-[0.18em] uppercase font-medium px-3 py-1.5 ${
+            className={`absolute top-3 left-3 z-20 text-[10px] tracking-[0.18em] uppercase font-medium px-3 py-1.5 ${
               isSale ? "bg-red-600 text-white" : "bg-[var(--camel)] text-white"
             }`}
           >
             {localize(product.badge, lang)}
           </span>
         )}
-        <div className="overflow-hidden h-full" ref={emblaRef}>
-          <div className="flex h-full">
-            {product.images.map((src, i) => (
-              <div className="flex-[0_0_100%] min-w-0 h-full overflow-hidden" key={i}>
-                <img
-                  src={src}
-                  alt={`${localize(product.title, lang)} — изображение ${i + 1}`}
-                  loading="lazy"
-                  width={1024}
-                  height={1280}
-                  className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
+
+        {/* Stacked, absolute-positioned images with opacity fade */}
+        <div className="absolute inset-0">
+          {product.images.map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt={`${localize(product.title, lang)} — ${i + 1}`}
+              loading="lazy"
+              width={1024}
+              height={1280}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                i === current ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
         </div>
-        {snaps.length > 1 && (
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
-            {snaps.map((_, i) => (
+
+        {total > 1 && (
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+            {product.images.map((_, i) => (
               <button
                 key={i}
-                onClick={() => emblaApi?.scrollTo(i)}
-                aria-label={`Слайд ${i + 1}`}
+                type="button"
+                onClick={() => setCurrent(i)}
+                aria-label={`${localize(product.title, lang)} — ${i + 1}`}
                 className={`h-1.5 rounded-full transition-all ${
-                  selected === i ? "w-5 bg-white" : "w-1.5 bg-white/60"
+                  current === i ? "w-5 bg-white" : "w-1.5 bg-white/60 hover:bg-white/80"
                 }`}
               />
             ))}
@@ -90,7 +106,7 @@ export function ProductCard({ product }: { product: Product }) {
                 {fmtPrice(product.price)}
               </span>
               <span className="text-sm text-[var(--charcoal)]/40 line-through font-sans">
-                {fmtPrice(product.oldPrice)}
+                {fmtPrice(product.oldPrice as string)}
               </span>
             </>
           ) : (
