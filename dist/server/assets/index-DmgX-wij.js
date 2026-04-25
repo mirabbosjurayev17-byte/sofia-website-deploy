@@ -275,21 +275,43 @@ function Header() {
   ] });
 }
 const TG = "https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20";
-const AUTOPLAY_MS = 3e3;
+const AUTOPLAY_MS = 2e3;
+const SWIPE_THRESHOLD = 50;
 function ProductCard({ product }) {
   const { lang } = useLocale();
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const touchStartRef = useRef(null);
+  const touchEndRef = useRef(null);
   const offsetRef = useRef(Math.floor(Math.random() * AUTOPLAY_MS));
   const total = product.images.length;
+  const next = () => setCurrent((p) => (p + 1) % total);
+  const prev = () => setCurrent((p) => (p - 1 + total) % total);
+  const onTouchStart = (e) => {
+    touchEndRef.current = null;
+    touchStartRef.current = e.targetTouches[0].clientX;
+  };
+  const onTouchMove = (e) => {
+    touchEndRef.current = e.targetTouches[0].clientX;
+  };
+  const onTouchEnd = () => {
+    const start = touchStartRef.current;
+    const end = touchEndRef.current;
+    if (start === null || end === null) return;
+    const delta = start - end;
+    if (delta > SWIPE_THRESHOLD) next();
+    else if (delta < -SWIPE_THRESHOLD) prev();
+    touchStartRef.current = null;
+    touchEndRef.current = null;
+  };
   useEffect(() => {
     if (paused || total <= 1) return;
     let interval;
     const startDelay = Math.max(200, AUTOPLAY_MS - offsetRef.current);
     const initial = setTimeout(() => {
-      setCurrent((prev) => (prev + 1) % total);
+      setCurrent((prev2) => (prev2 + 1) % total);
       interval = setInterval(() => {
-        setCurrent((prev) => (prev + 1) % total);
+        setCurrent((prev2) => (prev2 + 1) % total);
       }, AUTOPLAY_MS);
     }, startDelay);
     return () => {
@@ -303,9 +325,12 @@ function ProductCard({ product }) {
     /* @__PURE__ */ jsxs(
       "div",
       {
-        className: "relative overflow-hidden bg-muted aspect-[4/5]",
+        className: "relative overflow-hidden bg-muted aspect-[4/5] touch-pan-y",
         onMouseEnter: () => setPaused(true),
         onMouseLeave: () => setPaused(false),
+        onTouchStart,
+        onTouchMove,
+        onTouchEnd,
         children: [
           product.badge && /* @__PURE__ */ jsx(
             "span",

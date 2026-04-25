@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type TouchEvent as ReactTouchEvent } from "react";
 import { localize, type LocalizedText, useLocale, ui } from "@/lib/i18n";
 
 export interface Product {
@@ -11,16 +11,40 @@ export interface Product {
 }
 
 const TG = "https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20";
-const AUTOPLAY_MS = 3000;
+const AUTOPLAY_MS = 2000;
+const SWIPE_THRESHOLD = 50;
 
 export function ProductCard({ product }: { product: Product }) {
   const { lang } = useLocale();
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const touchStartRef = useRef<number | null>(null);
+  const touchEndRef = useRef<number | null>(null);
   // Stagger autoplay start so multiple cards on screen don't flip in unison.
   const offsetRef = useRef<number>(Math.floor(Math.random() * AUTOPLAY_MS));
 
   const total = product.images.length;
+
+  const next = () => setCurrent((p) => (p + 1) % total);
+  const prev = () => setCurrent((p) => (p - 1 + total) % total);
+
+  const onTouchStart = (e: ReactTouchEvent) => {
+    touchEndRef.current = null;
+    touchStartRef.current = e.targetTouches[0].clientX;
+  };
+  const onTouchMove = (e: ReactTouchEvent) => {
+    touchEndRef.current = e.targetTouches[0].clientX;
+  };
+  const onTouchEnd = () => {
+    const start = touchStartRef.current;
+    const end = touchEndRef.current;
+    if (start === null || end === null) return;
+    const delta = start - end;
+    if (delta > SWIPE_THRESHOLD) next();
+    else if (delta < -SWIPE_THRESHOLD) prev();
+    touchStartRef.current = null;
+    touchEndRef.current = null;
+  };
 
   useEffect(() => {
     if (paused || total <= 1) return;
@@ -44,9 +68,12 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group flex flex-col">
       <div
-        className="relative overflow-hidden bg-muted aspect-[4/5]"
+        className="relative overflow-hidden bg-muted aspect-[4/5] touch-pan-y"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
       >
         {product.badge && (
           <span
