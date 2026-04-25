@@ -275,15 +275,12 @@ function Header() {
   ] });
 }
 const TG = "https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20";
-const AUTOPLAY_MS = 2e3;
 const SWIPE_THRESHOLD = 50;
 function ProductCard({ product }) {
   const { lang } = useLocale();
   const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
   const touchStartRef = useRef(null);
   const touchEndRef = useRef(null);
-  const offsetRef = useRef(Math.floor(Math.random() * AUTOPLAY_MS));
   const total = product.images.length;
   const next = () => setCurrent((p) => (p + 1) % total);
   const prev = () => setCurrent((p) => (p - 1 + total) % total);
@@ -304,30 +301,13 @@ function ProductCard({ product }) {
     touchStartRef.current = null;
     touchEndRef.current = null;
   };
-  useEffect(() => {
-    if (paused || total <= 1) return;
-    let interval;
-    const startDelay = Math.max(200, AUTOPLAY_MS - offsetRef.current);
-    const initial = setTimeout(() => {
-      setCurrent((prev2) => (prev2 + 1) % total);
-      interval = setInterval(() => {
-        setCurrent((prev2) => (prev2 + 1) % total);
-      }, AUTOPLAY_MS);
-    }, startDelay);
-    return () => {
-      clearTimeout(initial);
-      if (interval) clearInterval(interval);
-    };
-  }, [paused, total]);
   const isSale = !!product.oldPrice;
   const fmtPrice = (value) => lang === "uz" ? value.replace("UZS", "so'm") : value;
   return /* @__PURE__ */ jsxs("div", { className: "group flex flex-col", children: [
     /* @__PURE__ */ jsxs(
       "div",
       {
-        className: "relative overflow-hidden bg-muted aspect-[4/5] touch-pan-y",
-        onMouseEnter: () => setPaused(true),
-        onMouseLeave: () => setPaused(false),
+        className: "relative overflow-hidden bg-muted aspect-[4/5] touch-pan-y select-none",
         onTouchStart,
         onTouchMove,
         onTouchEnd,
@@ -357,7 +337,7 @@ function ProductCard({ product }) {
               type: "button",
               onClick: () => setCurrent(i),
               "aria-label": `${localize(product.title, lang)} — ${i + 1}`,
-              className: `h-1.5 rounded-full transition-all ${current === i ? "w-5 bg-white" : "w-1.5 bg-white/60 hover:bg-white/80"}`
+              className: `h-1.5 rounded-full transition-all cursor-pointer ${current === i ? "w-5 bg-white" : "w-1.5 bg-white/60 hover:bg-white/80"}`
             },
             i
           )) })
