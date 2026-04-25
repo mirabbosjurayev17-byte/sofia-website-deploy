@@ -192,15 +192,38 @@ function Header() {
           )
         ] })
       ] }),
-      /* @__PURE__ */ jsx(
-        "button",
-        {
-          onClick: () => setOpen(true),
-          "aria-label": "Меню",
-          className: "lg:hidden text-[var(--charcoal)] p-2 -mr-2",
-          children: /* @__PURE__ */ jsx("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ jsx("path", { d: "M3 6h18M3 12h18M3 18h18" }) })
-        }
-      )
+      /* @__PURE__ */ jsxs("div", { className: "lg:hidden flex items-center gap-2.5", children: [
+        /* @__PURE__ */ jsxs("div", { className: "font-sans text-[13px] tracking-wide text-[var(--charcoal)]/70 flex items-center", children: [
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              onClick: () => setLang("ru"),
+              className: `transition-colors px-1 ${lang === "ru" ? "text-[var(--charcoal)] font-semibold" : "hover:text-[var(--camel)]"}`,
+              "aria-label": "Русский",
+              children: "RU"
+            }
+          ),
+          /* @__PURE__ */ jsx("span", { className: "text-[var(--charcoal)]/30", children: "|" }),
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              onClick: () => setLang("uz"),
+              className: `transition-colors px-1 ${lang === "uz" ? "text-[var(--charcoal)] font-semibold" : "hover:text-[var(--camel)]"}`,
+              "aria-label": "O'zbekcha",
+              children: "UZ"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsx(
+          "button",
+          {
+            onClick: () => setOpen(true),
+            "aria-label": "Меню",
+            className: "text-[var(--charcoal)] p-2 -mr-2",
+            children: /* @__PURE__ */ jsx("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ jsx("path", { d: "M3 6h18M3 12h18M3 18h18" }) })
+          }
+        )
+      ] })
     ] }),
     /* @__PURE__ */ jsxs(
       "div",
