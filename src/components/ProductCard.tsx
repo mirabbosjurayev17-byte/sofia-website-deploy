@@ -93,7 +93,7 @@ export function ProductCard({ product }: { product: Product }) {
               width={1024}
               height={1280}
               draggable={false}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out pointer-events-none ${
+              className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out pointer-events-none group-hover:scale-105 ${
                 i === current ? "opacity-100" : "opacity-0"
               }`}
             />
