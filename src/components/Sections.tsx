@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ProductCard, type Product } from "./ProductCard";
+import { SmartImage } from "@/components/SmartImage";
 import { localize, useLocale, ui } from "@/lib/i18n";
 import custom from "@/assets/custom-production.jpg";
 import installments from "@/assets/installments.jpg";
@@ -392,7 +393,7 @@ export function Installments() {
           </p>
         </div>
         <div className="relative min-h-[400px] lg:min-h-full">
-          <img src="/images/sections/installment.jpg" alt="Интерьер с мебелью SOFIA-MEBEL" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+          <SmartImage src="/images/sections/installment.jpg" alt="Интерьер с мебелью SOFIA-MEBEL" loading="lazy" wrapperClassName="absolute inset-0 w-full h-full" className="w-full h-full object-cover" />
         </div>
       </div>
     </section>
@@ -405,7 +406,7 @@ export function CustomProduction() {
     <section id="custom" className="bg-white">
       <div className="grid lg:grid-cols-2">
         <div className="relative min-h-[400px] lg:min-h-[640px] order-2 lg:order-1">
-          <img src="/images/sections/custom.jpg" alt="Производство мебели на заказ" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+          <SmartImage src="/images/sections/custom.jpg" alt="Производство мебели на заказ" loading="lazy" wrapperClassName="absolute inset-0 w-full h-full" className="w-full h-full object-cover" />
         </div>
         <div className="px-5 lg:px-16 xl:px-24 py-20 lg:py-28 flex flex-col justify-center order-1 lg:order-2">
           <p className="text-[var(--camel)] text-xs tracking-[0.3em] uppercase mb-5">{localize(ui.customEyebrow, lang)}</p>

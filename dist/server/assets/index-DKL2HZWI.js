@@ -297,6 +297,18 @@ function Header() {
     )
   ] });
 }
+const RX = /\.(jpe?g|png)(\?.*)?$/i;
+function toWebp(src) {
+  if (!RX.test(src)) return null;
+  return src.replace(RX, ".webp$2");
+}
+function SmartImage({ src, alt = "", wrapperClassName, ...rest }) {
+  const webp = toWebp(src);
+  return /* @__PURE__ */ jsxs("picture", { className: wrapperClassName, children: [
+    webp && /* @__PURE__ */ jsx("source", { srcSet: webp, type: "image/webp" }),
+    /* @__PURE__ */ jsx("img", { src, alt, ...rest })
+  ] });
+}
 const TG = "https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20";
 const SWIPE_THRESHOLD = 50;
 function ProductCard({ product }) {
@@ -357,7 +369,7 @@ function ProductCard({ product }) {
             }
           ),
           /* @__PURE__ */ jsx("div", { className: "absolute inset-0", children: product.images.map((src, i) => /* @__PURE__ */ jsx(
-            "img",
+            SmartImage,
             {
               src,
               alt: `${localize(product.title, lang)} — ${i + 1}`,
@@ -365,7 +377,8 @@ function ProductCard({ product }) {
               width: 1024,
               height: 1280,
               draggable: false,
-              className: `absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out pointer-events-none group-hover:scale-105 ${i === current ? "opacity-100" : "opacity-0"}`
+              wrapperClassName: `absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out pointer-events-none ${i === current ? "opacity-100" : "opacity-0"}`,
+              className: "absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
             },
             i
           )) }),
@@ -758,13 +771,13 @@ function Installments() {
       ] }, b.name)) }),
       /* @__PURE__ */ jsx("p", { className: "text-xs text-[var(--charcoal)]/60 leading-relaxed max-w-md", children: localize(ui.installmentNote, lang) })
     ] }),
-    /* @__PURE__ */ jsx("div", { className: "relative min-h-[400px] lg:min-h-full", children: /* @__PURE__ */ jsx("img", { src: "/images/sections/installment.jpg", alt: "Интерьер с мебелью SOFIA-MEBEL", loading: "lazy", className: "absolute inset-0 w-full h-full object-cover" }) })
+    /* @__PURE__ */ jsx("div", { className: "relative min-h-[400px] lg:min-h-full", children: /* @__PURE__ */ jsx(SmartImage, { src: "/images/sections/installment.jpg", alt: "Интерьер с мебелью SOFIA-MEBEL", loading: "lazy", wrapperClassName: "absolute inset-0 w-full h-full", className: "w-full h-full object-cover" }) })
   ] }) });
 }
 function CustomProduction() {
   const { lang } = useLocale();
   return /* @__PURE__ */ jsx("section", { id: "custom", className: "bg-white", children: /* @__PURE__ */ jsxs("div", { className: "grid lg:grid-cols-2", children: [
-    /* @__PURE__ */ jsx("div", { className: "relative min-h-[400px] lg:min-h-[640px] order-2 lg:order-1", children: /* @__PURE__ */ jsx("img", { src: "/images/sections/custom.jpg", alt: "Производство мебели на заказ", loading: "lazy", className: "absolute inset-0 w-full h-full object-cover" }) }),
+    /* @__PURE__ */ jsx("div", { className: "relative min-h-[400px] lg:min-h-[640px] order-2 lg:order-1", children: /* @__PURE__ */ jsx(SmartImage, { src: "/images/sections/custom.jpg", alt: "Производство мебели на заказ", loading: "lazy", wrapperClassName: "absolute inset-0 w-full h-full", className: "w-full h-full object-cover" }) }),
     /* @__PURE__ */ jsxs("div", { className: "px-5 lg:px-16 xl:px-24 py-20 lg:py-28 flex flex-col justify-center order-1 lg:order-2", children: [
       /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.3em] uppercase mb-5", children: localize(ui.customEyebrow, lang) }),
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl lg:text-5xl text-[var(--charcoal)] mb-7 leading-tight", children: lang === "ru" ? /* @__PURE__ */ jsxs(Fragment, { children: [

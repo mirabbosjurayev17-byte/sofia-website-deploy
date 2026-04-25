@@ -1,5 +1,6 @@
 import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { localize, type LocalizedText, useLocale, ui } from "@/lib/i18n";
+import { SmartImage } from "@/components/SmartImage";
 
 export interface Product {
   title: LocalizedText;
@@ -85,7 +86,7 @@ export function ProductCard({ product }: { product: Product }) {
         {/* Stacked, absolute-positioned images with opacity fade */}
         <div className="absolute inset-0">
           {product.images.map((src, i) => (
-            <img
+            <SmartImage
               key={i}
               src={src}
               alt={`${localize(product.title, lang)} — ${i + 1}`}
@@ -93,9 +94,10 @@ export function ProductCard({ product }: { product: Product }) {
               width={1024}
               height={1280}
               draggable={false}
-              className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out pointer-events-none group-hover:scale-105 ${
+              wrapperClassName={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out pointer-events-none ${
                 i === current ? "opacity-100" : "opacity-0"
               }`}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
             />
           ))}
         </div>

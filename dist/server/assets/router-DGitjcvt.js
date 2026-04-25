@@ -91,7 +91,7 @@ function RootComponent() {
     /* @__PURE__ */ jsx(Outlet, {})
   ] });
 }
-const $$splitComponentImporter = () => import("./index-C26EjSHe.js");
+const $$splitComponentImporter = () => import("./index-DKL2HZWI.js");
 const Route = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter, "component"),
   head: () => ({
