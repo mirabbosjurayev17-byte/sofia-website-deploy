@@ -1,6 +1,37 @@
-import { jsx, jsxs } from "react/jsx-runtime";
+import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import { createRootRoute, Link, Outlet, HeadContent, Scripts, createFileRoute, lazyRouteComponent, createRouter, useRouter } from "@tanstack/react-router";
-const appCss = "/assets/styles-D-VOIrNU.css";
+import { useEffect } from "react";
+const appCss = "/assets/styles-BpRLH_RU.css";
+function ImageProtection() {
+  useEffect(() => {
+    const onContextMenu = (e) => {
+      e.preventDefault();
+    };
+    const onDragStart = (e) => {
+      const target = e.target;
+      if (target && target.tagName === "IMG") {
+        e.preventDefault();
+      }
+    };
+    const onKeyDown = (e) => {
+      const mod = e.ctrlKey || e.metaKey;
+      if (!mod) return;
+      const key = e.key.toLowerCase();
+      if (key === "s" || key === "u") {
+        e.preventDefault();
+      }
+    };
+    document.addEventListener("contextmenu", onContextMenu);
+    document.addEventListener("dragstart", onDragStart);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("contextmenu", onContextMenu);
+      document.removeEventListener("dragstart", onDragStart);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
+  return null;
+}
 function NotFoundComponent() {
   return /* @__PURE__ */ jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsx("h1", { className: "text-7xl font-bold text-foreground", children: "404" }),
@@ -55,7 +86,10 @@ function RootShell({ children }) {
   ] });
 }
 function RootComponent() {
-  return /* @__PURE__ */ jsx(Outlet, {});
+  return /* @__PURE__ */ jsxs(Fragment, { children: [
+    /* @__PURE__ */ jsx(ImageProtection, {}),
+    /* @__PURE__ */ jsx(Outlet, {})
+  ] });
 }
 const $$splitComponentImporter = () => import("./index-BiZQYQKG.js");
 const Route = createFileRoute("/")({
