@@ -382,8 +382,8 @@ const sofas = [
   {
     title: { ru: 'Кухонный уголок "Ракушка"', uz: 'Oshxona burchagi "Rakushka"' },
     description: {
-      ru: "Размер 215x165 см. Турецкий дизайн, ящики для хранения, моющаяся обивка.",
-      uz: "O'lchami 215x165 sm. Turkiya dizayni, saqlash qutilari va yuviladigan qoplama."
+      ru: "Идеальное решение для уютной кухни, где важны комфорт и практичность. Компактная форма позволяет рационально использовать пространство, а мягкая обивка делает каждое чаепитие особенно приятным. Продуманная конструкция с ящиками для хранения помогает поддерживать порядок, а стильный дизайн гармонично вписывается в любой интерьер.",
+      uz: "Qulaylik va amaliylik muhim bo'lgan shinam oshxona uchun ideal yechim. Ixcham forma joydan oqilona foydalanishga imkon beradi, yumshoq qoplama esa har bir choy ichish damini alohida yoqimli qiladi. Saqlash qutilari bilan o'ylangan tuzilma tartibni saqlashga yordam beradi, nafis dizayn esa istalgan interyerga uyg'un mos tushadi."
     },
     price: "5 300 000 UZS",
     images: ["/images/products/Ракушка/1.jpg", "/images/products/Ракушка/2.jpg"]
@@ -391,8 +391,8 @@ const sofas = [
   {
     title: { ru: 'Комплект "Йорк" (Тройка)', uz: `"York" to'plami (Troyka)` },
     description: {
-      ru: "Диван 210 см и 2 кресла. Откидная спинка имеет три положения, полностью откидывается.",
-      uz: "Divan 210 sm va 2 ta kreslo. Orqa suyanchiği uch holatda sozlanadi va to'liq yotadi."
+      ru: "Многофункциональное решение для всей семьи, где сочетаются комфорт и универсальность. Просторный диван и кресла создают полноценную зону отдыха, а возможность трансформации делает его удобным для ежедневного использования. Мягкие формы, продуманная эргономика и классический дизайн создают атмосферу уюта и идеально подходят как для отдыха, так и для приёма гостей.",
+      uz: "Qulaylik va ko'p qirralilik uyg'unlashgan butun oila uchun ko'p funksiyali yechim. Keng divan va kreslolar to'laqonli dam olish maydonini yaratadi, transformatsiya imkoniyati esa uni har kungi foydalanish uchun qulay qiladi. Yumshoq formalar, o'ylangan ergonomika va klassik dizayn shinam muhit yaratadi va ham dam olish, ham mehmon kutish uchun ideal mos keladi."
     },
     price: "8 500 000 UZS",
     images: ["/images/products/york/1.jpg", "/images/products/york/2.jpg"]
@@ -400,17 +400,17 @@ const sofas = [
   {
     title: { ru: 'Раздвижной диван "VIOLA"', uz: `Yig'iladigan divan "VIOLA"` },
     description: {
-      ru: "Идеальное решение для ежедневного сна. Широкое спальное место (225 см) и вместительный бельевой ящик — отличная альтернатива кровати. Современный дизайн легко впишется в любой интерьер.",
-      uz: "Har kungi uyqu uchun ideal yechim. Keng yotoq joyi (225 sm) va katta saqlash qutisi karavotga ajoyib muqobil bo'ladi. Zamonaviy dizayn istalgan interyerga oson uyg'unlashadi."
+      ru: "Стильное и практичное решение для современного дома. Благодаря широкому спальному месту он легко заменяет кровать и обеспечивает комфортный сон каждый день. Элегантный дизайн, вместительный бельевой ящик и удобный механизм трансформации делают его идеальным выбором для тех, кто ценит функциональность и уют.",
+      uz: "Zamonaviy uy uchun nafis va amaliy yechim. Keng yotoq joyi tufayli u karavotni bemalol almashtiradi va har kuni qulay uyquni ta'minlaydi. Nafis dizayn, sig'imli saqlash qutisi va qulay transformatsiya mexanizmi uni funksionallik va shinamlikni qadrlaydiganlar uchun ideal tanlovga aylantiradi."
     },
     price: "6 200 000 UZS",
     images: ["/images/products/VIOLA/1.jpg", "/images/products/VIOLA/2.jpg"]
   },
   {
-    title: { ru: 'Угловой раскладной диван "Мартелл"', uz: `Burchakli yig'iladigan divan "Martell"` },
+    title: { ru: 'Угловой раскладной диван "Мартель"', uz: `Burchakli yig'iladigan divan "Martel"` },
     description: {
-      ru: 'Размер 280x155 см. Съёмные подушки на подлокотниках, механизм "дельфин".',
-      uz: `O'lchami 280x155 sm. Qo'ltiq qismlarida olinadigan yostiqlar, mexanizm "delfin".`
+      ru: "Сочетание современного дизайна и максимального комфорта для всей семьи. Просторная конструкция позволяет удобно разместиться, а раскладной механизм превращает его в полноценное спальное место. Мягкие подушки, практичные материалы и продуманная форма делают его отличным выбором для ежедневного отдыха и уютных вечеров.",
+      uz: "Zamonaviy dizayn va butun oila uchun maksimal qulaylik uyg'unligi. Keng tuzilma qulay joylashishga imkon beradi, yig'iladigan mexanizm esa uni to'laqonli yotoq joyiga aylantiradi. Yumshoq yostiqlar, amaliy materiallar va o'ylangan forma uni har kungi dam olish va shinam oqshomlar uchun ajoyib tanlovga aylantiradi."
     },
     price: "6 800 000 UZS",
     images: ["/images/products/Мартелл/1.jpg", "/images/products/Мартелл/2.jpg"]
