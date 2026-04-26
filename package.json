@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "images:webp": "node scripts/generate-webp.mjs"
+    "images:webp": "node scripts/generate-webp.mjs",
+    "images:og": "node scripts/generate-og-image.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

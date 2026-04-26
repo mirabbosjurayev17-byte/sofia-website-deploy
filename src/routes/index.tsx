@@ -8,10 +8,12 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "SOFIA-MEBEL — Мягкая мебель достойного качества в Ташкенте" },
-      { name: "description", content: "Шикарный выбор мягкой мебели: диваны, кресла-качалки, мебель на заказ. Рассрочка 0%. Ташкент, ул. Мукими 98А." },
-      { property: "og:title", content: "SOFIA-MEBEL — Мягкая мебель достойного качества" },
-      { property: "og:description", content: "Качество и комфорт. Диваны, кресла-качалки, мебель на заказ в Ташкенте." },
+      { title: "SOFIA-MEBEL — мягкая мебель достойного качества" },
+      { name: "description", content: "Изготовление и продажа мягкой мебели в Ташкенте. Удобные, стильные диваны с доставкой по Узбекистану." },
+      { property: "og:title", content: "SOFIA-MEBEL — мягкая мебель достойного качества" },
+      { property: "og:description", content: "Изготовление и продажа мягкой мебели в Ташкенте. Удобные, стильные диваны с доставкой по Узбекистану." },
+      { property: "og:image", content: "https://sofiamebel.uz/og-image.jpg" },
+      { property: "og:url", content: "https://sofiamebel.uz" },
     ],
   }),
 });
