@@ -321,7 +321,7 @@ export function Catalog() {
   return (
     <section id="catalog" className="py-20 lg:py-32 bg-[var(--ivory)]">
       <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
-        <SectionTitle eyebrow={localize(ui.collectionEyebrow, lang)}>{localize(ui.sectionHits, lang)}</SectionTitle>
+        <SectionTitle>{localize(ui.sectionHits, lang)}</SectionTitle>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14 lg:gap-x-8 lg:gap-y-20">
           {sofas.map((p) => <ProductCard key={p.title} product={p} />)}
         </div>

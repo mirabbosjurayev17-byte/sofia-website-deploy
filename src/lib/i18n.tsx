@@ -53,7 +53,6 @@ export const ui = {
   sectionHits: { ru: "Хиты продаж: Мягкая мебель", uz: "Ommabop: Yumshoq mebellar" },
   sectionPromo: { ru: "Акции и скидки", uz: "Aksiya va chegirmalar" },
   sectionChairs: { ru: "Кресла-качалки", uz: "Kreslo-kachalkalar" },
-  collectionEyebrow: { ru: "Коллекция 2026", uz: "To'plam 2026" },
   specialPriceEyebrow: { ru: "Специальные цены", uz: "Maxsus narxlar" },
   cozyEyebrow: { ru: "Уют и расслабление", uz: "Shinamlik va hordiq" },
   helpEyebrow: { ru: "Помощь", uz: "Yordam" },

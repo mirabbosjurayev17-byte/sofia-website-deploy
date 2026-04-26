@@ -8,9 +8,9 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "SOFIA-MEBEL — Премиальная мягкая мебель в Ташкенте" },
+      { title: "SOFIA-MEBEL — Мягкая мебель достойного качества в Ташкенте" },
       { name: "description", content: "Шикарный выбор мягкой мебели: диваны, кресла-качалки, мебель на заказ. Рассрочка 0%. Ташкент, ул. Мукими 98А." },
-      { property: "og:title", content: "SOFIA-MEBEL — Премиальная мягкая мебель" },
+      { property: "og:title", content: "SOFIA-MEBEL — Мягкая мебель достойного качества" },
       { property: "og:description", content: "Качество и комфорт. Диваны, кресла-качалки, мебель на заказ в Ташкенте." },
     ],
   }),

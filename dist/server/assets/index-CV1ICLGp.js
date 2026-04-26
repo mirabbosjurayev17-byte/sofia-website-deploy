@@ -37,7 +37,6 @@ const ui = {
   sectionHits: { ru: "Хиты продаж: Мягкая мебель", uz: "Ommabop: Yumshoq mebellar" },
   sectionPromo: { ru: "Акции и скидки", uz: "Aksiya va chegirmalar" },
   sectionChairs: { ru: "Кресла-качалки", uz: "Kreslo-kachalkalar" },
-  collectionEyebrow: { ru: "Коллекция 2026", uz: "To'plam 2026" },
   specialPriceEyebrow: { ru: "Специальные цены", uz: "Maxsus narxlar" },
   cozyEyebrow: { ru: "Уют и расслабление", uz: "Shinamlik va hordiq" },
   helpEyebrow: { ru: "Помощь", uz: "Yordam" },
@@ -727,7 +726,7 @@ function Hero() {
 function Catalog() {
   const { lang } = useLocale();
   return /* @__PURE__ */ jsx("section", { id: "catalog", className: "py-20 lg:py-32 bg-[var(--ivory)]", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-[1400px] px-5 lg:px-10", children: [
-    /* @__PURE__ */ jsx(SectionTitle, { eyebrow: localize(ui.collectionEyebrow, lang), children: localize(ui.sectionHits, lang) }),
+    /* @__PURE__ */ jsx(SectionTitle, { children: localize(ui.sectionHits, lang) }),
     /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14 lg:gap-x-8 lg:gap-y-20", children: sofas.map((p) => /* @__PURE__ */ jsx(ProductCard, { product: p }, p.title)) })
   ] }) });
 }

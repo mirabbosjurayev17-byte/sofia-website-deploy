@@ -53,15 +53,15 @@ const Route$1 = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Lovable App" },
-      { name: "description", content: "SOFIA-MEBEL предлагает премиальный каталог мягкой мебели с роскошным дизайном и удобным интерфейсом." },
+      { name: "description", content: "SOFIA-MEBEL — каталог мягкой мебели достойного качества: уютный дизайн, надёжные материалы и честные цены." },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "SOFIA-MEBEL предлагает премиальный каталог мягкой мебели с роскошным дизайном и удобным интерфейсом." },
+      { property: "og:description", content: "SOFIA-MEBEL — каталог мягкой мебели достойного качества: уютный дизайн, надёжные материалы и честные цены." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "SOFIA-MEBEL предлагает премиальный каталог мягкой мебели с роскошным дизайном и удобным интерфейсом." },
+      { name: "twitter:description", content: "SOFIA-MEBEL — каталог мягкой мебели достойного качества: уютный дизайн, надёжные материалы и честные цены." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e9edd45f-aabb-4fbd-8123-0f527e1a4dd7/id-preview-c596d9e2--6b3f2b6f-b311-4a21-8bb5-0582c47fd00b.lovable.app-1776838159345.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e9edd45f-aabb-4fbd-8123-0f527e1a4dd7/id-preview-c596d9e2--6b3f2b6f-b311-4a21-8bb5-0582c47fd00b.lovable.app-1776838159345.png" }
     ],
@@ -91,18 +91,18 @@ function RootComponent() {
     /* @__PURE__ */ jsx(Outlet, {})
   ] });
 }
-const $$splitComponentImporter = () => import("./index-DKL2HZWI.js");
+const $$splitComponentImporter = () => import("./index-CV1ICLGp.js");
 const Route = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter, "component"),
   head: () => ({
     meta: [{
-      title: "SOFIA-MEBEL — Премиальная мягкая мебель в Ташкенте"
+      title: "SOFIA-MEBEL — Мягкая мебель достойного качества в Ташкенте"
     }, {
       name: "description",
       content: "Шикарный выбор мягкой мебели: диваны, кресла-качалки, мебель на заказ. Рассрочка 0%. Ташкент, ул. Мукими 98А."
     }, {
       property: "og:title",
-      content: "SOFIA-MEBEL — Премиальная мягкая мебель"
+      content: "SOFIA-MEBEL — Мягкая мебель достойного качества"
     }, {
       property: "og:description",
       content: "Качество и комфорт. Диваны, кресла-качалки, мебель на заказ в Ташкенте."
