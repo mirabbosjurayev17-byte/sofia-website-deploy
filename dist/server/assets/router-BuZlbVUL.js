@@ -91,26 +91,29 @@ function RootShell({ children }) {
         "script",
         {
           dangerouslySetInnerHTML: {
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id=GTM-5SRSXN9'+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5SRSXN9');`
+            __html: `(function(){var s=document.createElement('script');s.innerHTML="(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-5SRSXN9'+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5SRSXN9');";document.head.appendChild(s);})();`
+          }
+        }
+      ),
+      /* @__PURE__ */ jsx(
+        "script",
+        {
+          dangerouslySetInnerHTML: {
+            __html: `(function(){var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id=G-VPKWSRK982';document.head.appendChild(g);g.onload=function(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VPKWSRK982');};})();`
           }
         }
       ),
       /* @__PURE__ */ jsx(HeadContent, {})
     ] }),
     /* @__PURE__ */ jsxs("body", { children: [
-      /* @__PURE__ */ jsx("noscript", { children: /* @__PURE__ */ jsx(
-        "iframe",
+      /* @__PURE__ */ jsx(
+        "noscript",
         {
-          src: "https://www.googletagmanager.com/ns.html?id=GTM-5SRSXN9",
-          height: "0",
-          width: "0",
-          style: { display: "none", visibility: "hidden" }
+          dangerouslySetInnerHTML: {
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SRSXN9" height="0" width="0" style="display:none;visibility:hidden"></iframe>`
+          }
         }
-      ) }),
+      ),
       children,
       /* @__PURE__ */ jsx(Scripts, {})
     ] })
