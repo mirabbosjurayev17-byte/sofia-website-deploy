@@ -13,6 +13,9 @@
     { "src": "/assets/(.*)", "dest": "/dist/client/assets/$1" },
     { "src": "/images/(.*)", "dest": "/dist/client/images/$1" },
     { "src": "/favicon.ico", "dest": "/dist/client/favicon.ico" },
+    { "src": "/sitemap.xml", "dest": "/dist/client/sitemap.xml" },
+    { "src": "/robots.txt", "dest": "/dist/client/robots.txt" },
+    { "src": "/og-image.jpg", "dest": "/dist/client/og-image.jpg" },
     { "src": "/(.*)", "dest": "/api/index.mjs" }
   ]
 }
