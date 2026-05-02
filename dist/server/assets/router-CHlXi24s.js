@@ -52,27 +52,27 @@ const Route$1 = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SOFIA MEBEL — Мягкая мебель в Ташкенте | Диваны на заказ и в рассрочку" },
-      { name: "description", content: "Качественная мягкая мебель от SOFIA MEBEL в Ташкенте. Угловые и раскладные диваны, кресла-качалки. Изготовление по вашим размерам. Рассрочка (Uzum, Anor Bank). Toshkentda sifatli yumshoq mebellar, divan va kreslolar." },
-      { name: "keywords", content: "мягкая мебель Ташкент, купить диван в Ташкенте, угловые диваны, раскладной диван, диван трансформер, кресло-качалка, мебель в рассрочку Ташкент, диваны на заказ, yumshoq mebel Toshkent, divan sotib olish, burchak divanlar, tebranma kreslo, muddatli to'lovga mebel, buyurtma mebel, Sofia Mebel" },
+      { title: "Мягкая мебель в Ташкенте на заказ | Диваны, кресла, рассрочка — SOFIA MEBEL" },
+      { name: "description", content: "Фабрика мягкой мебели SOFIA MEBEL в Ташкенте. Купить угловой, раскладной диван, кресло-качалку по своим размерам. Рассрочка Uzum и Anor Bank без %. Toshkentda yumshoq mebel, divanlar, tebranma kreslolar ishlab chiqarish. Muddatli to'lov." },
+      { name: "keywords", content: "мягкая мебель Ташкент, купить диван в Ташкенте, угловой диван, раскладной диван, диван трансформер, кресло-качалка, мебель в рассрочку Ташкент, диван на заказ, Uzum Nasiya мебель, Anor Bank рассрочка, yumshoq mebel Toshkent, divan sotib olish, burchak divan, tebranma kreslo, muddatli to'lovga mebel, mebel ishlab chiqarish Toshkent, arzon mebel, sifatli mebel, sofiamebel, диваны для гостиной, кухонный уголок" },
       { name: "author", content: "Sofia Mebel" },
       { name: "theme-color", content: "#FAF6F3" },
       // Open Graph
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.sofiamebel.uz/" },
       { property: "og:site_name", content: "Sofia Mebel" },
-      { property: "og:title", content: "SOFIA MEBEL — Мягкая мебель в Ташкенте" },
-      { property: "og:description", content: "Подарите уют вашему дому! Широкий выбор мягкой мебели, диванов и кресел. Изготовление по вашим размерам и рассрочка без %." },
-      { property: "og:image", content: "https://sofiamebel.uz/og-image.jpg" },
+      { property: "og:title", content: "Мягкая мебель в Ташкенте на заказ | SOFIA MEBEL" },
+      { property: "og:description", content: "Фабрика мягкой мебели SOFIA MEBEL в Ташкенте. Диваны, кресла на заказ. Рассрочка Uzum и Anor Bank без %." },
+      { property: "og:image", content: "https://www.sofiamebel.uz/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "SOFIA MEBEL — Мягкая мебель в Ташкенте" },
+      { property: "og:image:alt", content: "SOFIA MEBEL — мягкая мебель в Ташкенте" },
       { property: "og:locale", content: "ru_RU" },
       // Twitter
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "SOFIA MEBEL — Мягкая мебель в Ташкенте" },
-      { name: "twitter:description", content: "Подарите уют вашему дому! Широкий выбор мягкой мебели, диванов и кресел. Изготовление по вашим размерам и рассрочка без %." },
-      { name: "twitter:image", content: "https://sofiamebel.uz/og-image.jpg" }
+      { name: "twitter:title", content: "Мягкая мебель в Ташкенте на заказ | SOFIA MEBEL" },
+      { name: "twitter:description", content: "Фабрика мягкой мебели SOFIA MEBEL. Диваны, кресла на заказ. Рассрочка без %." },
+      { name: "twitter:image", content: "https://www.sofiamebel.uz/og-image.jpg" }
     ],
     links: [
       {
@@ -104,7 +104,32 @@ function RootShell({ children }) {
           }
         }
       ),
-      /* @__PURE__ */ jsx(HeadContent, {})
+      /* @__PURE__ */ jsx(HeadContent, {}),
+      /* @__PURE__ */ jsx(
+        "script",
+        {
+          type: "application/ld+json",
+          dangerouslySetInnerHTML: {
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FurnitureStore",
+              "name": "Sofia Mebel",
+              "image": "https://www.sofiamebel.uz/logo.png",
+              "description": "Производство и продажа мягкой мебели в Ташкенте. Диваны на заказ, рассрочка.",
+              "url": "https://www.sofiamebel.uz/",
+              "telephone": "+998970003334",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "ул. Мукими 98А",
+                "addressLocality": "Ташкент",
+                "addressCountry": "UZ"
+              },
+              "paymentAccepted": "Cash, Credit Card, Uzum Nasiya, Anor Bank",
+              "openingHours": "Mo-Su 10:00-19:00"
+            })
+          }
+        }
+      )
     ] }),
     /* @__PURE__ */ jsxs("body", { children: [
       /* @__PURE__ */ jsx(
