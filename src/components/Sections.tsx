@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ProductCard, type Product } from "./ProductCard";
 import { SmartImage } from "@/components/SmartImage";
 import { localize, useLocale, ui } from "@/lib/i18n";
+import { productImages } from "@/lib/images";
 import custom from "@/assets/custom-production.jpg";
 import installments from "@/assets/installments.jpg";
 
@@ -13,7 +14,7 @@ const sofas: Product[] = [
       uz: "Zamonaviy mehmonxona uchun shinamlik va funksionallik uyg'unligi. Keng modulli forma butun oilani qulay joylashtirishga imkon beradi, turkiya texnologiyasi va tabiiy yog'och oyoqchalar esa uzoq yillik bardoshlilikni ta'minlaydi. Har kungi dam olish va mehmon kutish uchun ideal.",
     },
     price: "11 000 000 UZS",
-    images: ["/images/products/valensia/1.jpg", "/images/products/valensia/2.jpg", "/images/products/valensia/3.jpg"],
+    images: productImages("valensia"),
   },
   {
     title: { ru: 'Угловой диван "EVA"', uz: 'Burchakli divan "EVA"' },
@@ -22,7 +23,7 @@ const sofas: Product[] = [
       uz: "Har bir tafsilotda qulaylik va amaliylikni qadrlaydiganlar uchun ideal tanlov. Keng forma va 270×230 sm o'lcham butun oila uchun shinam muhit yaratadi, ikki ochiladigan puf va sig'imli saqlash qutisi esa tartib va kerakli narsalarni qo'l ostida saqlashga yordam beradi.",
     },
     price: "8 500 000 UZS",
-    images: ["/images/products/eva/1.jpg", "/images/products/eva/2.jpg", "/images/products/eva/3.jpg"],
+    images: productImages("eva"),
   },
   {
     title: { ru: 'Раскладной диван "Тик-так"', uz: 'Yig\'iladigan divan "Tik-tak"' },
@@ -31,7 +32,7 @@ const sofas: Product[] = [
       uz: "Har kungi foydalanish va tinch uyqu uchun ishonchli hamroh. \"Yevroknijka\" mexanizmi yengil va shovqinsiz ishlaydi, kengligi 240 sm va tekis yotoq yuzasi esa haqiqiy dam olishni ta'minlaydi. Har qanday xona uchun butun oilaga mos amaliy yechim.",
     },
     price: "5 800 000 UZS",
-    images: ["/images/products/tik-tak/1.jpg", "/images/products/tik-tak/2.jpg", "/images/products/tik-tak/3.jpg"],
+    images: productImages("tik-tak"),
   },
   {
     title: { ru: 'Угловой диван "Bella"', uz: 'Burchakli divan "Bella"' },
@@ -40,7 +41,7 @@ const sofas: Product[] = [
       uz: "Har bir chiziqda uslub va amaliylikni birlashtirgan nafis yechim. 270×155 sm o'lcham butun oila bilan shinam oqshomlar uchun ideal mos keladi, atamanka va qo'ltiq tayoqlardagi keng saqlash qutilari esa har kungi foydalanishni g'oyat qulay qiladi.",
     },
     price: "7 000 000 UZS",
-    images: ["/images/products/Bella/1.jpg", "/images/products/Bella/2.jpg", "/images/products/Bella/3.jpg"],
+    images: productImages("Bella"),
   },
   {
     title: { ru: 'Кухонный уголок "Ракушка"', uz: 'Oshxona burchagi "Rakushka"' },
@@ -49,7 +50,7 @@ const sofas: Product[] = [
       uz: "Qulaylik va amaliylik muhim bo'lgan shinam oshxona uchun ideal yechim. Ixcham forma joydan oqilona foydalanishga imkon beradi, yumshoq qoplama esa har bir choy ichish damini alohida yoqimli qiladi. Saqlash qutilari bilan o'ylangan tuzilma tartibni saqlashga yordam beradi, nafis dizayn esa istalgan interyerga uyg'un mos tushadi.",
     },
     price: "5 300 000 UZS",
-    images: ["/images/products/Ракушка/1.jpg", "/images/products/Ракушка/2.jpg", "/images/products/Ракушка/3.jpg"],
+    images: productImages("Ракушка"),
   },
   {
     title: { ru: 'Комплект "Йорк" (Тройка)', uz: '"York" to\'plami (Troyka)' },
@@ -58,7 +59,7 @@ const sofas: Product[] = [
       uz: "Qulaylik va ko'p qirralilik uyg'unlashgan butun oila uchun ko'p funksiyali yechim. Keng divan va kreslolar to'laqonli dam olish maydonini yaratadi, transformatsiya imkoniyati esa uni har kungi foydalanish uchun qulay qiladi. Yumshoq formalar, o'ylangan ergonomika va klassik dizayn shinam muhit yaratadi va ham dam olish, ham mehmon kutish uchun ideal mos keladi.",
     },
     price: "8 500 000 UZS",
-    images: ["/images/products/york/1.jpg", "/images/products/york/2.jpg", "/images/products/york/3.jpg"],
+    images: productImages("york"),
   },
   {
     title: { ru: 'Раздвижной диван "VIOLA"', uz: 'Yig\'iladigan divan "VIOLA"' },
@@ -67,7 +68,7 @@ const sofas: Product[] = [
       uz: "Zamonaviy uy uchun nafis va amaliy yechim. Keng yotoq joyi tufayli u karavotni bemalol almashtiradi va har kuni qulay uyquni ta'minlaydi. Nafis dizayn, sig'imli saqlash qutisi va qulay transformatsiya mexanizmi uni funksionallik va shinamlikni qadrlaydiganlar uchun ideal tanlovga aylantiradi.",
     },
     price: "6 200 000 UZS",
-    images: ["/images/products/VIOLA/1.jpg", "/images/products/VIOLA/2.jpg", "/images/products/VIOLA/3.jpg"],
+    images: productImages("VIOLA"),
   },
   {
     title: { ru: 'Угловой раскладной диван "Мартель"', uz: 'Burchakli yig\'iladigan divan "Martel"' },
@@ -76,7 +77,7 @@ const sofas: Product[] = [
       uz: "Zamonaviy dizayn va butun oila uchun maksimal qulaylik uyg'unligi. Keng tuzilma qulay joylashishga imkon beradi, yig'iladigan mexanizm esa uni to'laqonli yotoq joyiga aylantiradi. Yumshoq yostiqlar, amaliy materiallar va o'ylangan forma uni har kungi dam olish va shinam oqshomlar uchun ajoyib tanlovga aylantiradi.",
     },
     price: "6 800 000 UZS",
-    images: ["/images/products/Мартелл/1.jpg", "/images/products/Мартелл/2.jpg", "/images/products/Мартелл/3.jpg"],
+    images: productImages("Мартелл"),
   },
   {
     title: { ru: 'Раскладной диван "Мини-Йорк"', uz: 'Yig\'iladigan divan "Mini-York"' },
@@ -85,7 +86,7 @@ const sofas: Product[] = [
       uz: "Har bir santimetr muhim bo'lgan kichik xonalar uchun ideal yechim. O'lchamiga qaramay, u to'laqonli yotoq joyiga oson aylanadi va qulay dam olish baxsh etadi. Nafis tashqi ko'rinish va o'ylangan tuzilma uni amaliylik va shinamlik qadrlanadigan zamonaviy kvartiralar uchun ajoyib tanlovga aylantiradi.",
     },
     price: "4 500 000 UZS",
-    images: ["/images/products/Мини-Йорк/1.jpg", "/images/products/Мини-Йорк/2.jpg", "/images/products/Мини-Йорк/3.jpg"],
+    images: productImages("Мини-Йорк"),
   },
   {
     title: { ru: 'Угловой раскладной диван "Нота PLUS"', uz: 'Burchakli yig\'iladigan divan "Nota PLUS"' },
@@ -94,7 +95,7 @@ const sofas: Product[] = [
       uz: "Kundalik hayotda kenglik va qulaylikni qadrlaydiganlar uchun yaratilgan. Katta yotoq joyi uni to'laqonli karavot sifatida ishlatishga imkon beradi, sig'imli qutilar esa narsalarni qulay saqlashga yordam beradi. Zamonaviy dizayn va yumshoq formalar shinam muhit yaratadi va uni har qanday mehmonxonaning tortish markaziga aylantiradi.",
     },
     price: "6 800 000 UZS",
-    images: ["/images/products/Нота PLUS уголок/1.jpg", "/images/products/Нота PLUS уголок/2.jpg", "/images/products/Нота PLUS уголок/3.jpg"],
+    images: productImages("Нота PLUS уголок"),
   },
   {
     title: { ru: 'Раскладной диван "Нота Plus"', uz: 'Yig\'iladigan divan "Nota Plus"' },
@@ -103,7 +104,7 @@ const sofas: Product[] = [
       uz: "Qulaylik va funksionallikning uyg'un birikmasi. Keng yotoq joyi qulay uyqu bilan ta'minlaydi, ishonchli mexanizm esa transformatsiyani yengil va tez qiladi. Minimalistik dizayn uni har qanday interyerga oson moslashtiradi va shinamlik hamda osoyishtalik tuyg'usini yaratadi.",
     },
     price: "5 800 000 UZS",
-    images: ["/images/products/Нота Plus/1.jpg", "/images/products/Нота Plus/2.jpg", "/images/products/Нота Plus/3.jpg"],
+    images: productImages("Нота Plus"),
   },
   {
     title: { ru: 'Угловой диван "ORIGINAL"', uz: 'Burchakli divan "ORIGINAL"' },
@@ -112,7 +113,7 @@ const sofas: Product[] = [
       uz: "Katta oila va shinam oqshomlar uchun universal yechim. Keng tuzilma qulay joylashishga imkon beradi, qo'shimcha puflar esa foydalanishda moslashuvchanlikni oshiradi. Amaliy materiallar va sig'imli qutilar uni nafaqat chiroyli, balki kundalik hayotda eng qulay mebelga aylantiradi.",
     },
     price: "8 500 000 UZS",
-    images: ["/images/products/original/1.jpg", "/images/products/original/2.jpg", "/images/products/original/3.jpg"],
+    images: productImages("original"),
   },
   {
     title: { ru: 'Угловой раскладной диван "BAR-уголок"', uz: 'Burchakli yig\'iladigan divan "BAR-burchak"' },
@@ -121,7 +122,7 @@ const sofas: Product[] = [
       uz: "Qulaylik va funksionallikka urg'u bergan nafis yechim. Keng burchakli joylashuv qulay dam olish maydonini yaratishga imkon beradi, yig'iladigan mexanizm esa uni to'laqonli yotoq joyiga aylantiradi. Yumshoq o'rindiqlar va o'ylangan tuzilma uni butun oila va har kungi foydalanish uchun ideal tanlovga aylantiradi.",
     },
     price: "6 800 000 UZS",
-    images: ["/images/products/BAR-уголок/1.jpg", "/images/products/BAR-уголок/2.jpg", "/images/products/BAR-уголок/3.jpg"],
+    images: productImages("BAR-уголок"),
   },
   {
     title: { ru: "Классическая раскладная тройка (Диван и 2 кресла)", uz: "Klassik yig'iladigan troyka (Divan va 2 kreslo)" },
@@ -130,7 +131,7 @@ const sofas: Product[] = [
       uz: "Butun oila uchun qulay dam olishning vaqt sinovidan o'tgan yechimi. Keng divan va qulay kreslolar uyg'un shinamlik maydonini yaratadi va mehmon kutish uchun ideal mos keladi. Yig'ilish funksiyasi divanni har kungi foydalanish uchun amaliy qiladi va bitta to'plamda uslub va qulaylikni birlashtiradi.",
     },
     price: "5 800 000 UZS",
-    images: ["/images/products/Classic Troyka/1.jpg", "/images/products/Classic Troyka/2.jpg", "/images/products/Classic Troyka/3.jpg"],
+    images: productImages("Classic Troyka"),
   },
   {
     title: { ru: 'Комплект "Ласетти" (Тройка)', uz: '"Lasetti" to\'plami (Troyka)' },
@@ -139,7 +140,7 @@ const sofas: Product[] = [
       uz: "Yengillik, uslub va qulaylik bitta yechimda. Universal tuzilma mebelni har xil dam olish va kundalik hayot stsenariylariga oson moslashtirishga imkon beradi. Yumshoq formalar va zamonaviy dizayn shinam muhit yaratadi va xonani yanada iliq va jonli qiladi.",
     },
     price: "5 800 000 UZS",
-    images: ["/images/products/lacetti/1.jpg", "/images/products/lacetti/2.jpg", "/images/products/lacetti/3.jpg", "/images/products/lacetti/4.jpg"],
+    images: productImages("lacetti"),
   },
   {
     title: { ru: 'Угловой диван "Venera"', uz: 'Burchakli divan "Venera"' },
@@ -148,7 +149,7 @@ const sofas: Product[] = [
       uz: "Zamonaviy mehmonxona uchun nafislik va amaliylik uyg'unligi. Keng forma butun oilani qulay joylashtirishga imkon beradi, sig'imli qutilar esa funksionallikni oshiradi. Yumshoq yostiqlar va o'ylangan dizayn uni har kungi dam olish va hordiq chiqarish uchun ideal qiladi.",
     },
     price: "8 500 000 UZS",
-    images: ["/images/products/venera/1.jpg", "/images/products/venera/2.jpg", "/images/products/venera/3.jpg"],
+    images: productImages("venera"),
   },
   {
     title: { ru: 'Угловой диван "VIOLA"', uz: 'Burchakli divan "VIOLA"' },
@@ -157,7 +158,7 @@ const sofas: Product[] = [
       uz: "Qulaylik va zamonaviy uslub o'rtasidagi muvozanat. Keng tuzilma va yumshoq yostiqlar uzoq kundan keyin dam olish uchun ideal sharoit yaratadi. Amaliy yechimlar va sifatli materiallar uni butun oila tomonidan har kungi foydalanishda bardoshli va qulay qiladi.",
     },
     price: "7 300 000 UZS",
-    images: ["/images/products/VIOLA уголок/1.jpg", "/images/products/VIOLA уголок/2.jpg", "/images/products/VIOLA уголок/3.jpg"],
+    images: productImages("VIOLA уголок"),
   },
   {
     title: { ru: 'Раскладной диван "Аккордеон"', uz: 'Yig\'iladigan divan "Akkordeon"' },
@@ -166,7 +167,7 @@ const sofas: Product[] = [
       uz: "To'laqonli yotoq joyi bilan ixcham va qulay yechim. Transformatsiya mexanizmi divanni tezda yoyishga imkon beradi va har kuni qulay uyquni ta'minlaydi. Funksionallik, joy tejash va kundalik hayotda shinamlik muhim bo'lgan kichik xonalar uchun ajoyib tanlov.",
     },
     price: "5 300 000 UZS",
-    images: ["/images/products/akkordeon/1.jpg", "/images/products/akkordeon/2.jpg", "/images/products/akkordeon/3.jpg"],
+    images: productImages("akkordeon"),
   },
   {
     title: { ru: 'Раскладной диван "SPARK"', uz: 'Yig\'iladigan divan "SPARK"' },
@@ -175,7 +176,7 @@ const sofas: Product[] = [
       uz: "Qulay dam olish va uyqu uchun zamonaviy yechim. Chuqur o'rindiq va yumshoq orqa suyanchiq butun oilaga kun davomida maksimal qulaylikni ta'minlaydi. Ishonchli transformatsiya mexanizmi tufayli u keng yotoq joyiga oson aylanadi va uyingizda har kuni shinamlik yaratadi.",
     },
     price: "5 300 000 UZS",
-    images: ["/images/products/spark/1.jpg", "/images/products/spark/2.jpg", "/images/products/spark/3.jpg"],
+    images: productImages("spark"),
   },
 ];
 
@@ -188,7 +189,7 @@ const promos: Product[] = [
     },
     price: "4 760 000 UZS",
     oldPrice: "6 800 000 UZS",
-    images: ["/images/products/happy/1.jpg", "/images/products/happy/2.jpg", "/images/products/happy/3.jpg"],
+    images: productImages("happy"),
     badge: ui.discountBadge,
   },
   {
@@ -199,7 +200,7 @@ const promos: Product[] = [
     },
     price: "5 840 000 UZS",
     oldPrice: "7 300 000 UZS",
-    images: ["/images/products/estel/1.jpg", "/images/products/estel/2.jpg", "/images/products/estel/3.jpg"],
+    images: productImages("estel"),
     badge: ui.discountBadge,
   },
   {
@@ -210,7 +211,7 @@ const promos: Product[] = [
     },
     price: "5 440 000 UZS",
     oldPrice: "6 800 000 UZS",
-    images: ["/images/products/laura/1.jpg", "/images/products/laura/2.jpg", "/images/products/laura/3.jpg"],
+    images: productImages("laura"),
     badge: ui.discountBadge,
   },
   {
@@ -221,7 +222,7 @@ const promos: Product[] = [
     },
     price: "4 400 000 UZS",
     oldPrice: "5 500 000 UZS",
-    images: ["/images/products/york plus/1.jpg", "/images/products/york plus/2.jpg", "/images/products/york plus/3.jpg"],
+    images: productImages("york plus"),
     badge: ui.discountBadge,
   },
 ];
@@ -234,7 +235,7 @@ const chairs: Product[] = [
       uz: "Material: presslangan fanera. Amortizatsiya effekti bor, 150 kg gacha vazn ko'taradi. Sifat kafolati.",
     },
     price: "3 200 000 UZS",
-    images: ["/images/products/rocking - 3/1.jpg", "/images/products/rocking - 3/2.jpg", "/images/products/rocking - 3/3.jpg"],
+    images: productImages("rocking - 3"),
   },
   {
     title: { ru: "Классическое кресло-качалка", uz: "Klassik kreslo-kachalka" },
@@ -243,7 +244,7 @@ const chairs: Product[] = [
       uz: "Uy shinamligining timsoli. Mayin tebranish bosimni me'yorlashtiradi. Dam olish va bolani uxlatish uchun ideal.",
     },
     price: "3 200 000 UZS",
-    images: ["/images/products/rocking - 2/1.jpg", "/images/products/rocking - 2/2.jpg", "/images/products/rocking - 2/3.jpg"],
+    images: productImages("rocking - 2"),
   },
   {
     title: { ru: "Кресло для отдыха и релакса", uz: "Dam olish uchun kreslo" },
@@ -252,7 +253,7 @@ const chairs: Product[] = [
       uz: "Karkasi presslangan faneradan, maxsus texnologiyada tayyorlangan. Yon tomonlarga yoqimli amortizatsiya hissini beradi.",
     },
     price: "3 200 000 UZS",
-    images: ["/images/products/rocking - 1/1.jpg", "/images/products/rocking - 1/2.jpg", "/images/products/rocking - 1/3.jpg"],
+    images: productImages("rocking - 1"),
   },
 ];
 
