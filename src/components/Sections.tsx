@@ -139,7 +139,7 @@ const sofas: Product[] = [
       uz: "Yengillik, uslub va qulaylik bitta yechimda. Universal tuzilma mebelni har xil dam olish va kundalik hayot stsenariylariga oson moslashtirishga imkon beradi. Yumshoq formalar va zamonaviy dizayn shinam muhit yaratadi va xonani yanada iliq va jonli qiladi.",
     },
     price: "5 800 000 UZS",
-    images: ["/images/products/lacetti/1.jpg", "/images/products/lacetti/2.jpg", "/images/products/lacetti/3.jpg"],
+    images: ["/images/products/lacetti/1.jpg", "/images/products/lacetti/2.jpg", "/images/products/lacetti/3.jpg", "/images/products/lacetti/4.jpg"],
   },
   {
     title: { ru: 'Угловой диван "Venera"', uz: 'Burchakli divan "Venera"' },
