@@ -5,13 +5,15 @@ import { SmartImage } from "@/components/SmartImage";
 export interface Product {
   title: LocalizedText;
   description: LocalizedText;
+  dimensions?: LocalizedText;
   price: string;
   oldPrice?: string;
   images: string[];
   badge?: LocalizedText;
 }
 
-const TG = "https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20";
+const TG =
+  "https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20";
 const SWIPE_THRESHOLD = 50;
 
 export function ProductCard({ product }: { product: Product }) {
@@ -126,6 +128,14 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="text-[13px] text-[var(--charcoal)]/60 leading-relaxed font-sans">
           {localize(product.description, lang)}
         </p>
+        {product.dimensions && (
+          <p className="text-[12px] text-[var(--charcoal)]/70 leading-relaxed font-sans">
+            <span className="font-semibold text-[var(--charcoal)]">
+              {localize(ui.dimensionsLabel, lang)}:
+            </span>{" "}
+            {localize(product.dimensions, lang)}
+          </p>
+        )}
         <div className="flex items-baseline gap-3 pt-1">
           {isSale ? (
             <>

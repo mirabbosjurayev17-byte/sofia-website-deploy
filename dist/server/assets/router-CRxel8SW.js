@@ -1,7 +1,7 @@
 import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import { createRootRoute, Link, Outlet, HeadContent, Scripts, createFileRoute, lazyRouteComponent, createRouter, useRouter } from "@tanstack/react-router";
 import { useEffect } from "react";
-const appCss = "/assets/styles-CC2Amz30.css";
+const appCss = "/assets/styles-DP5e_ozo.css";
 function ImageProtection() {
   useEffect(() => {
     const onContextMenu = (e) => {
@@ -151,7 +151,7 @@ function RootComponent() {
     /* @__PURE__ */ jsx(Outlet, {})
   ] });
 }
-const $$splitComponentImporter = () => import("./index-Cwo5iGuo.js");
+const $$splitComponentImporter = () => import("./index-B5NQCjhK.js");
 const Route = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter, "component"),
   head: () => ({

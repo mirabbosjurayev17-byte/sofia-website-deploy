@@ -38,8 +38,18 @@ export const ui = {
     { href: "#promo", label: { ru: "Акции", uz: "Aksiyalar" } },
     { href: "#chairs", label: { ru: "Кресла-качалки", uz: "Kreslo-kachalkalar" } },
     { href: "#installments", label: { ru: "Рассрочка", uz: "Muddatli to'lov" } },
-    { href: "#custom", label: { ru: "На заказ", uz: "Buyurtma asosida" } },
+    { href: "#delivery", label: { ru: "Доставка", uz: "Yetkazib berish" } },
     { href: "#contacts", label: { ru: "Контакты", uz: "Kontaktlar" } },
+  ],
+  announcementMessages: [
+    {
+      ru: "Скидки до 30% на популярные модели диванов - ограниченное предложение",
+      uz: "Ommabop divan modellariga 30% gacha chegirma - cheklangan taklif",
+    },
+    {
+      ru: "Бесплатная доставка по всему Узбекистану!",
+      uz: "Butun O'zbekiston bo'ylab bepul yetkazib berish!",
+    },
   ],
   heroTitle: {
     ru: "Подарите уют вашему дому — качество и комфорт",
@@ -70,6 +80,7 @@ export const ui = {
   discussOrder: { ru: "Обсудить заказ", uz: "Buyurtmani muhokama qilish" },
   discountBadge: { ru: "Скидка", uz: "Chegirma" },
   askAvailability: { ru: "Уточнить наличие", uz: "Mavjudligini bilish" },
+  dimensionsLabel: { ru: "Размеры", uz: "O'lchamlar" },
   writeTelegram: { ru: "Написать в Telegram", uz: "Telegram orqali yozish" },
   call: { ru: "Позвонить", uz: "Qo'ng'iroq qilish" },
   installment12: { ru: "Рассрочка на 12 месяцев", uz: "12 oygacha muddatli to'lov" },
@@ -89,7 +100,10 @@ export const ui = {
       },
     },
     {
-      q: { ru: "Вы делаете доставку в другие города Узбекистана?", uz: "O'zbekistonning boshqa shaharlariga yetkazib berasizmi?" },
+      q: {
+        ru: "Вы делаете доставку в другие города Узбекистана?",
+        uz: "O'zbekistonning boshqa shaharlariga yetkazib berasizmi?",
+      },
       a: {
         ru: "Да, мы доставляем мебель по всему Узбекистану.\n\nВ большинстве случаев доставка бесплатная, однако:\n• при покупке по акции или в рассрочку условия могут отличаться.\n\nСроки и детали доставки зависят от вашего города — просто позвоните нам, и мы всё подробно расскажем:\n📞 +998 97 000 33 34",
         uz: "Ha, biz mebelni butun O'zbekiston bo'ylab yetkazib beramiz.\n\nKo'p hollarda yetkazib berish bepul, lekin:\n• aksiya yoki muddatli to'lov bilan xarid qilinganda shartlar farqlanishi mumkin.\n\nMuddat va batafsil ma'lumot shaharingizga bog'liq — bizga qo'ng'iroq qiling, hammasini batafsil aytib beramiz:\n📞 +998 97 000 33 34",
@@ -103,7 +117,10 @@ export const ui = {
       },
     },
     {
-      q: { ru: "У вас мебель только готовая или под заказ?", uz: "Mebellaringiz faqat tayyormi yoki buyurtma asosida ham olasizmi?" },
+      q: {
+        ru: "У вас мебель только готовая или под заказ?",
+        uz: "Mebellaringiz faqat tayyormi yoki buyurtma asosida ham olasizmi?",
+      },
       a: {
         ru: "Мы предлагаем оба варианта:\n• Готовые модели — можно выбрать и забрать сразу.\n• Мебель под заказ — создадим именно то, что нужно вам.\n\nВы можете выбрать:\n✔ размер\n✔ ткань\n✔ цвет\n✔ конфигурацию\n\nСрок изготовления — в среднем 15 дней.\n\nМы поможем воплотить вашу идею в идеальный диван ✨",
         uz: "Biz har ikki variantni ham taklif qilamiz:\n• Tayyor modellar — tanlab darhol olib ketishingiz mumkin.\n• Buyurtma asosida — siz uchun aynan kerakli mebelni yaratamiz.\n\nO'zingiz tanlaysiz:\n✔ o'lcham\n✔ mato\n✔ rang\n✔ konfiguratsiya\n\nTayyorlash muddati — o'rtacha 15 kun.\n\nFikringizni mukammal divanga aylantirishga yordam beramiz ✨",

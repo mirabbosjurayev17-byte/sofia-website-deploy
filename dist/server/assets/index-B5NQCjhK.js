@@ -1,5 +1,6 @@
 import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import { useState, useMemo, createContext, useContext, useEffect, useRef } from "react";
+import { Truck, ShieldCheck, Wrench } from "lucide-react";
 const LocaleContext = createContext(null);
 function LocaleProvider({ children }) {
   const [lang, setLang] = useState("ru");
@@ -26,8 +27,18 @@ const ui = {
     { href: "#promo", label: { ru: "Акции", uz: "Aksiyalar" } },
     { href: "#chairs", label: { ru: "Кресла-качалки", uz: "Kreslo-kachalkalar" } },
     { href: "#installments", label: { ru: "Рассрочка", uz: "Muddatli to'lov" } },
-    { href: "#custom", label: { ru: "На заказ", uz: "Buyurtma asosida" } },
+    { href: "#delivery", label: { ru: "Доставка", uz: "Yetkazib berish" } },
     { href: "#contacts", label: { ru: "Контакты", uz: "Kontaktlar" } }
+  ],
+  announcementMessages: [
+    {
+      ru: "Скидки до 30% на популярные модели диванов - ограниченное предложение",
+      uz: "Ommabop divan modellariga 30% gacha chegirma - cheklangan taklif"
+    },
+    {
+      ru: "Бесплатная доставка по всему Узбекистану!",
+      uz: "Butun O'zbekiston bo'ylab bepul yetkazib berish!"
+    }
   ],
   heroDescription: {
     ru: "Удобные механизмы, ортопедические пружины и ткани с водоотталкивающей пропиткой.",
@@ -52,6 +63,7 @@ const ui = {
   discussOrder: { ru: "Обсудить заказ", uz: "Buyurtmani muhokama qilish" },
   discountBadge: { ru: "Скидка", uz: "Chegirma" },
   askAvailability: { ru: "Уточнить наличие", uz: "Mavjudligini bilish" },
+  dimensionsLabel: { ru: "Размеры", uz: "O'lchamlar" },
   writeTelegram: { ru: "Написать в Telegram", uz: "Telegram orqali yozish" },
   call: { ru: "Позвонить", uz: "Qo'ng'iroq qilish" },
   installment12: { ru: "Рассрочка на 12 месяцев", uz: "12 oygacha muddatli to'lov" },
@@ -71,7 +83,10 @@ const ui = {
       }
     },
     {
-      q: { ru: "Вы делаете доставку в другие города Узбекистана?", uz: "O'zbekistonning boshqa shaharlariga yetkazib berasizmi?" },
+      q: {
+        ru: "Вы делаете доставку в другие города Узбекистана?",
+        uz: "O'zbekistonning boshqa shaharlariga yetkazib berasizmi?"
+      },
       a: {
         ru: "Да, мы доставляем мебель по всему Узбекистану.\n\nВ большинстве случаев доставка бесплатная, однако:\n• при покупке по акции или в рассрочку условия могут отличаться.\n\nСроки и детали доставки зависят от вашего города — просто позвоните нам, и мы всё подробно расскажем:\n📞 +998 97 000 33 34",
         uz: "Ha, biz mebelni butun O'zbekiston bo'ylab yetkazib beramiz.\n\nKo'p hollarda yetkazib berish bepul, lekin:\n• aksiya yoki muddatli to'lov bilan xarid qilinganda shartlar farqlanishi mumkin.\n\nMuddat va batafsil ma'lumot shaharingizga bog'liq — bizga qo'ng'iroq qiling, hammasini batafsil aytib beramiz:\n📞 +998 97 000 33 34"
@@ -85,7 +100,10 @@ const ui = {
       }
     },
     {
-      q: { ru: "У вас мебель только готовая или под заказ?", uz: "Mebellaringiz faqat tayyormi yoki buyurtma asosida ham olasizmi?" },
+      q: {
+        ru: "У вас мебель только готовая или под заказ?",
+        uz: "Mebellaringiz faqat tayyormi yoki buyurtma asosida ham olasizmi?"
+      },
       a: {
         ru: "Мы предлагаем оба варианта:\n• Готовые модели — можно выбрать и забрать сразу.\n• Мебель под заказ — создадим именно то, что нужно вам.\n\nВы можете выбрать:\n✔ размер\n✔ ткань\n✔ цвет\n✔ конфигурацию\n\nСрок изготовления — в среднем 15 дней.\n\nМы поможем воплотить вашу идею в идеальный диван ✨",
         uz: "Biz har ikki variantni ham taklif qilamiz:\n• Tayyor modellar — tanlab darhol olib ketishingiz mumkin.\n• Buyurtma asosida — siz uchun aynan kerakli mebelni yaratamiz.\n\nO'zingiz tanlaysiz:\n✔ o'lcham\n✔ mato\n✔ rang\n✔ konfiguratsiya\n\nTayyorlash muddati — o'rtacha 15 kun.\n\nFikringizni mukammal divanga aylantirishga yordam beramiz ✨"
@@ -113,11 +131,6 @@ const ui = {
   managerTelegram: { ru: "Менеджер (Telegram)", uz: "Menejer (Telegram)" },
   cityCountry: { ru: "Ташкент, Узбекистан", uz: "Toshkent, O'zbekiston" },
   addressLine: { ru: "Ташкент, ул. Мукими 98А", uz: "Toshkent, Muqimiy ko'chasi 98A" },
-  // Top promo bar
-  topBarPromo: {
-    ru: "Скидки до 30% на популярные модели диванов — ограниченное предложение",
-    uz: "Ommabop divan modellariga 30% gacha chegirma — cheklangan taklif"
-  },
   heroCallNow: { ru: "Позвонить сейчас", uz: "Hozir qo'ng'iroq qiling" },
   // Map section (showroom CTA)
   mapEyebrow: { ru: "Шоу-рум", uz: "Shou-rum" },
@@ -138,17 +151,49 @@ const ui = {
 function Header() {
   const { lang, setLang } = useLocale();
   const [open, setOpen] = useState(false);
+  const [announcementIndex, setAnnouncementIndex] = useState(0);
+  const announcementMessages = ui.announcementMessages.map((message) => localize(message, lang));
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setAnnouncementIndex((current) => (current + 1) % announcementMessages.length);
+    }, 5e3);
+    return () => window.clearInterval(timer);
+  }, [announcementMessages.length]);
   return /* @__PURE__ */ jsxs("header", { className: "fixed top-0 left-0 right-0 z-50 bg-[var(--ivory)] border-b border-[var(--charcoal)]/10", children: [
-    /* @__PURE__ */ jsx("div", { className: "bg-[var(--charcoal)] text-white", children: /* @__PURE__ */ jsx("div", { className: "mx-auto max-w-[1400px] px-4 lg:px-10 h-8 lg:h-9 flex items-center justify-center", children: /* @__PURE__ */ jsx("p", { className: "font-sans text-[11px] lg:text-[12px] tracking-[0.05em] text-center text-white/95 truncate", children: localize(ui.topBarPromo, lang) }) }) }),
+    /* @__PURE__ */ jsx("div", { className: "bg-[var(--charcoal)] text-white", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-[1400px] h-8 lg:h-9 overflow-hidden", children: [
+      /* @__PURE__ */ jsx("div", { className: "hidden md:flex h-full items-center justify-center px-4 lg:px-10", children: /* @__PURE__ */ jsx(
+        "p",
+        {
+          className: "announcement-fade font-sans text-[12px] tracking-[0.05em] text-center text-white/95",
+          children: announcementMessages[announcementIndex]
+        },
+        `${lang}-${announcementIndex}`
+      ) }),
+      /* @__PURE__ */ jsx("div", { className: "md:hidden h-full flex items-center overflow-hidden", children: /* @__PURE__ */ jsx("div", { className: "announcement-marquee flex min-w-max items-center whitespace-nowrap", children: [...announcementMessages, ...announcementMessages].map((message, index) => /* @__PURE__ */ jsx(
+        "span",
+        {
+          className: "font-sans text-[11px] tracking-[0.05em] text-white/95 px-8",
+          children: message
+        },
+        `${message}-${index}`
+      )) }) })
+    ] }) }),
     /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-[1400px] px-5 lg:px-10 h-16 lg:h-20 flex items-center justify-between", children: [
-      /* @__PURE__ */ jsxs("a", { href: "#", className: "font-serif text-xl lg:text-2xl tracking-tight text-[var(--charcoal)]", children: [
-        "SOFIA",
-        /* @__PURE__ */ jsx("span", { className: "text-[var(--camel)]", children: "·" }),
-        "MEBEL"
-      ] }),
+      /* @__PURE__ */ jsxs(
+        "a",
+        {
+          href: "#",
+          className: "font-serif text-xl lg:text-2xl tracking-tight text-[var(--charcoal)]",
+          children: [
+            "SOFIA",
+            /* @__PURE__ */ jsx("span", { className: "text-[var(--camel)]", children: "·" }),
+            "MEBEL"
+          ]
+        }
+      ),
       /* @__PURE__ */ jsx("nav", { className: "hidden lg:flex items-center gap-9", children: ui.nav.map((n) => /* @__PURE__ */ jsx(
         "a",
         {
@@ -170,7 +215,14 @@ function Header() {
             children: /* @__PURE__ */ jsx("svg", { width: "22", height: "22", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ jsx("path", { d: "M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 8.16l-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12L8.47 13.4l-2.81-.88c-.61-.19-.62-.61.13-.9l10.99-4.24c.51-.18.96.12.77.78z" }) })
           }
         ),
-        /* @__PURE__ */ jsx("a", { href: "tel:+998970003334", className: "text-sm text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors tracking-wide", children: "+998 97 000 33 34" }),
+        /* @__PURE__ */ jsx(
+          "a",
+          {
+            href: "tel:+998970003334",
+            className: "text-sm text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors tracking-wide",
+            children: "+998 97 000 33 34"
+          }
+        ),
         /* @__PURE__ */ jsxs("div", { className: "text-sm tracking-wide text-[var(--charcoal)]/60", children: [
           /* @__PURE__ */ jsx(
             "button",
@@ -219,7 +271,18 @@ function Header() {
             onClick: () => setOpen(true),
             "aria-label": "Меню",
             className: "text-[var(--charcoal)] p-2 -mr-2",
-            children: /* @__PURE__ */ jsx("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ jsx("path", { d: "M3 6h18M3 12h18M3 18h18" }) })
+            children: /* @__PURE__ */ jsx(
+              "svg",
+              {
+                width: "24",
+                height: "24",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "1.5",
+                children: /* @__PURE__ */ jsx("path", { d: "M3 6h18M3 12h18M3 18h18" })
+              }
+            )
           }
         )
       ] })
@@ -256,7 +319,26 @@ function Header() {
                   }
                 )
               ] }),
-              /* @__PURE__ */ jsx("button", { onClick: () => setOpen(false), "aria-label": "Закрыть", className: "p-2 -mr-2 text-[var(--charcoal)]", children: /* @__PURE__ */ jsx("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ jsx("path", { d: "M6 6l12 12M18 6L6 18" }) }) })
+              /* @__PURE__ */ jsx(
+                "button",
+                {
+                  onClick: () => setOpen(false),
+                  "aria-label": "Закрыть",
+                  className: "p-2 -mr-2 text-[var(--charcoal)]",
+                  children: /* @__PURE__ */ jsx(
+                    "svg",
+                    {
+                      width: "24",
+                      height: "24",
+                      viewBox: "0 0 24 24",
+                      fill: "none",
+                      stroke: "currentColor",
+                      strokeWidth: "1.5",
+                      children: /* @__PURE__ */ jsx("path", { d: "M6 6l12 12M18 6L6 18" })
+                    }
+                  )
+                }
+              )
             ] })
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "flex flex-col h-[calc(100%-4rem)] justify-between p-6", children: [
@@ -397,6 +479,14 @@ function ProductCard({ product }) {
     /* @__PURE__ */ jsxs("div", { className: "pt-5 pb-2 flex flex-col gap-2", children: [
       /* @__PURE__ */ jsx("h3", { className: "font-sans font-bold text-[15px] text-[var(--charcoal)] leading-snug tracking-tight", children: localize(product.title, lang) }),
       /* @__PURE__ */ jsx("p", { className: "text-[13px] text-[var(--charcoal)]/60 leading-relaxed font-sans", children: localize(product.description, lang) }),
+      product.dimensions && /* @__PURE__ */ jsxs("p", { className: "text-[12px] text-[var(--charcoal)]/70 leading-relaxed font-sans", children: [
+        /* @__PURE__ */ jsxs("span", { className: "font-semibold text-[var(--charcoal)]", children: [
+          localize(ui.dimensionsLabel, lang),
+          ":"
+        ] }),
+        " ",
+        localize(product.dimensions, lang)
+      ] }),
       /* @__PURE__ */ jsx("div", { className: "flex items-baseline gap-3 pt-1", children: isSale ? /* @__PURE__ */ jsxs(Fragment, { children: [
         /* @__PURE__ */ jsx("span", { className: "font-sans font-bold text-[var(--charcoal)] tracking-tight", children: fmtPrice(product.price) }),
         /* @__PURE__ */ jsx("span", { className: "text-sm text-[var(--charcoal)]/40 line-through font-sans", children: fmtPrice(product.oldPrice) })
@@ -464,6 +554,10 @@ function productImages(folder) {
   }
   return Array.from({ length: count }, (_, i) => `/images/products/${folder}/${i + 1}.jpg`);
 }
+const size = (ru, uz) => ({
+  ru,
+  uz: uz ?? ru.replaceAll("см", "sm")
+});
 const sofas = [
   {
     title: { ru: 'Угловой диван "VALENSIA"', uz: 'Burchakli divan "VALENSIA"' },
@@ -471,6 +565,7 @@ const sofas = [
       ru: "Сочетание уюта и функциональности для современной гостиной. Просторная модульная форма позволяет комфортно разместиться всей семье, а турецкая технология сборки и ножки из натурального дерева обеспечивают надёжность на годы. Идеален как для ежедневного отдыха, так и для приёма гостей.",
       uz: "Zamonaviy mehmonxona uchun shinamlik va funksionallik uyg'unligi. Keng modulli forma butun oilani qulay joylashtirishga imkon beradi, turkiya texnologiyasi va tabiiy yog'och oyoqchalar esa uzoq yillik bardoshlilikni ta'minlaydi. Har kungi dam olish va mehmon kutish uchun ideal."
     },
+    dimensions: size("300 x 180 x 90 см"),
     price: "11 000 000 UZS",
     images: productImages("valensia")
   },
@@ -480,6 +575,7 @@ const sofas = [
       ru: "Идеальный выбор для тех, кто ценит комфорт и практичность в каждой детали. Свободные линии и размер 270×230 см создают атмосферу уюта для всей семьи, а два открывающихся пуфа и вместительный бельевой отсек помогут сохранить порядок и всё необходимое под рукой.",
       uz: "Har bir tafsilotda qulaylik va amaliylikni qadrlaydiganlar uchun ideal tanlov. Keng forma va 270×230 sm o'lcham butun oila uchun shinam muhit yaratadi, ikki ochiladigan puf va sig'imli saqlash qutisi esa tartib va kerakli narsalarni qo'l ostida saqlashga yordam beradi."
     },
+    dimensions: size("270 x 230 x 90 см"),
     price: "8 500 000 UZS",
     images: productImages("eva")
   },
@@ -489,6 +585,7 @@ const sofas = [
       ru: 'Надёжный спутник для ежедневного использования и спокойного сна. Механизм "еврокнижка" работает легко и бесшумно, а ширина 240 см и ровная спальная поверхность обеспечивают настоящий отдых. Практичное решение для всей семьи в любой комнате.',
       uz: `Har kungi foydalanish va tinch uyqu uchun ishonchli hamroh. "Yevroknijka" mexanizmi yengil va shovqinsiz ishlaydi, kengligi 240 sm va tekis yotoq yuzasi esa haqiqiy dam olishni ta'minlaydi. Har qanday xona uchun butun oilaga mos amaliy yechim.`
     },
+    dimensions: size("240 x 100 x 85 см"),
     price: "5 800 000 UZS",
     images: productImages("tik-tak")
   },
@@ -498,6 +595,7 @@ const sofas = [
       ru: "Элегантное решение, которое объединяет стиль и практичность в каждой линии. Размер 270×155 см идеально подходит для уютных вечеров всей семьёй, а вместительные бельевые отсеки в атаманке и подлокотниках делают его исключительно удобным для ежедневного использования.",
       uz: "Har bir chiziqda uslub va amaliylikni birlashtirgan nafis yechim. 270×155 sm o'lcham butun oila bilan shinam oqshomlar uchun ideal mos keladi, atamanka va qo'ltiq tayoqlardagi keng saqlash qutilari esa har kungi foydalanishni g'oyat qulay qiladi."
     },
+    dimensions: size("270 x 155 x 90 см"),
     price: "7 000 000 UZS",
     images: productImages("Bella")
   },
@@ -507,6 +605,7 @@ const sofas = [
       ru: "Идеальное решение для уютной кухни, где важны комфорт и практичность. Компактная форма позволяет рационально использовать пространство, а мягкая обивка делает каждое чаепитие особенно приятным. Продуманная конструкция с ящиками для хранения помогает поддерживать порядок, а стильный дизайн гармонично вписывается в любой интерьер.",
       uz: "Qulaylik va amaliylik muhim bo'lgan shinam oshxona uchun ideal yechim. Ixcham forma joydan oqilona foydalanishga imkon beradi, yumshoq qoplama esa har bir choy ichish damini alohida yoqimli qiladi. Saqlash qutilari bilan o'ylangan tuzilma tartibni saqlashga yordam beradi, nafis dizayn esa istalgan interyerga uyg'un mos tushadi."
     },
+    dimensions: size("215 x 165 см"),
     price: "5 300 000 UZS",
     images: productImages("Ракушка")
   },
@@ -516,6 +615,10 @@ const sofas = [
       ru: "Многофункциональное решение для всей семьи, где сочетаются комфорт и универсальность. Просторный диван и кресла создают полноценную зону отдыха, а возможность трансформации делает его удобным для ежедневного использования. Мягкие формы, продуманная эргономика и классический дизайн создают атмосферу уюта и идеально подходят как для отдыха, так и для приёма гостей.",
       uz: "Qulaylik va ko'p qirralilik uyg'unlashgan butun oila uchun ko'p funksiyali yechim. Keng divan va kreslolar to'laqonli dam olish maydonini yaratadi, transformatsiya imkoniyati esa uni har kungi foydalanish uchun qulay qiladi. Yumshoq formalar, o'ylangan ergonomika va klassik dizayn shinam muhit yaratadi va ham dam olish, ham mehmon kutish uchun ideal mos keladi."
     },
+    dimensions: size(
+      "диван 220 x 100 x 85 см, кресла по 90 x 90 x 85 см",
+      "divan 220 x 100 x 85 sm, kreslolar 90 x 90 x 85 sm"
+    ),
     price: "8 500 000 UZS",
     images: productImages("york")
   },
@@ -525,15 +628,20 @@ const sofas = [
       ru: "Стильное и практичное решение для современного дома. Благодаря широкому спальному месту он легко заменяет кровать и обеспечивает комфортный сон каждый день. Элегантный дизайн, вместительный бельевой ящик и удобный механизм трансформации делают его идеальным выбором для тех, кто ценит функциональность и уют.",
       uz: "Zamonaviy uy uchun nafis va amaliy yechim. Keng yotoq joyi tufayli u karavotni bemalol almashtiradi va har kuni qulay uyquni ta'minlaydi. Nafis dizayn, sig'imli saqlash qutisi va qulay transformatsiya mexanizmi uni funksionallik va shinamlikni qadrlaydiganlar uchun ideal tanlovga aylantiradi."
     },
+    dimensions: size("220 x 100 x 85 см"),
     price: "6 200 000 UZS",
     images: productImages("VIOLA")
   },
   {
-    title: { ru: 'Угловой раскладной диван "Мартель"', uz: `Burchakli yig'iladigan divan "Martel"` },
+    title: {
+      ru: 'Угловой раскладной диван "Мартель"',
+      uz: `Burchakli yig'iladigan divan "Martel"`
+    },
     description: {
       ru: "Сочетание современного дизайна и максимального комфорта для всей семьи. Просторная конструкция позволяет удобно разместиться, а раскладной механизм превращает его в полноценное спальное место. Мягкие подушки, практичные материалы и продуманная форма делают его отличным выбором для ежедневного отдыха и уютных вечеров.",
       uz: "Zamonaviy dizayn va butun oila uchun maksimal qulaylik uyg'unligi. Keng tuzilma qulay joylashishga imkon beradi, yig'iladigan mexanizm esa uni to'laqonli yotoq joyiga aylantiradi. Yumshoq yostiqlar, amaliy materiallar va o'ylangan forma uni har kungi dam olish va shinam oqshomlar uchun ajoyib tanlovga aylantiradi."
     },
+    dimensions: size("300 x 180 x 90 см"),
     price: "6 800 000 UZS",
     images: productImages("Мартелл")
   },
@@ -543,15 +651,20 @@ const sofas = [
       ru: "Идеальное решение для небольших пространств, где важен каждый сантиметр. Несмотря на свои размеры, он легко трансформируется в полноценное спальное место и дарит комфортный отдых. Стильный внешний вид и продуманная конструкция делают его отличным выбором для современных квартир, где ценится практичность и уют.",
       uz: "Har bir santimetr muhim bo'lgan kichik xonalar uchun ideal yechim. O'lchamiga qaramay, u to'laqonli yotoq joyiga oson aylanadi va qulay dam olish baxsh etadi. Nafis tashqi ko'rinish va o'ylangan tuzilma uni amaliylik va shinamlik qadrlanadigan zamonaviy kvartiralar uchun ajoyib tanlovga aylantiradi."
     },
+    dimensions: size("190 x 95 x 85 см"),
     price: "4 500 000 UZS",
     images: productImages("Мини-Йорк")
   },
   {
-    title: { ru: 'Угловой раскладной диван "Нота PLUS"', uz: `Burchakli yig'iladigan divan "Nota PLUS"` },
+    title: {
+      ru: 'Угловой раскладной диван "Нота PLUS"',
+      uz: `Burchakli yig'iladigan divan "Nota PLUS"`
+    },
     description: {
       ru: "Создан для тех, кто ценит простор и комфорт в повседневной жизни. Большое спальное место позволяет использовать его как полноценную кровать, а вместительные ящики помогают удобно хранить вещи. Современный дизайн и мягкие формы создают уютную атмосферу и делают его центром притяжения в любой гостиной.",
       uz: "Kundalik hayotda kenglik va qulaylikni qadrlaydiganlar uchun yaratilgan. Katta yotoq joyi uni to'laqonli karavot sifatida ishlatishga imkon beradi, sig'imli qutilar esa narsalarni qulay saqlashga yordam beradi. Zamonaviy dizayn va yumshoq formalar shinam muhit yaratadi va uni har qanday mehmonxonaning tortish markaziga aylantiradi."
     },
+    dimensions: size("300 x 180 x 90 см"),
     price: "6 800 000 UZS",
     images: productImages("Нота PLUS уголок")
   },
@@ -561,6 +674,7 @@ const sofas = [
       ru: "Гармоничное сочетание удобства и функциональности. Просторное спальное место обеспечивает комфортный сон, а надёжный механизм делает трансформацию лёгкой и быстрой. Минималистичный дизайн позволяет легко вписать его в любой интерьер, создавая ощущение уюта и спокойствия.",
       uz: "Qulaylik va funksionallikning uyg'un birikmasi. Keng yotoq joyi qulay uyqu bilan ta'minlaydi, ishonchli mexanizm esa transformatsiyani yengil va tez qiladi. Minimalistik dizayn uni har qanday interyerga oson moslashtiradi va shinamlik hamda osoyishtalik tuyg'usini yaratadi."
     },
+    dimensions: size("220 x 100 x 85 см"),
     price: "5 800 000 UZS",
     images: productImages("Нота Plus")
   },
@@ -570,24 +684,36 @@ const sofas = [
       ru: "Универсальное решение для большой семьи и уютных вечеров. Просторная конструкция позволяет удобно разместиться, а дополнительные пуфы добавляют гибкости в использовании. Практичные материалы и вместительные ящики делают его не только красивым, но и максимально удобным в повседневной жизни.",
       uz: "Katta oila va shinam oqshomlar uchun universal yechim. Keng tuzilma qulay joylashishga imkon beradi, qo'shimcha puflar esa foydalanishda moslashuvchanlikni oshiradi. Amaliy materiallar va sig'imli qutilar uni nafaqat chiroyli, balki kundalik hayotda eng qulay mebelga aylantiradi."
     },
+    dimensions: size("300 x 180 x 90 см"),
     price: "8 500 000 UZS",
     images: productImages("original")
   },
   {
-    title: { ru: 'Угловой раскладной диван "BAR-уголок"', uz: `Burchakli yig'iladigan divan "BAR-burchak"` },
+    title: {
+      ru: 'Угловой раскладной диван "BAR-уголок"',
+      uz: `Burchakli yig'iladigan divan "BAR-burchak"`
+    },
     description: {
       ru: "Стильное решение с акцентом на комфорт и функциональность. Просторное угловое расположение позволяет создать удобную зону отдыха, а раскладной механизм превращает его в полноценное спальное место. Мягкие сиденья и продуманная конструкция делают его идеальным выбором для всей семьи и ежедневного использования.",
       uz: "Qulaylik va funksionallikka urg'u bergan nafis yechim. Keng burchakli joylashuv qulay dam olish maydonini yaratishga imkon beradi, yig'iladigan mexanizm esa uni to'laqonli yotoq joyiga aylantiradi. Yumshoq o'rindiqlar va o'ylangan tuzilma uni butun oila va har kungi foydalanish uchun ideal tanlovga aylantiradi."
     },
+    dimensions: size("300 x 180 x 90 см"),
     price: "6 800 000 UZS",
     images: productImages("BAR-уголок")
   },
   {
-    title: { ru: "Классическая раскладная тройка (Диван и 2 кресла)", uz: "Klassik yig'iladigan troyka (Divan va 2 kreslo)" },
+    title: {
+      ru: "Классическая раскладная тройка (Диван и 2 кресла)",
+      uz: "Klassik yig'iladigan troyka (Divan va 2 kreslo)"
+    },
     description: {
       ru: "Проверенное временем решение для комфортного отдыха всей семьи. Просторный диван и удобные кресла создают гармоничную зону уюта и идеально подходят для приёма гостей. Функция раскладывания делает диван практичным для ежедневного использования, сочетая стиль и удобство в одном комплекте.",
       uz: "Butun oila uchun qulay dam olishning vaqt sinovidan o'tgan yechimi. Keng divan va qulay kreslolar uyg'un shinamlik maydonini yaratadi va mehmon kutish uchun ideal mos keladi. Yig'ilish funksiyasi divanni har kungi foydalanish uchun amaliy qiladi va bitta to'plamda uslub va qulaylikni birlashtiradi."
     },
+    dimensions: size(
+      "диван 220 x 100 x 85 см, кресла по 90 x 90 x 85 см",
+      "divan 220 x 100 x 85 sm, kreslolar 90 x 90 x 85 sm"
+    ),
     price: "5 800 000 UZS",
     images: productImages("Classic Troyka")
   },
@@ -597,6 +723,10 @@ const sofas = [
       ru: "Лёгкость, стиль и комфорт в одном решении. Универсальная конструкция позволяет легко адаптировать мебель под разные сценарии отдыха и использовать её в повседневной жизни. Мягкие формы и современный дизайн создают уютную атмосферу, делая пространство более тёплым и живым.",
       uz: "Yengillik, uslub va qulaylik bitta yechimda. Universal tuzilma mebelni har xil dam olish va kundalik hayot stsenariylariga oson moslashtirishga imkon beradi. Yumshoq formalar va zamonaviy dizayn shinam muhit yaratadi va xonani yanada iliq va jonli qiladi."
     },
+    dimensions: size(
+      "диван 190 x 95 x 85 см, кресла по 90 x 90 x 85 см",
+      "divan 190 x 95 x 85 sm, kreslolar 90 x 90 x 85 sm"
+    ),
     price: "5 800 000 UZS",
     images: productImages("lacetti")
   },
@@ -606,6 +736,7 @@ const sofas = [
       ru: "Сочетание элегантности и практичности для современной гостиной. Просторная форма позволяет удобно разместиться всей семье, а вместительные ящики добавляют функциональности. Мягкие подушки и продуманный дизайн делают его идеальным для ежедневного отдыха и расслабления.",
       uz: "Zamonaviy mehmonxona uchun nafislik va amaliylik uyg'unligi. Keng forma butun oilani qulay joylashtirishga imkon beradi, sig'imli qutilar esa funksionallikni oshiradi. Yumshoq yostiqlar va o'ylangan dizayn uni har kungi dam olish va hordiq chiqarish uchun ideal qiladi."
     },
+    dimensions: size("300 x 180 x 90 см"),
     price: "8 500 000 UZS",
     images: productImages("venera")
   },
@@ -615,6 +746,7 @@ const sofas = [
       ru: "Баланс между комфортом и современным стилем. Просторная конструкция и мягкие подушки создают идеальные условия для отдыха после долгого дня. Практичные решения и качественные материалы обеспечивают долговечность и удобство в ежедневном использовании всей семьей.",
       uz: "Qulaylik va zamonaviy uslub o'rtasidagi muvozanat. Keng tuzilma va yumshoq yostiqlar uzoq kundan keyin dam olish uchun ideal sharoit yaratadi. Amaliy yechimlar va sifatli materiallar uni butun oila tomonidan har kungi foydalanishda bardoshli va qulay qiladi."
     },
+    dimensions: size("300 x 180 x 90 см"),
     price: "7 300 000 UZS",
     images: productImages("VIOLA уголок")
   },
@@ -624,6 +756,7 @@ const sofas = [
       ru: "Компактное и удобное решение с полноценным спальным местом. Механизм трансформации позволяет быстро разложить диван, обеспечивая комфортный сон каждый день. Отличный выбор для небольших помещений, где важны функциональность, экономия пространства и уют в ежедневной жизни.",
       uz: "To'laqonli yotoq joyi bilan ixcham va qulay yechim. Transformatsiya mexanizmi divanni tezda yoyishga imkon beradi va har kuni qulay uyquni ta'minlaydi. Funksionallik, joy tejash va kundalik hayotda shinamlik muhim bo'lgan kichik xonalar uchun ajoyib tanlov."
     },
+    dimensions: size("220 x 100 x 85 см"),
     price: "5 300 000 UZS",
     images: productImages("akkordeon")
   },
@@ -633,6 +766,7 @@ const sofas = [
       ru: "Современное решение для комфортного отдыха и сна. Глубокое сиденье и мягкая спинка обеспечивают максимальное удобство в течение дня всей семье. Благодаря надёжному механизму трансформации он легко превращается в просторное спальное место, создавая уют в вашем доме каждый день.",
       uz: "Qulay dam olish va uyqu uchun zamonaviy yechim. Chuqur o'rindiq va yumshoq orqa suyanchiq butun oilaga kun davomida maksimal qulaylikni ta'minlaydi. Ishonchli transformatsiya mexanizmi tufayli u keng yotoq joyiga oson aylanadi va uyingizda har kuni shinamlik yaratadi."
     },
+    dimensions: size("220 x 100 x 85 см"),
     price: "5 300 000 UZS",
     images: productImages("spark")
   }
@@ -644,6 +778,7 @@ const promos = [
       ru: 'Многофункциональный диван для всей семьи. Размер 260×150 см, механизм "дельфин" и ортопедические пружины обеспечивают комфорт и долгую службу.',
       uz: `Butun oila uchun ko'p funksiyali divan. O'lchami 260×150 sm, "delfin" mexanizmi va ortopedik prujinalar uzoq vaqt qulaylik va bardoshlilikni ta'minlaydi.`
     },
+    dimensions: size("260 x 150 x 90 см"),
     price: "4 760 000 UZS",
     oldPrice: "6 800 000 UZS",
     images: productImages("happy"),
@@ -655,6 +790,7 @@ const promos = [
       ru: "Эргономичный вариант для комфортного отдыха. Размер 260×160 см, прочный металлический каркас, сторону угла можно менять под любую планировку.",
       uz: "O'lchami 260x160 sm. Metall karkas, burchak tomoni almashtiriladi."
     },
+    dimensions: size("260 x 160 x 90 см"),
     price: "5 840 000 UZS",
     oldPrice: "7 300 000 UZS",
     images: productImages("estel"),
@@ -666,6 +802,7 @@ const promos = [
       ru: "Эргономичный комплект для комфортного отдыха. Размер 265×150 см, ППУ плотностью 48 и вместительный отсек для хранения белья.",
       uz: "O'lchami 265x150 sm. PPU 48 zichlik, katta saqlash qutisi."
     },
+    dimensions: size("265 x 150 x 90 см"),
     price: "5 440 000 UZS",
     oldPrice: "6 800 000 UZS",
     images: productImages("laura"),
@@ -677,6 +814,7 @@ const promos = [
       ru: 'Ширина 193 см. ППУ с эффектом памяти "memory foam", двойной механизм.',
       uz: 'Kengligi 193 sm. PPU "memory foam" effekti bilan, ikki mexanizm.'
     },
+    dimensions: size("193 x 100 x 85 см"),
     price: "4 400 000 UZS",
     oldPrice: "5 500 000 UZS",
     images: productImages("york plus"),
@@ -690,6 +828,7 @@ const chairs = [
       ru: "Материал: прессованная фанера. Эффект амортизации, выдерживает вес до 150 кг. Гарантия качества.",
       uz: "Material: presslangan fanera. Amortizatsiya effekti bor, 150 kg gacha vazn ko'taradi. Sifat kafolati."
     },
+    dimensions: size("90 x 90 x 85 см"),
     price: "3 200 000 UZS",
     images: productImages("rocking - 3")
   },
@@ -699,15 +838,17 @@ const chairs = [
       ru: "Символ домашнего уюта. Плавное раскачивание нормализует давление. Идеально для релакса и убаюкивания малыша.",
       uz: "Uy shinamligining timsoli. Mayin tebranish bosimni me'yorlashtiradi. Dam olish va bolani uxlatish uchun ideal."
     },
+    dimensions: size("90 x 90 x 85 см"),
     price: "3 200 000 UZS",
     images: productImages("rocking - 2")
   },
   {
     title: { ru: "Кресло для отдыха и релакса", uz: "Dam olish uchun kreslo" },
     description: {
-      ru: "Каркас из прессованной фанеры, изготовлен по специальной технологии. Создаёт приятное ощущение амортизации в стороны.",
+      ru: "Каркас из прессованной фанеры изготовлен по специальной технологии. Создаёт приятное ощущение амортизации в стороны.",
       uz: "Karkasi presslangan faneradan, maxsus texnologiyada tayyorlangan. Yon tomonlarga yoqimli amortizatsiya hissini beradi."
     },
+    dimensions: size("90 x 90 x 85 см"),
     price: "3 200 000 UZS",
     images: productImages("rocking - 1")
   }
@@ -753,7 +894,18 @@ function Hero() {
             className: "inline-flex items-center justify-center gap-3 bg-[var(--camel)] hover:bg-[var(--camel-dark)] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase transition-colors",
             children: [
               localize(ui.showCatalog, lang),
-              /* @__PURE__ */ jsx("svg", { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ jsx("path", { d: "M5 12h14M13 6l6 6-6 6" }) })
+              /* @__PURE__ */ jsx(
+                "svg",
+                {
+                  width: "18",
+                  height: "18",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "1.5",
+                  children: /* @__PURE__ */ jsx("path", { d: "M5 12h14M13 6l6 6-6 6" })
+                }
+              )
             ]
           }
         ),
@@ -764,7 +916,20 @@ function Hero() {
             className: "inline-flex items-center justify-center gap-3 border border-white/40 hover:border-[var(--camel)] hover:text-[var(--camel)] text-white px-7 py-4 transition-colors",
             "aria-label": localize(ui.heroCallNow, lang),
             children: [
-              /* @__PURE__ */ jsx("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ jsx("path", { d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" }) }),
+              /* @__PURE__ */ jsx(
+                "svg",
+                {
+                  width: "20",
+                  height: "20",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "1.6",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  children: /* @__PURE__ */ jsx("path", { d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" })
+                }
+              ),
               /* @__PURE__ */ jsx("span", { className: "font-sans font-semibold text-base lg:text-lg tracking-wide", children: "+998 97 000 33 34" })
             ]
           }
@@ -811,22 +976,47 @@ function Installments() {
         "Muddatli to'lovga ",
         /* @__PURE__ */ jsx("span", { className: "text-[var(--camel)] italic", children: "mebel" })
       ] }) }),
-      /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: banks.map((b) => /* @__PURE__ */ jsxs("div", { className: "flex items-baseline justify-between border-b border-[var(--charcoal)]/15 pb-4", children: [
-        /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("p", { className: "font-serif text-lg text-[var(--charcoal)]", children: b.name }),
-          /* @__PURE__ */ jsx("p", { className: "text-sm text-[var(--charcoal)]/70", children: b.text })
-        ] }),
-        b.note && /* @__PURE__ */ jsx("span", { className: "text-[var(--camel)] font-medium", children: b.note })
-      ] }, b.name)) }),
+      /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: banks.map((b) => /* @__PURE__ */ jsxs(
+        "div",
+        {
+          className: "flex items-baseline justify-between border-b border-[var(--charcoal)]/15 pb-4",
+          children: [
+            /* @__PURE__ */ jsxs("div", { children: [
+              /* @__PURE__ */ jsx("p", { className: "font-serif text-lg text-[var(--charcoal)]", children: b.name }),
+              /* @__PURE__ */ jsx("p", { className: "text-sm text-[var(--charcoal)]/70", children: b.text })
+            ] }),
+            b.note && /* @__PURE__ */ jsx("span", { className: "text-[var(--camel)] font-medium", children: b.note })
+          ]
+        },
+        b.name
+      )) }),
       /* @__PURE__ */ jsx("p", { className: "text-xs text-[var(--charcoal)]/60 leading-relaxed max-w-md", children: localize(ui.installmentNote, lang) })
     ] }),
-    /* @__PURE__ */ jsx("div", { className: "relative min-h-[400px] lg:min-h-full", children: /* @__PURE__ */ jsx(SmartImage, { src: "/images/sections/installment.jpg", alt: "Интерьер с мебелью SOFIA-MEBEL", loading: "lazy", wrapperClassName: "absolute inset-0 w-full h-full", className: "w-full h-full object-cover" }) })
+    /* @__PURE__ */ jsx("div", { className: "relative min-h-[400px] lg:min-h-full", children: /* @__PURE__ */ jsx(
+      SmartImage,
+      {
+        src: "/images/sections/installment.jpg",
+        alt: "Интерьер с мебелью SOFIA-MEBEL",
+        loading: "lazy",
+        wrapperClassName: "absolute inset-0 w-full h-full",
+        className: "w-full h-full object-cover"
+      }
+    ) })
   ] }) });
 }
 function CustomProduction() {
   const { lang } = useLocale();
   return /* @__PURE__ */ jsx("section", { id: "custom", className: "bg-white", children: /* @__PURE__ */ jsxs("div", { className: "grid lg:grid-cols-2", children: [
-    /* @__PURE__ */ jsx("div", { className: "relative min-h-[400px] lg:min-h-[640px] order-2 lg:order-1", children: /* @__PURE__ */ jsx(SmartImage, { src: "/images/sections/custom.jpg", alt: "Производство мебели на заказ", loading: "lazy", wrapperClassName: "absolute inset-0 w-full h-full", className: "w-full h-full object-cover" }) }),
+    /* @__PURE__ */ jsx("div", { className: "relative min-h-[400px] lg:min-h-[640px] order-2 lg:order-1", children: /* @__PURE__ */ jsx(
+      SmartImage,
+      {
+        src: "/images/sections/custom.jpg",
+        alt: "Производство мебели на заказ",
+        loading: "lazy",
+        wrapperClassName: "absolute inset-0 w-full h-full",
+        className: "w-full h-full object-cover"
+      }
+    ) }),
     /* @__PURE__ */ jsxs("div", { className: "px-5 lg:px-16 xl:px-24 py-20 lg:py-28 flex flex-col justify-center order-1 lg:order-2", children: [
       /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.3em] uppercase mb-5", children: localize(ui.customEyebrow, lang) }),
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl lg:text-5xl text-[var(--charcoal)] mb-7 leading-tight", children: lang === "ru" ? /* @__PURE__ */ jsxs(Fragment, { children: [
@@ -858,6 +1048,85 @@ function CustomProduction() {
     ] })
   ] }) });
 }
+function Delivery() {
+  const { lang } = useLocale();
+  const content = lang === "ru" ? {
+    eyebrow: "Доставка",
+    title: "Доставка по всему Узбекистану",
+    subtitle: "Быстро, бережно и абсолютно бесплатно",
+    description: [
+      "Мы заботимся о вашем удобстве, поэтому осуществляем бесплатную доставку мягкой мебели во все регионы Республики Узбекистан.",
+      "Наши специалисты бережно доставят, поднимут на этаж и аккуратно соберут вашу мебель прямо у вас дома."
+    ],
+    items: [
+      {
+        title: "Бесплатная доставка",
+        text: "Во все регионы Республики Узбекистан",
+        icon: Truck
+      },
+      {
+        title: "Бережная транспортировка",
+        text: "Аккуратная упаковка и контроль на каждом этапе",
+        icon: ShieldCheck
+      },
+      {
+        title: "Профессиональная сборка",
+        text: "Подъем на этаж и сборка мебели у вас дома",
+        icon: Wrench
+      }
+    ]
+  } : {
+    eyebrow: "Yetkazib berish",
+    title: "Butun O'zbekiston bo'ylab yetkazib berish",
+    subtitle: "Tez, ehtiyotkor va mutlaqo bepul",
+    description: [
+      "Sizga qulay bo'lishi uchun yumshoq mebellarni O'zbekiston Respublikasining barcha hududlariga bepul yetkazib beramiz.",
+      "Mutaxassislarimiz mebelingizni ehtiyotkorlik bilan olib boradi, qavatga ko'taradi va uyingizda puxta yig'ib beradi."
+    ],
+    items: [
+      {
+        title: "Bepul yetkazib berish",
+        text: "O'zbekistonning barcha hududlariga",
+        icon: Truck
+      },
+      {
+        title: "Ehtiyotkor tashish",
+        text: "Har bir bosqichda puxta qadoqlash va nazorat",
+        icon: ShieldCheck
+      },
+      {
+        title: "Professional yig'ish",
+        text: "Qavatga olib chiqish va uyingizda yig'ib berish",
+        icon: Wrench
+      }
+    ]
+  };
+  return /* @__PURE__ */ jsx("section", { id: "delivery", className: "py-20 lg:py-28 bg-[var(--ivory)]", children: /* @__PURE__ */ jsx("div", { className: "mx-auto max-w-[1400px] px-5 lg:px-10", children: /* @__PURE__ */ jsxs("div", { className: "grid lg:grid-cols-[0.95fr_1.05fr] gap-12 lg:gap-16 items-center", children: [
+    /* @__PURE__ */ jsxs("div", { children: [
+      /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.3em] uppercase mb-5", children: content.eyebrow }),
+      /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl lg:text-5xl text-[var(--charcoal)] mb-5 leading-tight", children: content.title }),
+      /* @__PURE__ */ jsx("p", { className: "font-serif italic text-2xl text-[var(--camel)] mb-8", children: content.subtitle }),
+      /* @__PURE__ */ jsx("div", { className: "space-y-5 text-[var(--charcoal)]/75 leading-relaxed text-base lg:text-lg max-w-2xl", children: content.description.map((paragraph) => /* @__PURE__ */ jsx("p", { children: paragraph }, paragraph)) })
+    ] }),
+    /* @__PURE__ */ jsx("div", { className: "grid sm:grid-cols-3 lg:grid-cols-1 gap-4", children: content.items.map((item) => {
+      const Icon = item.icon;
+      return /* @__PURE__ */ jsxs(
+        "div",
+        {
+          className: "bg-white border border-[var(--charcoal)]/10 px-6 py-6 lg:px-7 lg:py-7 flex gap-5 items-start",
+          children: [
+            /* @__PURE__ */ jsx("span", { className: "shrink-0 inline-flex h-12 w-12 items-center justify-center bg-[var(--camel)]/10 text-[var(--camel)]", children: /* @__PURE__ */ jsx(Icon, { size: 24, strokeWidth: 1.6 }) }),
+            /* @__PURE__ */ jsxs("span", { children: [
+              /* @__PURE__ */ jsx("span", { className: "block font-serif text-xl text-[var(--charcoal)] mb-2", children: item.title }),
+              /* @__PURE__ */ jsx("span", { className: "block text-sm leading-relaxed text-[var(--charcoal)]/65", children: item.text })
+            ] })
+          ]
+        },
+        item.title
+      );
+    }) })
+  ] }) }) });
+}
 const FAQ_ITEMS = ui.faq;
 function FAQ() {
   const { lang } = useLocale();
@@ -875,11 +1144,23 @@ function FAQ() {
             "aria-expanded": isOpen,
             children: [
               /* @__PURE__ */ jsx("span", { className: "font-sans font-semibold text-base lg:text-lg text-[var(--charcoal)] group-hover:text-[var(--camel)] transition-colors", children: localize(item.q, lang) }),
-              /* @__PURE__ */ jsx("span", { className: `text-[var(--camel)] text-2xl transition-transform shrink-0 ${isOpen ? "rotate-45" : ""}`, children: "+" })
+              /* @__PURE__ */ jsx(
+                "span",
+                {
+                  className: `text-[var(--camel)] text-2xl transition-transform shrink-0 ${isOpen ? "rotate-45" : ""}`,
+                  children: "+"
+                }
+              )
             ]
           }
         ),
-        /* @__PURE__ */ jsx("div", { className: `grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"}`, children: /* @__PURE__ */ jsx("div", { className: "overflow-hidden", children: /* @__PURE__ */ jsx("div", { className: "font-sans text-[var(--charcoal)]/80 leading-relaxed pr-4 lg:pr-12 text-[15px] whitespace-pre-line", children: localize(item.a, lang) }) }) })
+        /* @__PURE__ */ jsx(
+          "div",
+          {
+            className: `grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"}`,
+            children: /* @__PURE__ */ jsx("div", { className: "overflow-hidden", children: /* @__PURE__ */ jsx("div", { className: "font-sans text-[var(--charcoal)]/80 leading-relaxed pr-4 lg:pr-12 text-[15px] whitespace-pre-line", children: localize(item.a, lang) }) })
+          }
+        )
       ] }, i);
     }) })
   ] }) });
@@ -908,7 +1189,14 @@ function MapSection() {
             /* @__PURE__ */ jsx("span", { className: "text-[var(--camel)] text-xl leading-none mt-1", children: "📞" }),
             /* @__PURE__ */ jsxs("div", { children: [
               /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-[11px] tracking-[0.25em] uppercase mb-1 font-medium", children: localize(ui.mapPhoneLabel, lang) }),
-              /* @__PURE__ */ jsx("a", { href: "tel:+998970003334", className: "text-base lg:text-lg text-[var(--charcoal)] font-medium hover:text-[var(--camel)] transition-colors", children: "+998 97 000 33 34" })
+              /* @__PURE__ */ jsx(
+                "a",
+                {
+                  href: "tel:+998970003334",
+                  className: "text-base lg:text-lg text-[var(--charcoal)] font-medium hover:text-[var(--camel)] transition-colors",
+                  children: "+998 97 000 33 34"
+                }
+              )
             ] })
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "flex gap-4", children: [
@@ -928,7 +1216,18 @@ function MapSection() {
             className: "mt-10 inline-flex items-center justify-center gap-2 bg-[var(--charcoal)] hover:bg-[var(--camel)] text-white text-sm font-medium tracking-wide px-6 py-3.5 transition-colors w-fit",
             children: [
               localize(ui.mapOpenInYandex, lang),
-              /* @__PURE__ */ jsx("svg", { width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.8", children: /* @__PURE__ */ jsx("path", { d: "M7 17L17 7M9 7h8v8" }) })
+              /* @__PURE__ */ jsx(
+                "svg",
+                {
+                  width: "14",
+                  height: "14",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "1.8",
+                  children: /* @__PURE__ */ jsx("path", { d: "M7 17L17 7M9 7h8v8" })
+                }
+              )
             ]
           }
         )
@@ -969,8 +1268,22 @@ function Footer() {
         ] }),
         /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-2", children: localize(ui.phonesLabel, lang) }),
-          /* @__PURE__ */ jsx("a", { href: "tel:+998970003334", className: "block text-[var(--ivory)]/85 hover:text-[var(--camel)] transition-colors", children: "+998 97 000 33 34" }),
-          /* @__PURE__ */ jsx("a", { href: "tel:+998977782126", className: "block text-[var(--ivory)]/85 hover:text-[var(--camel)] transition-colors", children: "+998 97 778 21 26" })
+          /* @__PURE__ */ jsx(
+            "a",
+            {
+              href: "tel:+998970003334",
+              className: "block text-[var(--ivory)]/85 hover:text-[var(--camel)] transition-colors",
+              children: "+998 97 000 33 34"
+            }
+          ),
+          /* @__PURE__ */ jsx(
+            "a",
+            {
+              href: "tel:+998977782126",
+              className: "block text-[var(--ivory)]/85 hover:text-[var(--camel)] transition-colors",
+              children: "+998 97 778 21 26"
+            }
+          )
         ] }),
         /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-2", children: localize(ui.scheduleLabel, lang) }),
@@ -980,14 +1293,32 @@ function Footer() {
       /* @__PURE__ */ jsxs("div", { children: [
         /* @__PURE__ */ jsx("p", { className: "text-[var(--camel)] text-xs tracking-[0.25em] uppercase mb-4", children: localize(ui.socialLabel, lang) }),
         /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-3 text-sm", children: [
-          /* @__PURE__ */ jsxs("a", { href: "https://t.me/sofiamebel", target: "_blank", rel: "noopener noreferrer", className: "inline-flex items-center gap-3 text-[var(--ivory)]/85 hover:text-[var(--camel)] transition-colors", children: [
-            /* @__PURE__ */ jsx("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ jsx("path", { d: "M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 8.16l-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12L8.47 13.4l-2.81-.88c-.61-.19-.62-.61.13-.9l10.99-4.24c.51-.18.96.12.77.78z" }) }),
-            localize(ui.telegramChannel, lang)
-          ] }),
-          /* @__PURE__ */ jsxs("a", { href: "https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20", target: "_blank", rel: "noopener noreferrer", className: "inline-flex items-center gap-3 text-[var(--ivory)]/85 hover:text-[var(--camel)] transition-colors", children: [
-            /* @__PURE__ */ jsx("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ jsx("path", { d: "M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 8.16l-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12L8.47 13.4l-2.81-.88c-.61-.19-.62-.61.13-.9l10.99-4.24c.51-.18.96.12.77.78z" }) }),
-            localize(ui.managerTelegram, lang)
-          ] })
+          /* @__PURE__ */ jsxs(
+            "a",
+            {
+              href: "https://t.me/sofiamebel",
+              target: "_blank",
+              rel: "noopener noreferrer",
+              className: "inline-flex items-center gap-3 text-[var(--ivory)]/85 hover:text-[var(--camel)] transition-colors",
+              children: [
+                /* @__PURE__ */ jsx("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ jsx("path", { d: "M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 8.16l-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12L8.47 13.4l-2.81-.88c-.61-.19-.62-.61.13-.9l10.99-4.24c.51-.18.96.12.77.78z" }) }),
+                localize(ui.telegramChannel, lang)
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxs(
+            "a",
+            {
+              href: "https://t.me/OtvechuZdes?text=Здравствуйте!%20Я%20пишу%20с%20сайта%20Sofia-Mebel.%20Интересует%20мебель.%20Можете%20подсказать%20по%20наличию%20и%20вариантам?%20",
+              target: "_blank",
+              rel: "noopener noreferrer",
+              className: "inline-flex items-center gap-3 text-[var(--ivory)]/85 hover:text-[var(--camel)] transition-colors",
+              children: [
+                /* @__PURE__ */ jsx("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ jsx("path", { d: "M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 8.16l-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12L8.47 13.4l-2.81-.88c-.61-.19-.62-.61.13-.9l10.99-4.24c.51-.18.96.12.77.78z" }) }),
+                localize(ui.managerTelegram, lang)
+              ]
+            }
+          )
         ] })
       ] })
     ] }),
@@ -1039,6 +1370,7 @@ function Index() {
       /* @__PURE__ */ jsx(Chairs, {}),
       /* @__PURE__ */ jsx(Installments, {}),
       /* @__PURE__ */ jsx(CustomProduction, {}),
+      /* @__PURE__ */ jsx(Delivery, {}),
       /* @__PURE__ */ jsx(FAQ, {}),
       /* @__PURE__ */ jsx(MapSection, {})
     ] }),

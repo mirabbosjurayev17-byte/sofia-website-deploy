@@ -4,23 +4,53 @@ import { localize, useLocale, ui } from "@/lib/i18n";
 export function Header() {
   const { lang, setLang } = useLocale();
   const [open, setOpen] = useState(false);
+  const [announcementIndex, setAnnouncementIndex] = useState(0);
+  const announcementMessages = ui.announcementMessages.map((message) => localize(message, lang));
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setAnnouncementIndex((current) => (current + 1) % announcementMessages.length);
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, [announcementMessages.length]);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--ivory)] border-b border-[var(--charcoal)]/10">
       {/* Promotional top bar */}
       <div className="bg-[var(--charcoal)] text-white">
-        <div className="mx-auto max-w-[1400px] px-4 lg:px-10 h-8 lg:h-9 flex items-center justify-center">
-          <p className="font-sans text-[11px] lg:text-[12px] tracking-[0.05em] text-center text-white/95 truncate">
-            {localize(ui.topBarPromo, lang)}
-          </p>
+        <div className="mx-auto max-w-[1400px] h-8 lg:h-9 overflow-hidden">
+          <div className="hidden md:flex h-full items-center justify-center px-4 lg:px-10">
+            <p
+              key={`${lang}-${announcementIndex}`}
+              className="announcement-fade font-sans text-[12px] tracking-[0.05em] text-center text-white/95"
+            >
+              {announcementMessages[announcementIndex]}
+            </p>
+          </div>
+          <div className="md:hidden h-full flex items-center overflow-hidden">
+            <div className="announcement-marquee flex min-w-max items-center whitespace-nowrap">
+              {[...announcementMessages, ...announcementMessages].map((message, index) => (
+                <span
+                  key={`${message}-${index}`}
+                  className="font-sans text-[11px] tracking-[0.05em] text-white/95 px-8"
+                >
+                  {message}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
       <div className="mx-auto max-w-[1400px] px-5 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
-        <a href="#" className="font-serif text-xl lg:text-2xl tracking-tight text-[var(--charcoal)]">
+        <a
+          href="#"
+          className="font-serif text-xl lg:text-2xl tracking-tight text-[var(--charcoal)]"
+        >
           SOFIA<span className="text-[var(--camel)]">·</span>MEBEL
         </a>
 
@@ -45,10 +75,13 @@ export function Header() {
             className="text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors"
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 8.16l-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12L8.47 13.4l-2.81-.88c-.61-.19-.62-.61.13-.9l10.99-4.24c.51-.18.96.12.77.78z"/>
+              <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 8.16l-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12L8.47 13.4l-2.81-.88c-.61-.19-.62-.61.13-.9l10.99-4.24c.51-.18.96.12.77.78z" />
             </svg>
           </a>
-          <a href="tel:+998970003334" className="text-sm text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors tracking-wide">
+          <a
+            href="tel:+998970003334"
+            className="text-sm text-[var(--charcoal)] hover:text-[var(--camel)] transition-colors tracking-wide"
+          >
             +998 97 000 33 34
           </a>
           <div className="text-sm tracking-wide text-[var(--charcoal)]/60">
@@ -91,7 +124,14 @@ export function Header() {
             aria-label="Меню"
             className="text-[var(--charcoal)] p-2 -mr-2"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
               <path d="M3 6h18M3 12h18M3 18h18" />
             </svg>
           </button>
@@ -106,7 +146,9 @@ export function Header() {
         style={{ backgroundColor: "#FAF6F3" }}
       >
         <div className="h-16 px-5 flex items-center justify-between border-b border-[var(--charcoal)]/10">
-          <span className="font-serif text-xl text-[var(--charcoal)]">SOFIA<span className="text-[var(--camel)]">·</span>MEBEL</span>
+          <span className="font-serif text-xl text-[var(--charcoal)]">
+            SOFIA<span className="text-[var(--camel)]">·</span>MEBEL
+          </span>
           <div className="flex items-center gap-4">
             <div className="text-sm tracking-wide text-[var(--charcoal)]/60">
               <button
@@ -123,8 +165,19 @@ export function Header() {
                 UZ
               </button>
             </div>
-            <button onClick={() => setOpen(false)} aria-label="Закрыть" className="p-2 -mr-2 text-[var(--charcoal)]">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Закрыть"
+              className="p-2 -mr-2 text-[var(--charcoal)]"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
             </button>

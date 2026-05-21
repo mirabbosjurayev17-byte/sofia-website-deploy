@@ -2,7 +2,7 @@
 @source "../src";
 @import "tw-animate-css";
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -34,18 +34,18 @@
   --color-camel: var(--camel);
   --color-camel-dark: var(--camel-dark);
   --color-charcoal: var(--charcoal);
-  --font-serif: 'Lora', Georgia, serif;
-  --font-sans: 'Inter Tight', system-ui, sans-serif;
+  --font-serif: "Lora", Georgia, serif;
+  --font-sans: "Inter Tight", system-ui, sans-serif;
 }
 
 :root {
   --radius: 0.25rem;
 
   /* Brand */
-  --ivory: oklch(0.972 0.008 70);        /* #FAF6F3 */
-  --camel: oklch(0.638 0.062 65);        /* #AB8964 */
+  --ivory: oklch(0.972 0.008 70); /* #FAF6F3 */
+  --camel: oklch(0.638 0.062 65); /* #AB8964 */
   --camel-dark: oklch(0.55 0.065 60);
-  --charcoal: oklch(0.305 0.018 35);     /* #423333 */
+  --charcoal: oklch(0.305 0.018 35); /* #423333 */
 
   --background: var(--ivory);
   --foreground: var(--charcoal);
@@ -81,18 +81,57 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-serif);
     letter-spacing: -0.01em;
   }
 }
 
 @layer utilities {
-  .font-serif { font-family: var(--font-serif); }
-  .font-sans { font-family: var(--font-sans); }
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .announcement-fade {
+    animation: announcement-fade 5s ease-in-out both;
+  }
+
+  .announcement-marquee {
+    animation: announcement-marquee 16s linear infinite;
+  }
 }
 
-/* Casual image protection — prevents drag/select without breaking UX */
+@keyframes announcement-fade {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes announcement-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Casual image protection - prevents drag/select without breaking UX */
 img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
